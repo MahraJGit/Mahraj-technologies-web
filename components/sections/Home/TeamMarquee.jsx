@@ -1,39 +1,39 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { motion } from "framer-motion";
+import team1 from "@/public/team1.jpg";
 
 const teamMembers = [
   {
     id: 1,
     name: "Aahil Ahmed",
     designation: "Chief Technical Architect",
-    image: "/team1.jpg",
+    image: team1,
   },
   {
     id: 2,
     name: "Zoya Malik",
     designation: "Lead Systems Engineer",
-    image: "/team1.jpg",
+    image: team1,
   },
   {
     id: 3,
     name: "Rayan Khan",
     designation: "AI Research Lead",
-    image: "/team1.jpg",
+    image: team1,
   },
   {
     id: 4,
     name: "Sarah Sheikh",
     designation: "Backend Engineering Lead",
-    image: "/team1.jpg",
+    image: team1,
   },
   {
     id: 5,
     name: "Ibrahim Noor",
     designation: "Cloud Infrastructure Specialist",
-    image: "/team1.jpg",
+    image: team1,
   },
 ];
 
@@ -57,6 +57,7 @@ const TeamMemberCard = ({ member }) => {
           src={member.image}
           alt={member.name}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
         />
       </motion.div>

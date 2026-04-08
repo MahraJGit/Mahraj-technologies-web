@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import bgimg from "@/public/pricingctacontrast.png";
+import { useCalendly } from "@/context/CalendlyContext";
 
 export default function Cta() {
+    const { openModal } = useCalendly();
     return (
         <section className="py-24 bg-[#050505] px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="max-w-[1600px] mx-auto relative rounded-[2.5rem] overflow-hidden border border-zinc-900 bg-black flex flex-col items-center group shadow-2xl">
@@ -41,13 +43,12 @@ export default function Cta() {
                         >
                             Contact Us
                         </a>
-                        <a
-                            href="https://calendly.com"
-                            target="_blank"
+                        <button
+                            onClick={() => openModal()}
                             className="bg-white text-black font-bold text-xs md:text-sm uppercase tracking-[0.25em] px-10 py-5 lg:px-12 lg:py-6 rounded-md hover:bg-zinc-200 transition-all shadow-lg text-center w-full sm:w-auto lg:min-w-[240px]"
                         >
                             Schedule a Call
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

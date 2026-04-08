@@ -94,10 +94,10 @@ const PhaseContent = ({ phase, index, scrollProgress }) => {
   return (
     <motion.div
       style={{ opacity, x, scale, zIndex: totalPhases - index }}
-      className="absolute inset-0 flex items-center justify-start pointer-events-none"
+      className="absolute inset-x-0 bottom-0 top-32 flex items-center justify-start pointer-events-none"
     >
       {/* Responsive Container: Less padding on smaller laptops (lg) */}
-      <div className="w-full md:w-3/5 lg:w-3/4 xl:w-1/2 p-6 lg:p-12 xl:p-24 2xl:p-32 pt-32 lg:pt-32 text-left">
+      <div className="w-full md:w-3/5 lg:w-3/4 xl:w-1/2 p-6 lg:p-12 xl:p-24 2xl:p-32 text-left">
 
         {/* Background ID Number: Smaller on smaller laptops (lg) */}
         <div className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 select-none pointer-events-none opacity-[0.03]">

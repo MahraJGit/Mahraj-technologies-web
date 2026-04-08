@@ -108,12 +108,12 @@ export default function ContactForm() {
           <input type="hidden" name="subject" value="New Inquiry from Mahraj Terminal" />
           <input type="hidden" name="from_name" value="Mahraj Technologies" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+          <div className="grid grid-cols-1 gap-0">
             <InputField label="Name / Operator" placeholder="Enter Full Name" name="name" />
             <InputField label="Enterprise" placeholder="Organization" name="company" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+          <div className="grid grid-cols-1 gap-0">
             <InputField label="Communication ID" placeholder="Email Address" type="email" name="email" />
 
             {/* Custom High-Fidelity Dropdown */}
@@ -182,14 +182,12 @@ export default function ContactForm() {
             disabled={isSubmitting}
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
-            className={`w-full ${isSubmitting ? 'bg-zinc-800 cursor-not-allowed' : 'bg-primary hover:bg-white hover:text-black'} text-white font-black text-sm tracking-[0.5em] uppercase py-7 rounded-xl transition-all shadow-[0_0_40px_-10px_rgba(228,36,47,0.5)]`}
+            className={`w-full ${isSubmitting ? 'bg-zinc-800 cursor-not-allowed' : 'bg-primary hover:bg-[#c91d26]'} text-white font-black text-sm tracking-[0.3em] uppercase py-5 rounded-xl transition-colors shadow-[0_0_40px_-10px_rgba(228,36,47,0.5)]`}
           >
-            {isSubmitting ? result : "Transmit Data // 001"}
+            {isSubmitting ? result : "Submit"}
           </motion.button>
 
-          <p className="text-xs  text-zinc-600 uppercase text-center mt-10 tracking-widest leading-loose">
-            Encrypted handshake required for <br /> enterprise data transmission.
-          </p>
+
           {result && !isSubmitting && result !== "TRANSMISSION_SUCCESS" && (
             <p className="text-xs font-bold  text-red-500 text-center mt-4 uppercase">
               Error: {result}

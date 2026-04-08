@@ -13,18 +13,8 @@ export default function Hero() {
       {/* Decorative Radial Radiance */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
-        {/* Animated Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-[10px] font-bold tracking-[0.2em] text-primary uppercase bg-primary/30 border border-primary/50 rounded-full backdrop-blur-xl animate-pulse">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          Neural Engine Active
-        </div>
-
-
-        {/* High-Impact Title */}
+      <div className="relative z-10 max-w-5xl mx-auto text-center pt-8">
+        {/* High-Impact Title Stack */}
         <h1 className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tight text-white mb-8">
           The Future is <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary animate-gradient-x">

@@ -5,10 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logo from "@/public/logo.svg";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { useCalendly } from "@/context/CalendlyContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { openModal } = useCalendly();
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -17,6 +20,7 @@ export default function Header() {
     { name: "Services", href: "/services" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Pricing", href: "/pricing" },
+    { name: "Blogs", href: "/blogs" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -52,12 +56,20 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-3 sm:gap-5">
-          <Link
-            href="/contact"
+          <motion.button
+            onClick={() => openModal()}
+            animate={{
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
             className="inline-flex items-center justify-center bg-[#E4242F] text-white px-5 py-2.5 lg:px-7 lg:py-3 rounded-md font-bold text-xs md:text-sm tracking-widest uppercase hover:bg-[#c91d26] transition-colors shadow-lg"
           >
             SCHEDULE A CALL
-          </Link>
+          </motion.button>
 
           <button
             className="lg:hidden p-2 text-white hover:text-[#E4242F] transition-colors focus:outline-none"

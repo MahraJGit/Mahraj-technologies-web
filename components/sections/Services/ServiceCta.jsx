@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from 'next/link';
+import { useCalendly } from "@/context/CalendlyContext";
 
 export default function ServiceCta() {
+    const { openModal } = useCalendly();
+
     return (
         <section className="relative w-full py-20 md:py-48 overflow-hidden bg-black">
             {/* Background Image with Cinematic Overlay */}
@@ -39,19 +43,30 @@ export default function ServiceCta() {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="w-full sm:w-auto px-10 py-4 bg-primary text-white  text-xs tracking-[0.3em] uppercase font-bold shadow-[0_0_30px_rgba(228,36,47,0.3)] hover:shadow-[0_0_45px_rgba(228,36,47,0.5)] transition-all"
-                        >
-                            REQUEST PROTOCOL
-                        </motion.button>
+                        <Link href="/contact" className="w-full sm:w-auto">
+                            <motion.button
+                                whileHover={{ 
+                                    scale: 1.05,
+                                    backgroundColor: "#E4242F"
+                                }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full sm:w-auto px-10 py-5 bg-transparent border border-zinc-700 text-white text-xs tracking-[0.3em] uppercase font-bold transition-colors shadow-lg"
+                            >
+                                Contact Us
+                            </motion.button>
+                        </Link>
 
                         <motion.button
-                            whileHover={{ backgroundColor: "rgba(255,255,255,0.05)" }}
-                            className="w-full sm:w-auto px-10 py-4 border border-zinc-700 text-white  text-xs tracking-[0.3em] uppercase font-bold transition-colors"
+                            onClick={() => openModal()}
+                            whileHover={{ 
+                                scale: 1.05,
+                                backgroundColor: "#E4242F",
+                                borderColor: "#E4242F"
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            className="w-full sm:w-auto px-10 py-5 bg-transparent border border-zinc-700 text-white text-xs tracking-[0.3em] uppercase font-bold transition-all"
                         >
-                            TECHNICAL SPECS
+                            Schedule a Call
                         </motion.button>
                     </div>
                 </motion.div>

@@ -10,7 +10,8 @@ const nodes = [
     coordinates: "31.5204° N, 74.3587° E",
     status: "ACTIVE",
     address: "Mahraj Tech Park, Block L, Gulberg III, Lahore",
-    role: "HEADQUARTERS / ENGINEERING HUB"
+    role: "HEADQUARTERS / ENGINEERING HUB",
+    mapSrc: "https://maps.google.com/maps?q=Gulberg+III+Lahore+Pakistan&output=embed&z=14"
   },
   {
     id: "02",
@@ -18,7 +19,8 @@ const nodes = [
     coordinates: "25.2048° N, 55.2708° E",
     status: "OPERATIONAL",
     address: "Level 14, Boulevard Plaza, Tower 1, Downtown Dubai",
-    role: "STRATEGIC OPERATIONS / MENA HUB"
+    role: "STRATEGIC OPERATIONS / MENA HUB",
+    mapSrc: "https://maps.google.com/maps?q=Boulevard+Plaza+Tower+1+Downtown+Dubai&output=embed&z=14"
   }
 ];
 
@@ -65,6 +67,20 @@ export default function ContactInfo() {
               <div className="pt-8 border-t border-zinc-900 flex flex-col gap-3">
                 <span className="text-xs text-white  tracking-widest uppercase italic opacity-60">{node.role}</span>
                 <p className="text-base text-zinc-400 leading-relaxed max-w-md">{node.address}</p>
+              </div>
+
+              {/* Embedded Map */}
+              <div className="mt-4 rounded-lg overflow-hidden h-40 border border-zinc-800/50">
+                <iframe
+                  src={node.mapSrc}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: "grayscale(100%) invert(92%) contrast(83%)" }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Map of ${node.location}`}
+                />
               </div>
             </div>
           </motion.div>

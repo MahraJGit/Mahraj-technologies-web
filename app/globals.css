@@ -76,12 +76,18 @@
   .animate-marquee-infinite {
     animation: marquee-infinite 40s linear infinite;
   }
+
   .pause {
     animation-play-state: paused;
   }
 
   @keyframes marquee-infinite {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }

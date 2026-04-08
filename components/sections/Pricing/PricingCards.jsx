@@ -61,7 +61,7 @@ export default function PricingCards() {
     return (
         <section className="py-24 bg-[#050505]">
             <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
                     {pricingData.map((card, index) => (
                         <motion.div
                             key={card.id}
@@ -69,61 +69,61 @@ export default function PricingCards() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             whileHover={{
-                                y: -10,
+                                y: -8,
+                                scale: 1.03,
                                 borderColor: "rgba(228, 36, 47, 0.4)",
                                 backgroundColor: "rgba(9, 9, 11, 0.8)",
                                 boxShadow: "0 25px 60px -15px rgba(228, 36, 47, 0.2)",
                                 transition: { duration: 0.3 }
                             }}
                             transition={{ delay: index * 0.1 }}
-                            className={`relative p-10 md:p-14 rounded-3xl border border-zinc-900 bg-zinc-950/50 shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full mx-auto w-full max-w-[700px]`}
+                            className={`relative p-8 lg:p-10 rounded-3xl border border-zinc-900 bg-zinc-950/50 shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full w-full`}
                         >
-                            {/* Architect Badge */}
-                            {card.badge && (
-                                <div className="absolute top-0 right-0 left-0 flex justify-center pt-8">
-                                    <span className="bg-primary text-white text-[10px] font-black tracking-[0.3em] px-5 py-2 rounded-full uppercase shadow-lg">
-                                        {card.badge}
-                                    </span>
-                                </div>
-                            )}
-
                             {/* Header */}
-                            <div className="mb-12 pt-6">
-                                <div className="mb-8 scale-150 origin-left">{card.icon}</div>
-                                <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-3 leading-none">
+                            <div className="mb-6">
+                                {/* Badge inline if present */}
+                                {card.badge && (
+                                    <div className="mb-4">
+                                        <span className="bg-primary text-white text-[9px] font-black tracking-[0.25em] px-3 py-1.5 rounded-full uppercase shadow-lg inline-block">
+                                            {card.badge}
+                                        </span>
+                                    </div>
+                                )}
+                                <div className="mb-5 text-primary">{card.icon}</div>
+                                <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2 leading-none">
                                     {card.title}
                                 </h3>
-                                <p className="text-zinc-500 text-sm font-medium max-w-[320px]">
+                                <p className="text-zinc-500 text-sm font-medium">
                                     {card.subtitle}
                                 </p>
                             </div>
 
                             {/* Pricing */}
-                            <div className="mb-14">
+                            <div className="mb-8">
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-5xl font-black text-white tracking-tighter">
+                                    <span className="text-4xl font-black text-white tracking-tighter">
                                         {card.price}
                                     </span>
                                     {card.priceRange && (
-                                        <span className="text-2xl font-black text-zinc-700 tracking-tighter mx-1">- {card.priceRange}</span>
+                                        <span className="text-xl font-black text-zinc-700 tracking-tighter mx-1">- {card.priceRange}</span>
                                     )}
-                                    <span className="text-lg font-bold text-zinc-500 uppercase">{card.priceSub}</span>
+                                    <span className="text-base font-bold text-zinc-500 uppercase">{card.priceSub}</span>
                                 </div>
-                                <p className="text-[11px] text-zinc-600 font-bold tracking-widest uppercase mt-4 opacity-80 font-mono">
+                                <p className="text-[11px] text-zinc-600 font-bold tracking-widest uppercase mt-3 opacity-80 font-mono">
                                     {card.startingText}
                                 </p>
                             </div>
 
                             {/* Features Grid */}
-                            <div className="flex-grow space-y-8 mb-14">
+                            <div className="flex-grow space-y-4 mb-8">
                                 {card.features.map((feature, idx) => (
-                                    <div key={idx} className="flex items-center justify-between border-b border-zinc-900 pb-5">
-                                        <div className="flex items-center gap-4">
-                                            <CheckCircle2 className="w-5 h-5 text-primary opacity-80" />
-                                            <span className="text-sm font-bold text-zinc-300 uppercase tracking-tight">{feature.label}</span>
+                                    <div key={idx} className="flex items-center justify-between border-b border-zinc-900 pb-4">
+                                        <div className="flex items-center gap-3">
+                                            <CheckCircle2 className="w-4 h-4 text-primary opacity-80 shrink-0" />
+                                            <span className="text-xs font-bold text-zinc-300 uppercase tracking-tight">{feature.label}</span>
                                         </div>
-                                        <div className="text-right">
-                                            <p className="text-base font-black text-white">{feature.value}</p>
+                                        <div className="text-right ml-2">
+                                            <p className="text-sm font-black text-white">{feature.value}</p>
                                             <p className="text-[10px] text-zinc-600 font-bold tracking-tight uppercase mt-0.5">{feature.detail}</p>
                                         </div>
                                     </div>
@@ -134,10 +134,7 @@ export default function PricingCards() {
                             <motion.button
                                 whileHover={{ scale: 1.01 }}
                                 whileTap={{ scale: 0.99 }}
-                                className={`w-full py-6 rounded-2xl font-black text-sm uppercase tracking-[0.25em] transition-all
-                  ${card.isPrimary
-                                        ? 'bg-primary text-white shadow-[0_10px_30px_-10px_rgba(228,36,47,0.5)] hover:bg-red-600'
-                                        : 'bg-zinc-900 text-white hover:bg-zinc-800 border border-zinc-800'}`}
+                                className="w-full py-5 rounded-2xl font-black text-sm uppercase tracking-[0.25em] transition-all duration-300 bg-zinc-900 text-white border border-zinc-800 hover:bg-primary hover:border-primary hover:shadow-[0_10px_30px_-10px_rgba(228,36,47,0.4)]"
                             >
                                 {card.buttonText}
                             </motion.button>

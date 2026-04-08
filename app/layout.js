@@ -2,6 +2,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CalendlyProvider } from "@/context/CalendlyContext";
+import CalendlyModal from "@/components/ui/CalendlyModal";
 
 const spaceGrotesk = Poppins({
   subsets: ["latin"],
@@ -27,9 +29,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body className="min-h-screen flex flex-col antialiased">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <CalendlyProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <CalendlyModal />
+        </CalendlyProvider>
       </body>
     </html>
   );
