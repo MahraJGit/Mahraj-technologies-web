@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #E4242F;
+  --color-heading: #F3F3F3;
+  --color-white: #FFFFFF;
+  --color-text: #737373;
+  --color-body: #050505;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-heading: var(--color-heading);
+  --color-text: var(--color-text);
+  --color-body: var(--color-body);
+  --color-white: var(--color-white);
+}
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-body);
+    color: var(--color-text);
+    font-family: var(--font-space-grotesk), sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-heading);
+    font-family: var(--font-space-grotesk), sans-serif;
+    line-height: 1.2;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-base text-white pb-2;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 bottom-0 h-[2px] w-0 bg-[#E4242F] transition-all duration-500;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .animate-marquee-infinite {
+    animation: marquee-infinite 40s linear infinite;
+  }
+  .pause {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-infinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
