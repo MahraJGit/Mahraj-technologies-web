@@ -45,7 +45,7 @@ export default function ProtocolSpecifications() {
           <table className="w-full text-left border-collapse min-w-[800px] lg:min-w-0">
             <thead>
               <tr className="border-b border-zinc-900 pb-12">
-                <th className="py-8 px-4 text-xs font-black text-zinc-600 uppercase tracking-[0.3em] w-1/4">Feature Set</th>
+                <th className="py-8 px-4 text-xs font-black text-white uppercase tracking-[0.3em] w-1/4">Feature Set</th>
                 <th className="py-8 px-4 text-base font-black text-white uppercase tracking-widest w-1/4">Dedicated</th>
                 <th className="py-8 px-4 text-base font-black text-white uppercase tracking-widest w-1/4">Project-Based</th>
                 <th className="py-8 px-4 text-base font-black text-white uppercase tracking-widest w-1/4">Maintenance</th>
@@ -70,17 +70,17 @@ export default function ProtocolSpecifications() {
                     </span>
                   </td>
                   <td className="py-10 px-4">
-                    <span className="text-base font-bold text-white uppercase opacity-70 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <span className="text-base font-bold text-zinc-400 uppercase opacity-70 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                       {spec.dedicated}
                     </span>
                   </td>
                   <td className="py-10 px-4">
-                    <span className="text-base font-black text-white uppercase whitespace-nowrap">
+                    <span className="text-base font-black text-zinc-400 uppercase whitespace-nowrap">
                       {spec.project}
                     </span>
                   </td>
                   <td className="py-10 px-4">
-                    <span className="text-base font-bold text-white opacity-70 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <span className="text-base font-bold text-zinc-400 opacity-70 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                       {spec.maintenance}
                     </span>
                   </td>

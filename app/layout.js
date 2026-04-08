@@ -5,19 +5,19 @@ import Footer from "@/components/Footer";
 import { CalendlyProvider } from "@/context/CalendlyContext";
 import CalendlyModal from "@/components/ui/CalendlyModal";
 
-const spaceGrotesk = Poppins({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   variable: "--font-space-grotesk",
 });
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-  variable: "--font-poppins",
-});
+// const poppins = Poppins({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "500", "600", "700"],
+//   display: "swap",
+//   variable: "--font-poppins",
+// });
 
 export const metadata = {
   title: "Mahraj Technologies | Digital Innovation Agency",
@@ -27,7 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={spaceGrotesk.variable}>
+    <html lang="en" className={poppins.variable}>
       <body className="min-h-screen flex flex-col antialiased">
         <CalendlyProvider>
           <Header />

@@ -2,15 +2,16 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Network, 
-  Cloud, 
-  Layout, 
-  Shield, 
-  BrainCircuit, 
-  Blocks, 
-  Smartphone, 
-  LineChart 
+import {
+  Network,
+  Cloud,
+  Layout,
+  Shield,
+  BrainCircuit,
+  Blocks,
+  Smartphone,
+  LineChart,
+  Terminal
 } from 'lucide-react';
 
 const services = [
@@ -123,7 +124,9 @@ export default function ServiceCards() {
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3 text-[11px]  text-zinc-400 tracking-widest uppercase group-hover:text-zinc-300 transition-colors">
-                      <span className="w-1.5 h-1.5 bg-primary shadow-[0_0_5px_rgba(228,36,47,0.4)]" />
+                      {/* <span className="w-1.5 h-1.5 bg-primary shadow-[0_0_5px_rgba(228,36,47,0.4)]" /> */}
+                      {/* <Terminal size={20} strokeWidth={1.5} className="text-primary" /> */}
+                      <span className='text-primary text-1xl'>&gt;</span>
                       {feature}
                     </li>
                   ))}

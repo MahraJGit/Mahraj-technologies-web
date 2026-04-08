@@ -59,10 +59,10 @@ export default function Header() {
           <motion.button
             onClick={() => openModal()}
             animate={{
-              scale: [1, 1.05, 1],
+              scale: [1, 1.06, 1],
             }}
             transition={{
-              duration: 4,
+              duration: 2,
               repeat: Infinity,
               ease: "easeInOut",
             }}

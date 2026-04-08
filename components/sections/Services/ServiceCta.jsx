@@ -45,12 +45,13 @@ export default function ServiceCta() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <Link href="/contact" className="w-full sm:w-auto">
                             <motion.button
-                                whileHover={{ 
+                                whileHover={{
                                     scale: 1.05,
-                                    backgroundColor: "#E4242F"
+                                    backgroundColor: "transparent",
+                                    color: "#E4242F"
                                 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full sm:w-auto px-10 py-5 bg-transparent border border-zinc-700 text-white text-xs tracking-[0.3em] uppercase font-bold transition-colors shadow-lg"
+                                className="w-full sm:w-auto px-10 py-5 bg-primary border border-zinc-700 text-white text-xs tracking-[0.3em] uppercase font-bold transition-colors shadow-lg "
                             >
                                 Contact Us
                             </motion.button>
@@ -58,10 +59,10 @@ export default function ServiceCta() {
 
                         <motion.button
                             onClick={() => openModal()}
-                            whileHover={{ 
+                            whileHover={{
                                 scale: 1.05,
-                                backgroundColor: "#E4242F",
-                                borderColor: "#E4242F"
+                                backgroundColor: "#ffffff",
+                                color: "#000000"
                             }}
                             whileTap={{ scale: 0.98 }}
                             className="w-full sm:w-auto px-10 py-5 bg-transparent border border-zinc-700 text-white text-xs tracking-[0.3em] uppercase font-bold transition-all"
