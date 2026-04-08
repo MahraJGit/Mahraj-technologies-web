@@ -20,6 +20,9 @@ const poppins = Poppins({
 // });
 
 export const metadata = {
+  icons: {
+    icon: "/logo.svg"
+  },
   title: "Mahraj Technologies | Digital Innovation Agency",
   description:
     "Mahraj Technologies is a cutting-edge digital agency delivering world-class web development, app development, AI solutions, and product design services.",
