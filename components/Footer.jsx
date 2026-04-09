@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="w-full bg-[#050505] mt-auto border-t border-zinc-900/50">
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24">
-        <div className="flex flex-col md:flex-row justify-between gap-12 lg:gap-24">
+        <div className="flex flex-col md:flex-row justify-between gap-12 lg:gap-23">
 
           {/* Brand Column */}
           <div className="max-w-sm">

@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 const services = [
   "MOBILE INFRASTRUCTURE",
   "WEB ARCHITECTURE",
-  "NEURAL LINK SYSTEMS",
   "CLOUD STABILITY PROTOCOL",
-  "ENTERPRISE DIGITAL SUITE"
+  "ENTERPRISE DIGITAL SUITE",
+  "OTHER"
 ];
 
 const InputField = ({ label, placeholder, type = "text", name }) => {
@@ -40,7 +40,7 @@ export default function ContactForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
-    setResult("TRANSMITIING...");
+    setResult("SUBMITTING...");
 
     const formData = new FormData(event.target);
     // Add the custom service 
@@ -73,11 +73,11 @@ export default function ContactForm() {
   return (
     <div className="flex flex-col gap-12 bg-zinc-950/40 p-8 md:p-16 border border-zinc-900/50 rounded-2xl backdrop-blur-xl">
       <div className="space-y-4">
-        <span className="text-primary  text-sm tracking-[0.5em] uppercase font-bold flex items-center gap-4">
+        {/* <span className="text-primary  text-sm tracking-[0.5em] uppercase font-bold flex items-center gap-4">
           <span className="w-12 h-[1px] bg-primary" />
           INITIATE PROTOCOL
-        </span>
-        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase">Inquiry Terminal</h2>
+        </span> */}
+        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase">Let's Connect</h2>
       </div>
 
       {result === "TRANSMISSION_SUCCESS" ? (
@@ -109,17 +109,17 @@ export default function ContactForm() {
           <input type="hidden" name="from_name" value="Mahraj Technologies" />
 
           <div className="grid grid-cols-1 gap-0">
-            <InputField label="Name / Operator" placeholder="Enter Full Name" name="name" />
-            <InputField label="Enterprise" placeholder="Organization" name="company" />
+            <InputField label="Name" placeholder="Enter Full Name" name="name" />
+            <InputField label="Company" placeholder="Organization" name="company" />
           </div>
 
           <div className="grid grid-cols-1 gap-0">
-            <InputField label="Communication ID" placeholder="Email Address" type="email" name="email" />
+            <InputField label="Email" placeholder="Email Address" type="email" name="email" />
 
             {/* Custom High-Fidelity Dropdown */}
             <div className="relative group/field mt-12">
               <label className="block text-primary  text-xs tracking-[0.4em] uppercase mb-3 font-bold opacity-60">
-                Service Protocol
+                Service
               </label>
               <div className="relative">
                 <div
@@ -162,13 +162,13 @@ export default function ContactForm() {
           {/* Project Brief */}
           <div className="relative group/field mt-16 mb-16">
             <label className="block text-primary  text-xs tracking-[0.4em] uppercase mb-3 font-bold opacity-60">
-              Project Brief / Narrative
+              Project Brief
             </label>
             <textarea
               rows={4}
               name="message"
               required
-              placeholder="Describe your infrastructure requirements..."
+              placeholder="Describe your requirements..."
               className="w-full bg-transparent border-none py-5 text-white  text-lg focus:outline-none focus:ring-0 transition-all placeholder:text-zinc-800 resize-none"
             />
             {/* Base Line */}

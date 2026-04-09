@@ -4,6 +4,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CalendlyProvider } from "@/context/CalendlyContext";
 import CalendlyModal from "@/components/ui/CalendlyModal";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "@/app/api/uploadthing/core";
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,6 +37,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={poppins.variable}>
       <body className="min-h-screen flex flex-col antialiased">
         <CalendlyProvider>
+          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

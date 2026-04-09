@@ -111,12 +111,12 @@ const PhaseContent = ({ phase, index, scrollProgress }) => {
 
         {/* Content Grouping: Tighter gap on smaller laptops (lg) */}
         <div className="relative z-10 flex flex-col items-start gap-4 lg:gap-8">
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <div className="w-12 h-[2px] bg-primary animate-pulse" />
             <span className="text-primary  text-sm tracking-[0.5em] font-bold uppercase">
               {phase.code}
             </span>
-          </div>
+          </div> */}
           <h3 className="text-white text-3xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-black tracking-tight uppercase leading-[0.85] max-w-2xl">
             {phase.title}
           </h3>
@@ -124,11 +124,11 @@ const PhaseContent = ({ phase, index, scrollProgress }) => {
             <p className="text-zinc-300  text-xs lg:text-base xl:text-lg 2xl:text-xl leading-relaxed tracking-wide">
               {phase.description}
             </p>
-            <div className="flex items-center gap-4 text-zinc-600  text-[10px] tracking-widest uppercase">
+            {/* <div className="flex items-center gap-4 text-zinc-600  text-[10px] tracking-widest uppercase">
               <span>SECURE_DATA_READY</span>
               <div className="w-8 h-[1px] bg-zinc-800" />
               <span>NODE_{phase.id}_STABLE</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -203,7 +203,7 @@ export default function OperationalFlow() {
       {/* Desktop Layout (>= 1024px) */}
       <div className="hidden lg:block h-[720vh]">
         <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col bg-[#050505]">
-          <TechnicalDeco scrollProgress={scrollYProgress} />
+          {/* <TechnicalDeco scrollProgress={scrollYProgress} /> */}
           <div className="absolute left-8 top-1/4 bottom-1/4 w-[2px] bg-zinc-900 overflow-hidden z-50">
             <motion.div
               style={{ scaleY: scrollYProgress, originY: 0 }}
@@ -218,9 +218,9 @@ export default function OperationalFlow() {
                   OPERATIONAL DYNAMICS // MAHRAJ CORE
                 </span>
               </div>
-              <span className="text-zinc-500  text-[10px] tracking-[0.2em] uppercase italic">
+              {/* <span className="text-zinc-500  text-[10px] tracking-[0.2em] uppercase italic">
                 Architecting the digital frontier // v1.0
-              </span>
+              </span> */}
             </div>
           </div>
           <div className="relative flex-1">
@@ -230,8 +230,8 @@ export default function OperationalFlow() {
           </div>
           <div className="absolute bottom-12 left-12 right-12 flex items-center justify-between z-10 pointer-events-none">
             <motion.div className="flex items-center gap-4 text-zinc-600  text-[9px] tracking-widest uppercase">
-              <div className="w-1.5 h-1.5 bg-primary animate-pulse" />
-              <span>ARCHITECT_NODE // READY</span>
+              {/* <div className="w-1.5 h-1.5 bg-primary animate-pulse" /> */}
+              {/* <span>ARCHITECT_NODE // READY</span> */}
             </motion.div>
             <div className=" text-[9px] text-zinc-600 tracking-widest uppercase">
               <ScrollDepthLabel scrollProgress={scrollYProgress} />

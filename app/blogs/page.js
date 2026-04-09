@@ -10,7 +10,7 @@ export default function BlogsPage() {
   return (
     <main className="min-h-screen bg-black">
       <PageHero
-        eyebrow="TECHNICAL ARCHIVE"
+        eyebrow="MAHRAJ / BLOGS"
         titleLight="PROTOCOL"
         titleDark="Logs & Briefs"
         description="Deep dives into our recent technical breakthroughs, real-time architectures, and neural synchronization protocols."

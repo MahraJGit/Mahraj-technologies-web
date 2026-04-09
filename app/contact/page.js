@@ -5,8 +5,8 @@ import ContactInfo from "@/components/sections/Contact/ContactInfo";
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#050505]">
-      <PageHero 
-        eyebrow="INITIALIZE // CONNECTION.001"
+      <PageHero
+        eyebrow="MAHRAJ / CONTACT"
         titleLight="CONTACT"
         titleDark="SYSTEMS"
         description="Direct communication with our lead architects. Initiate technical inquiries for enterprise infrastructure, secure cloud deployment, and neural-link development."

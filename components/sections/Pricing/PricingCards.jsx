@@ -82,13 +82,13 @@ export default function PricingCards() {
                             {/* Header */}
                             <div className="mb-6">
                                 {/* Badge inline if present */}
-                                {card.badge && (
+                                {/* {card.badge && (
                                     <div className="mb-4">
                                         <span className="bg-primary text-white text-[9px] font-black tracking-[0.25em] px-3 py-1.5 rounded-full uppercase shadow-lg inline-block">
                                             {card.badge}
                                         </span>
                                     </div>
-                                )}
+                                )} */}
                                 <div className="mb-5 text-primary">{card.icon}</div>
                                 <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2 leading-none">
                                     {card.title}

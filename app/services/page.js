@@ -11,7 +11,7 @@ export default function ServicesPage() {
   return (
     <main className="w-full">
       <PageHero
-        eyebrow="CORE SYSTEMS / 001"
+        eyebrow="MAHRAJ / SERVICES"
         titleLight="SERVICES"
         titleDark="ARCHITECTURE"
         description="Precision-engineered digital infrastructure. Mahraj Technologies deploys monolithic stability with neural-link adaptability."

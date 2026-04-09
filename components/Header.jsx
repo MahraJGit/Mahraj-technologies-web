@@ -21,6 +21,7 @@ export default function Header() {
     { name: "Case Studies", href: "/case-studies" },
     { name: "Pricing", href: "/pricing" },
     { name: "Blogs", href: "/blogs" },
+    { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ];
 

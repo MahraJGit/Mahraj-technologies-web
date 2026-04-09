@@ -99,9 +99,9 @@ export default function TeamMarquee() {
     <section className="w-full bg-[#050505] py-24 overflow-hidden border-t border-zinc-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mb-16">
         <div className="flex flex-col gap-4 text-center">
-          <span className="text-primary  text-sm tracking-[0.4em] uppercase font-bold">
+          {/* <span className="text-primary  text-sm tracking-[0.4em] uppercase font-bold">
             Our Personnel // MAHRAJ_CORE
-          </span>
+          </span> */}
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9]">
             Architects of <br />
             <span className="text-zinc-600">The Digital Frontier</span>
