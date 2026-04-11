@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useUploadThing } from '@/utils/uploadthing';
+import { useSearchParams } from 'next/navigation';
 
 
 
@@ -43,7 +44,15 @@ export default function ApplicationForm() {
   const [resumeName, setResumeName] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
+  const searchParams = useSearchParams();
   const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    const jobParam = searchParams.get('job');
+    if (jobParam && roles.includes(jobParam)) {
+      setSelectedRole(jobParam);
+    }
+  }, [searchParams]);
 
   const { startUpload } = useUploadThing("resumeUploader", {
     onClientUploadComplete: (res) => {
@@ -115,7 +124,7 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section id="apply-form" className="relative w-full py-20 px-4 sm:px-6 lg:px-8 xl:px-12 bg-black border-b border-zinc-900/50">
+    <section className="relative w-full py-20 px-4 sm:px-6 lg:px-8 xl:px-12 bg-black border-b border-zinc-900/50">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col gap-12 bg-zinc-950/40 p-8 md:p-16 border border-zinc-900/50 rounded-2xl backdrop-blur-xl">
           <div className="space-y-4 text-center mb-4">

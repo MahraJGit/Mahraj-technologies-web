@@ -6,39 +6,39 @@ import { motion, useScroll, useSpring, useTransform, useMotionValueEvent } from 
 const phases = [
   {
     id: "01",
-    title: "NEURAL MAPPING",
+    title: "Administrative Support",
     code: "SYST_AUDIT_0x1",
-    description: "Our engineers perform a comprehensive deep-dive audit of your existing technological debt and underlying infrastructure. We utilize proprietary mapping algorithms to visualize every data endpoint and dependency, ensuring that the future-state architecture is built on a foundation of absolute clarity.",
+    description: "We provide reliable administrative support to manage emails, scheduling, documentation, and reporting. Our virtual assistance services improve business efficiency, streamline operations, and help teams focus on core growth activities.",
   },
   {
     id: "02",
-    title: "CORE ENGINEERING",
+    title: "Task Management Assistance",
     code: "STR_BUILD_0x2",
-    description: "The development process begins with the construction of a high-performance backbone designed for multi-generational longevity. We focus on monolithic stability while maintaining the modular flexibility required for modern AI integrations.",
+    description: "Our team handles task management with proper organization and follow-ups. We ensure smooth workflow coordination, timely execution, and productivity improvement using digital tools and structured virtual support systems for businesses.",
   },
   {
     id: "03",
-    title: "SYNAPTIC DEPLOYMENT",
+    title: "Calendar & Email Management",
     code: "STAGED_SYNC_0x3",
-    description: "We execute a precision-staged rollout into your live environments, utilizing real-time telemetry to monitor the health of every new node. Our deployment protocols are designed for zero-latency handoffs and immediate optimization.",
+    description: "We manage calendars and emails professionally to avoid missed opportunities and delays. Our virtual assistants organize meetings, prioritize communication, and maintain smooth scheduling for better time management and workflow efficiency.",
   },
   {
     id: "04",
-    title: "QUALITY ASSURANCE",
+    title: "Customer Support Handling",
     code: "FORENSIC_QA_0x4",
-    description: "Beyond standard bug checking, our forensic auditing process verifies the integrity of your system at the hardware and byte level. We simulate catastrophic failure scenarios to ensure that zero-defect performance is maintained.",
+    description: "We provide responsive customer support assistance to maintain client satisfaction. Our virtual assistance ensures timely replies, query handling, and professional communication that improve customer experience and strengthen brand trust online.",
   },
   {
     id: "05",
-    title: "GLOBAL SCALING",
+    title: "Data Entry & Research",
     code: "EDGE_OPT_0x5",
-    description: "As your user base grows, we expand your regional node network and optimize edge delivery for worldwide low-latency reach. Our scaling architecture is built to distribute load intelligently across continents.",
+    description: "Our team handles accurate data entry and detailed online research tasks. Our virtual assistants ensure error-free documentation, organized data systems, and insightful research that supports business decisions and operational improvements effectively.",
   },
   {
     id: "06",
-    title: "CONTINUOUS MONITORING",
+    title: "Business Operations Support",
     code: "AI_WATCH_0x6",
-    description: "Our partnership continues with 24/7 AI-driven telemetry loops that provide autonomous health checks and proactive patching. We monitor the horizon for potential latency and security threats in real-time.",
+    description: "We assist in daily business operations to reduce workload and improve productivity. Our virtual assistance services help streamline processes, manage repetitive tasks, and ensure the smooth execution of business activities consistently.",
   },
 ];
 
@@ -143,42 +143,42 @@ const MobileFlow = () => {
         <div className="flex items-center gap-4">
           <div className="w-12 h-[1px] bg-primary" />
           <span className="text-white  text-[10px] tracking-[0.5em] uppercase font-bold">
-            OPERATIONAL DYNAMICS // MOBILE_CORE
+            What we offer
           </span>
         </div>
-        <h2 className="text-zinc-500  text-[10px] tracking-[0.2em] uppercase italic">
+        {/* <h2 className="text-zinc-500  text-[10px] tracking-[0.2em] uppercase italic">
           Architecting the digital frontier // v1.0
-        </h2>
+        </h2> */}
       </div>
 
       {phases.map((phase) => (
         <div key={phase.id} className="relative">
-          <div className="absolute -top-10 -left-4 select-none pointer-events-none opacity-[0.05]">
+          {/* <div className="absolute -top-10 -left-4 select-none pointer-events-none opacity-[0.05]">
             <span
               className="text-[120px] font-black leading-none"
               style={{ WebkitTextStroke: '1px #E4242F', color: 'transparent' }}
             >
               {phase.id}
             </span>
-          </div>
+          </div> */}
           <div className="relative z-10 space-y-6">
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <div className="w-6 h-[1px] bg-primary" />
               <span className="text-primary  text-[10px] tracking-widest font-bold uppercase">
                 {phase.code}
               </span>
-            </div>
+            </div> */}
             <h3 className="text-white text-3xl font-black tracking-tight uppercase leading-tight">
               {phase.title}
             </h3>
             <p className="text-zinc-400  text-sm leading-relaxed">
               {phase.description}
             </p>
-            <div className="flex items-center gap-3 text-zinc-600  text-[8px] tracking-[0.3em] uppercase border-t border-zinc-900 pt-4">
+            {/* <div className="flex items-center gap-3 text-zinc-600  text-[8px] tracking-[0.3em] uppercase border-t border-zinc-900 pt-4">
               <span>SECURE_DATA</span>
               <div className="w-4 h-[1px] bg-zinc-800" />
               <span>NODE_STABLE</span>
-            </div>
+            </div> */}
           </div>
         </div>
       ))}
@@ -215,7 +215,7 @@ export default function OperationalFlow() {
               <div className="flex items-center gap-4">
                 <div className="w-16 h-[2px] bg-primary" />
                 <span className="text-white  text-sm tracking-[0.5em] uppercase font-bold">
-                  OPERATIONAL DYNAMICS // MAHRAJ CORE
+                  What We Offer
                 </span>
               </div>
               {/* <span className="text-zinc-500  text-[10px] tracking-[0.2em] uppercase italic">

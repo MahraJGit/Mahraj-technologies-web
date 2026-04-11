@@ -42,7 +42,7 @@ const TeamMemberCard = ({ member }) => {
     <motion.div
       whileHover="hover"
       initial="initial"
-      className="relative w-[280px] md:w-[350px] aspect-[4/5] mx-4 flex-shrink-0 overflow-hidden bg-zinc-900 rounded-lg shadow-2xl"
+      className="relative w-[280px] md:w-[300px] aspect-[4/5] mx-4 flex-shrink-0 overflow-hidden bg-zinc-900 rounded-lg shadow-2xl"
     >
       {/* Grayscale to Color Image */}
       <motion.div
@@ -103,8 +103,8 @@ export default function TeamMarquee() {
             Our Personnel // MAHRAJ_CORE
           </span> */}
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9]">
-            Architects of <br />
-            <span className="text-zinc-600">The Digital Frontier</span>
+            Meet <br />
+            <span className="text-zinc-600">Our Team</span>
           </h2>
         </div>
       </div>

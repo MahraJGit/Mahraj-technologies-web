@@ -31,14 +31,13 @@ export default function ServiceCta() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     {/* Main Heading */}
-                    <h2 className="text-4xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase mb-8 leading-none">
-                        READY TO DEPLOY?
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase mb-8 leading-none">
+                        Want smoother business operations?
                     </h2>
 
                     {/* Technical Subheading */}
                     <p className="max-w-xl mx-auto text-zinc-400  text-sm md:text-lg leading-relaxed mb-12 opacity-80 tracking-wide">
-                        Initialize your digital transformation. Our
-                        architects are on standby to engineer your legacy.
+                        Let&apos;s streamline your operations for better efficiency, productivity, and smooth business workflow management.
                     </p>
 
                     {/* Action Buttons */}
@@ -47,7 +46,7 @@ export default function ServiceCta() {
                             <motion.button
                                 whileHover={{
                                     scale: 1.05,
-                                    backgroundColor: "transparent",
+                                    backgroundColor: "rgba(228, 36, 47, 0)",
                                     color: "#E4242F"
                                 }}
                                 whileTap={{ scale: 0.98 }}
@@ -61,11 +60,11 @@ export default function ServiceCta() {
                             onClick={() => openModal()}
                             whileHover={{
                                 scale: 1.05,
-                                backgroundColor: "#ffffff",
-                                color: "#000000"
+                                backgroundColor: "rgba(255, 255, 255, 0)",
+                                color: "#ffffff"
                             }}
                             whileTap={{ scale: 0.98 }}
-                            className="w-full sm:w-auto px-10 py-5 bg-transparent border border-zinc-700 text-white text-xs tracking-[0.3em] uppercase font-bold transition-all"
+                            className="w-full sm:w-auto px-10 py-5 bg-white border border-zinc-700 text-black text-xs tracking-[0.3em] uppercase font-bold transition-all"
                         >
                             Schedule a Call
                         </motion.button>

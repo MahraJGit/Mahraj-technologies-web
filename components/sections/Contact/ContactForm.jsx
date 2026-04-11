@@ -23,9 +23,7 @@ const InputField = ({ label, placeholder, type = "text", name }) => {
         placeholder={placeholder}
         className="w-full bg-transparent border-none py-5 text-white text-lg focus:outline-none focus:ring-0 transition-all placeholder:text-zinc-800"
       />
-      {/* Base Line */}
       <div className="absolute bottom-0 left-0 h-[1px] w-full bg-zinc-800" />
-      {/* Active Line */}
       <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary group-focus-within/field:w-full transition-all duration-500" />
     </div>
   );
@@ -43,8 +41,7 @@ export default function ContactForm() {
     setResult("SUBMITTING...");
 
     const formData = new FormData(event.target);
-    // Add the custom service 
-    formData.append("access_key", "5d868a62-eb8f-4829-9544-096b3236b797"); // USER SHOULD REPLACE THIS
+    formData.append("access_key", "5d868a62-eb8f-4829-9544-096b3236b797");
     formData.append("service_protocol", selectedService);
 
     try {
@@ -73,10 +70,6 @@ export default function ContactForm() {
   return (
     <div className="flex flex-col gap-12 bg-zinc-950/40 p-8 md:p-16 border border-zinc-900/50 rounded-2xl backdrop-blur-xl">
       <div className="space-y-4">
-        {/* <span className="text-primary  text-sm tracking-[0.5em] uppercase font-bold flex items-center gap-4">
-          <span className="w-12 h-[1px] bg-primary" />
-          INITIATE PROTOCOL
-        </span> */}
         <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase">Let's Connect</h2>
       </div>
 
@@ -104,19 +97,21 @@ export default function ContactForm() {
         </motion.div>
       ) : (
         <form className="space-y-8" onSubmit={handleSubmit}>
-          {/* Web3Forms required fields */}
           <input type="hidden" name="subject" value="New Inquiry from Mahraj Terminal" />
           <input type="hidden" name="from_name" value="Mahraj Technologies" />
 
-          <div className="grid grid-cols-1 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
             <InputField label="Name" placeholder="Enter Full Name" name="name" />
+            <InputField label="Email" placeholder="Email Address" type="email" name="email" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
             <InputField label="Company" placeholder="Organization" name="company" />
+            <InputField label="Phone" placeholder="Phone Number" type="tel" name="phone" />
           </div>
 
           <div className="grid grid-cols-1 gap-0">
-            <InputField label="Email" placeholder="Email Address" type="email" name="email" />
 
-            {/* Custom High-Fidelity Dropdown */}
             <div className="relative group/field mt-12">
               <label className="block text-primary  text-xs tracking-[0.4em] uppercase mb-3 font-bold opacity-60">
                 Service
@@ -159,7 +154,6 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Project Brief */}
           <div className="relative group/field mt-16 mb-16">
             <label className="block text-primary  text-xs tracking-[0.4em] uppercase mb-3 font-bold opacity-60">
               Project Brief
@@ -171,9 +165,7 @@ export default function ContactForm() {
               placeholder="Describe your requirements..."
               className="w-full bg-transparent border-none py-5 text-white  text-lg focus:outline-none focus:ring-0 transition-all placeholder:text-zinc-800 resize-none"
             />
-            {/* Base Line */}
             <div className="absolute bottom-0 left-0 h-[1px] w-full bg-zinc-800" />
-            {/* Active Line */}
             <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary group-focus-within/field:w-full transition-all duration-500" />
           </div>
 

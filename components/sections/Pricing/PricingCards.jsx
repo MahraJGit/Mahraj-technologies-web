@@ -77,18 +77,10 @@ export default function PricingCards() {
                                 transition: { duration: 0.3 }
                             }}
                             transition={{ delay: index * 0.1 }}
-                            className={`relative p-8 lg:p-10 rounded-3xl border border-zinc-900 bg-zinc-950/50 shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full w-full`}
+                            className={`relative p-8 lg:p-10 rounded-3xl border border-zinc-900 bg-zinc-950/50 shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full w-full group`}
                         >
-                            {/* Header */}
+                            {/* ... existing header and pricing content ... */}
                             <div className="mb-6">
-                                {/* Badge inline if present */}
-                                {/* {card.badge && (
-                                    <div className="mb-4">
-                                        <span className="bg-primary text-white text-[9px] font-black tracking-[0.25em] px-3 py-1.5 rounded-full uppercase shadow-lg inline-block">
-                                            {card.badge}
-                                        </span>
-                                    </div>
-                                )} */}
                                 <div className="mb-5 text-primary">{card.icon}</div>
                                 <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2 leading-none">
                                     {card.title}
@@ -98,7 +90,6 @@ export default function PricingCards() {
                                 </p>
                             </div>
 
-                            {/* Pricing */}
                             <div className="mb-8">
                                 <div className="flex items-baseline gap-2">
                                     <span className="text-4xl font-black text-white tracking-tighter">
@@ -114,7 +105,6 @@ export default function PricingCards() {
                                 </p>
                             </div>
 
-                            {/* Features Grid */}
                             <div className="flex-grow space-y-4 mb-8">
                                 {card.features.map((feature, idx) => (
                                     <div key={idx} className="flex items-center justify-between border-b border-zinc-900 pb-4">
@@ -132,9 +122,9 @@ export default function PricingCards() {
 
                             {/* CTA Button */}
                             <motion.button
-                                whileHover={{ scale: 1.01 }}
-                                whileTap={{ scale: 0.99 }}
-                                className="w-full py-5 rounded-2xl font-black text-sm uppercase tracking-[0.25em] transition-all duration-300 bg-zinc-900 text-white border border-zinc-800 hover:bg-primary hover:border-primary hover:shadow-[0_10px_30px_-10px_rgba(228,36,47,0.4)]"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full py-5 rounded-2xl font-black text-sm uppercase tracking-[0.25em] transition-all duration-300 bg-zinc-900 text-white border border-zinc-800 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_10px_30px_-10px_rgba(228,36,47,0.4)]"
                             >
                                 {card.buttonText}
                             </motion.button>

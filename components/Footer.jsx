@@ -24,7 +24,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-8 text-sm text-zinc-400 leading-relaxed font-medium">
-              Engineering premium digital solutions for forward-thinking enterprises.
+              Delivering innovation, performance, and measurable business growth.
             </p>
           </div>
 

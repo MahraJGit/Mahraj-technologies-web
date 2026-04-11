@@ -3,95 +3,114 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  Network,
-  Cloud,
-  Layout,
-  Shield,
-  BrainCircuit,
-  Blocks,
+  BarChart3,
+  Search,
+  UserPlus,
+  Funnel,
+  Code,
   Smartphone,
-  LineChart,
-  Terminal
+  Layout,
+  PenTool,
+  CheckCircle,
+  Headphones,
 } from 'lucide-react';
 
 const services = [
   {
     id: "01",
-    code: "ENT_ARCH",
-    title: "ENTERPRISE ARCHITECTURE",
-    description: "Comprehensive structural blueprints for global-scale digital ecosystems and high-availability systems.",
-    features: ["SCALABLE MICROSERVICES", "LEGACY SYSTEM OVERHAUL", "MULTI-TENANT FABRIC"],
-    icon: Network
+    code: "DIG_MKT",
+    title: "DIGITAL MARKETING",
+    description: "We create data-driven digital marketing strategies that enhance brand visibility, improve audience engagement, and deliver consistent, measurable business growth.",
+    features: ["AUDIENCE TARGETING", "BRAND VISIBILITY", "PERFORMANCE TRACKING", "CONVERSION GROWTH"],
+    icon: BarChart3
   },
   {
     id: "02",
-    code: "CLD_SCALE",
-    title: "CLOUD SCALABILITY",
-    description: "Elastic resource management designed for explosive growth without compromising performance or latency.",
-    features: ["AUTOSCALING CLUSTERS", "SERVERLESS PIPELINES", "GLOBAL CDN DEPLOYMENT"],
-    icon: Cloud
+    code: "SEO_OPT",
+    title: "SEARCH ENGINE OPTIMIZATION",
+    description: "We improve search visibility through strategic SEO, optimizing content, technical structure, and performance to drive higher rankings and organic growth.",
+    features: ["ORGANIC VISIBILITY BOOST", "KEYWORD OPTIMIZATION STRATEGY", "TECHNICAL STIE IMPROVEMENTS", "HIGHER SEARCH RANKINGS"],
+    icon: Search
   },
   {
     id: "03",
-    code: "CIN_UIUX",
-    title: "CINEMATIC UI/UX",
-    description: "Immersive, high-fidelity interfaces that merge brutalist aesthetics with fluid, human-centric motion.",
-    features: ["KINETIC DEPTH LAYERING", "NEUROMORPHIC DESIGN", "LATENCY-FREE MOTION"],
-    icon: Layout
+    code: "LEAD_GEN",
+    title: "LEAD GENERATION",
+    description: "We build scalable lead generation systems that attract qualified prospects, improve conversion flow, and drive consistent business opportunities.",
+    features: ["QUALIFIED PROSPECT TARGETING", "CONVERSION-FOCUSED FUNNELS", "DATA-DRIVEN ACQUISITION", "CONSISTENT BUSINESS PIPELINE"],
+    icon: UserPlus
   },
   {
     id: "04",
-    code: "CYBER_SEC",
-    title: "CYBERSECURITY",
-    description: "Hardened, zero-trust protocols protecting critical infrastructure from advanced persistent threats.",
-    features: ["ZERO-TRUST GATEWAYS", "QUANTUM ENCRYPTION", "PENETRATION AUDITS"],
-    icon: Shield
+    code: "FUNNEL_DEV",
+    title: "SALES FUNNEL DEVELOPMENT",
+    description: "We design high-converting sales funnels that guide potential customers through structured digital journeys to maximize conversions and business growth.",
+    features: ["CONVERSION-FOCUSED FLOW", "AUDIENCE BEHAVIOR MAPPING", "LEAD NURTURING SYSTEM", "REVENUE OPTIMIZATION SYSTEM"],
+    icon: Funnel
   },
   {
     id: "05",
-    code: "AI_INTEG",
-    title: "AI INTEGRATION",
-    description: "Deploying neural nodes into existing workflows to automate complex decision-making processes.",
-    features: ["LLM CUSTOM TUNING", "PREDICTIVE MODELING", "COMPUTER VISION NODES"],
-    icon: BrainCircuit
+    code: "WEB_DEV",
+    title: "WEB DEVELOPMENT",
+    description: "We build high-performance, scalable websites focused on seamless user experience, speed optimization, and strong business conversion results.",
+    features: ["FAST-LOADING WEBSITES", "SCALABLE ARCHITECTURE DESIGN", "RESPONSIVE USER EXPERIENCE", "SECURE CODE STRUCTURE"],
+    icon: Code
   },
   {
     id: "06",
-    code: "WEB3_BC",
-    title: "WEB3 & BLOCKCHAIN",
-    description: "Decentralized protocols for transparent, immutable transactions and secure data ownership.",
-    features: ["SMART CONTRACT AUDITS", "DAPP ARCHITECTURE", "LAYER 2 SCALING"],
-    icon: Blocks
-  },
-  {
-    id: "07",
-    code: "MOB_NATIVE",
-    title: "MOBILE NATIVE",
-    description: "High-performance native applications for iOS and Android, optimized for low-latency hardware integration.",
-    features: ["SWIFT & KOTLIN ENGINE", "OFFLINE-FIRST SYNC", "BIOMETRIC SECURITY"],
+    code: "MOB_DEV",
+    title: "MOBILE DEVELOPMENT",
+    description: "We build high-performance mobile applications that deliver smooth user experiences and scalable digital solutions for modern businesses.",
+    features: ["NATIVE APP BUILDS", "CROSS-PLATFORM APPS", "PERFORMANCE OPTIMIZATION", "USER-FOCUSED DESIGN"],
     icon: Smartphone
   },
   {
-    id: "08",
-    code: "DATA_ANL",
-    title: "DATA ANALYTICS",
-    description: "Transforming raw data streams into actionable intelligence via real-time telemetry and visualization.",
-    features: ["REAL-TIME TELEMETRY", "ETL PIPELINE DESIGN", "ANOMALY DETECTION"],
-    icon: LineChart
+    id: "07",
+    code: "UI_UX",
+    title: "UI/UX DESIGN",
+    description: "We design intuitive and conversion-focused digital experiences that enhance usability, engagement, and user satisfaction across every touchpoint.",
+    features: ["USER-CENTERED DESIGN", "SMOOTH NAVIGATION FLOW", "CONVERSION-FOCUSED LAYOUTS", "MODERN VISUAL SYSTEMS"],
+    icon: Layout
   },
+  {
+    id: "08",
+    code: "GRAPHICS",
+    title: "GRAPHIC DESIGN",
+    description: "We create visually compelling brand designs that strengthen identity, improve engagement, and deliver consistent professional digital impressions.",
+    features: ["BRAND-FOCUSED VISUALS", "CREATIVE DESIGN STRATEGY", "MODERN AESTHETIC STYLE", "CONSISTENT VISUAL IDENTITY"],
+    icon: PenTool
+  },
+  {
+    id: "09",
+    code: "QA_TEST",
+    title: "SOFTWARE QUALITY ASSURANCE",
+    description: "We ensure your digital products meet the highest standards through structured testing, improving performance, reliability, and seamless user experience across platforms.",
+    features: ["BUG-FREE DELIVERY", "PERFORMANCE TESTING", "SYSTEM RELIABILITY", "ERROR PREVENTION"],
+    icon: CheckCircle
+  },
+  {
+    id: "10",
+    code: "VIRT_AST",
+    title: "VIRTUAL ASSISTANCE",
+    description: "We provide reliable virtual assistance support that streamlines daily operations, improves productivity, and ensures smooth business workflow management.",
+    features: ["ADMINISTRATIVE SUPPORT", "TASK MANAGEMENT HELP", "REMOTE BUSINESS HANDLING", "TIME-SAVING EXECUTION"],
+    icon: Headphones
+  }
 ];
 
 export default function ServiceCards() {
   return (
     <section className="bg-black">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-zinc-800/80">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-t border-zinc-800/80">
         {services.map((service) => (
           <div
             key={service.id}
             className="relative border-b border-zinc-900/80 
                        md:border-r md:[&:nth-child(2n)]:border-r-0 
                        lg:[&:nth-child(2n)]:border-r 
-                       lg:[&:nth-child(4n)]:border-r-0 
+                       lg:[&:nth-child(3n)]:border-r-0 
+                       xl:[&:nth-child(3n)]:border-r
+                       xl:[&:nth-child(4n)]:border-r-0 
                        bg-black group overflow-hidden"
           >
             <motion.div
@@ -110,7 +129,8 @@ export default function ServiceCards() {
               </div>
 
               {/* Title */}
-              <h3 className="text-white text-3xl font-bold tracking-tight mb-6 leading-[1.1] group-hover:text-primary transition-colors">
+              {/* Title */}
+              <h3 className="text-white text-3xl font-bold tracking-tight mb-6 leading-[1.1] group-hover:text-primary transition-colors min-h-[70px]">
                 {service.title}
               </h3>
 

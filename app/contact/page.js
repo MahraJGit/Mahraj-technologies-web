@@ -7,9 +7,9 @@ export default function ContactPage() {
     <main className="min-h-screen bg-[#050505]">
       <PageHero
         eyebrow="MAHRAJ / CONTACT"
-        titleLight="CONTACT"
-        titleDark="SYSTEMS"
-        description="Direct communication with our lead architects. Initiate technical inquiries for enterprise infrastructure, secure cloud deployment, and neural-link development."
+        titleLight="Get"
+        titleDark=" In Touch"
+        description="Have questions or ready to start your project? At Mahraj Technologies, we’re here to connect and support your digital journey."
       />
 
       <section className="relative py-24 lg:py-32 overflow-hidden bg-[radial-gradient(circle_at_1px_1px,#18181b_1px,transparent_0)] bg-[size:40px_40px]">

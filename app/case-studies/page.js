@@ -11,9 +11,9 @@ export default function CaseStudiesPage() {
     <main className="w-full bg-black min-h-screen">
       <PageHero
         eyebrow="MAHRAJ / CASE STUDIES"
-        titleLight="THE ARCHITECTURE OF"
-        titleDark="IMPACT."
-        description="We don't just ship features. We solve complex structural problems through aggressive clarity and technical soul. Explore our recent engineering triumphs."
+        titleLight="Our Success"
+        titleDark="STORIES"
+        description="Explore how we&apos;ve helped businesses achieve measurable growth through strategic digital solutions, improved performance, and consistent long-term success across industries."
       />
 
       <CaseStudyList />

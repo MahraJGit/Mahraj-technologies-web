@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from 'next/link';
 import { motion } from "framer-motion";
 import bgimg from "@/public/pricingctacontrast.png";
 import { useCalendly } from "@/context/CalendlyContext";
@@ -26,29 +27,43 @@ export default function Cta() {
 
                 <div className="relative z-20 p-8 md:p-16 lg:p-24 flex flex-col lg:flex-row items-center justify-between w-full gap-12 lg:gap-16">
                     <div className="flex-1 text-center lg:text-left">
-                        <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight lg:leading-[0.95] mb-6 drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,0.8)]">
-                            Initiate Your <br />
-                            <span className="text-primary italic">Neural Build</span>
+                        <h2 className="text-4xl xl:text-6xl font-black text-white uppercase tracking-[ -0.04em] leading-[1.05] md:leading-[0.95] lg:leading-[0.9] mb-8">
+                            Let&apos;s Build Something <br className="hidden md:block" />
+                            <span className="text-primary">Great Together</span>
                         </h2>
-                        <p className="text-white text-base md:text-lg lg:text-xl font-black leading-relaxed max-w-xl mx-auto lg:mx-0 drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,0.8)]">
+                        <p className="text-zinc-400 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
                             Ready to deploy a high-performance engineering team? Our architects are on standby to
                             evaluate your technical requirements and initiate the onboarding sequence.
                         </p>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-4 sm:gap-6 w-full lg:w-auto shrink-0 justify-center">
-                        <a
-                            href="/contact"
-                            className="bg-[#E4242F] text-white font-bold text-xs md:text-sm uppercase tracking-[0.25em] px-10 py-5 lg:px-12 lg:py-6 rounded-md hover:bg-[#c91d26] transition-all shadow-lg text-center w-full sm:w-auto lg:min-w-[240px]"
-                        >
-                            Contact Us
-                        </a>
-                        <button
+                    <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-center gap-6">
+                        <Link href="/contact" className="w-full sm:w-auto">
+                            <motion.button
+                                whileHover={{
+                                    scale: 1.05,
+                                    backgroundColor: "rgba(228, 36, 47, 0)",
+                                    color: "#E4242F"
+                                }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full sm:w-auto px-10 py-5 bg-primary border border-zinc-700 text-white text-xs tracking-[0.3em] uppercase font-bold transition-colors shadow-lg lg:min-w-[240px]"
+                            >
+                                Contact Us
+                            </motion.button>
+                        </Link>
+
+                        <motion.button
                             onClick={() => openModal()}
-                            className="bg-white text-black font-bold text-xs md:text-sm uppercase tracking-[0.25em] px-10 py-5 lg:px-12 lg:py-6 rounded-md hover:bg-zinc-200 transition-all shadow-lg text-center w-full sm:w-auto lg:min-w-[240px]"
+                            whileHover={{
+                                scale: 1.05,
+                                backgroundColor: "rgba(255, 255, 255, 0)",
+                                color: "#ffffff"
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            className="w-full sm:w-auto px-10 py-5 bg-white border border-zinc-700 text-black text-xs tracking-[0.3em] uppercase font-bold transition-all lg:min-w-[240px]"
                         >
                             Schedule a Call
-                        </button>
+                        </motion.button>
                     </div>
                 </div>
             </div>

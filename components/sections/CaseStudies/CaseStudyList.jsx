@@ -7,32 +7,32 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     id: "01",
-    category: "FINTECH",
+    category: "Case Study 01",
     year: "2023",
-    title: "Global Transaction Core",
-    problem: "A legacy banking infrastructure failing to handle 50k concurrent TPS, resulting in 4.2% transaction drop rates during peak hours.",
-    solution: "Redeveloped the middleware using a reactive microservices architecture and implemented a custom distributed locking mechanism.",
-    outcome: "99.999% Uptime. +340% Capacity Increase.",
+    title: "E-Commerce Growth System",
+    problem: "The client struggled with low website traffic, poor conversions, and inconsistent lead generation, resulting in weak online sales performance.",
+    solution: "We implemented SEO optimization, targeted digital marketing campaigns, and a structured sales funnel that increased traffic by 68% and conversions by 42%.",
+    outcome: "68% Increase in Website Traffic. 42% Boost in Conversion Rate.",
     image: "/casestudy1.png"
   },
   {
     id: "02",
-    category: "LOGISTICS",
+    category: "Case Study 02",
     year: "2023",
-    title: "Neural Route Optimizer",
-    problem: "Manual dispatching in complex urban environments led to 18% fuel waste and an average of 45-minute delivery delays.",
-    solution: "Engineered a real-time AI engine that processes 200+ variables per second to dynamically re-route fleets.",
-    outcome: "22% Fuel Reduction. -12min Avg Delivery Time.",
+    title: "Local Business Lead Expansion",
+    problem: "The business had minimal online visibility, low-quality leads, and inefficient customer acquisition strategies, limiting consistent monthly revenue growth opportunities significantly.",
+    solution: "We built a lead generation system using SEO, landing pages, and paid campaigns, resulting in 3x more qualified leads within months.",
+    outcome: "3x Growth in Qualified Leads. 55% Improvement in Lead Quality",
     image: "/casestudy2.png"
   },
   {
     id: "03",
-    category: "HEALTH",
+    category: "Case Study 03",
     year: "2023",
-    title: "Patient Privacy Shield",
-    problem: "Strict HIPAA compliance requirements and rising data breach threats made secure medical records sharing inefficient.",
-    solution: "Built a zero-trust encrypted ledger for medical data with biometric-gated multi-party authorization.",
-    outcome: "Zero Data Breaches. 100% Compliance Audit Pass.",
+    title: "SaaS Platform User Growth",
+    problem: "The SaaS platform faced high bounce rates, unclear UI structure, and very low trial sign-ups despite having a strong market product.",
+    solution: "We redesigned UX with conversion-focused wireframes, A/B tested onboarding flows, and optimized interactions to boost engagement and retention effectively.",
+    outcome: "60% Increase in User Engagement. 48% Higher Trial Sign-ups",
     image: "/casestudy3.png"
   }
 ];
@@ -83,7 +83,7 @@ const CaseStudyRow = ({ project, index }) => {
         </div>
 
         {/* Title */}
-        <h3 className="text-white text-3xl lg:text-5xl font-black tracking-tight uppercase leading-none mb-12 lg:whitespace-nowrap">
+        <h3 className="text-white text-3xl lg:text-5xl font-black tracking-tight uppercase leading-none mb-12">
           {project.title}
         </h3>
 
@@ -113,13 +113,13 @@ const CaseStudyRow = ({ project, index }) => {
             <h4 className="text-primary  text-[13px] tracking-[0.4em] uppercase font-bold mb-6">
               OUTCOME
             </h4>
-            <div className="text-white font-black text-2xl lg:text-4xl tracking-tight leading-tight">
+            <div className="text-white font-black text-2xl tracking-tight leading-tight">
               {project.outcome.split('. ').map((stat, i) => (
                 <span key={i} className="block">
-                  {stat.includes('+') || stat.includes('-') || stat.includes('Zero') || stat.includes('100%') ? (
+                  {stat.match(/\d+%|\d+x|\d+\.\d+%|[+\-]|Zero/i) ? (
                     <span>
                       {stat.split(' ').map((word, j) => (
-                        <span key={j} className={word.match(/[+\-]|Zero|100%|99\.999\%/) ? "text-primary ml-1" : ""}>
+                        <span key={j} className={word.match(/\d+%|\d+x|\d+\.\d+%|[+\-]|Zero/i) ? "text-primary" : ""}>
                           {word}{' '}
                         </span>
                       ))}

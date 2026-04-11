@@ -8,9 +8,9 @@ export default function PricingPage() {
     <main className="min-h-screen bg-[#050505]">
       <PageHero
         eyebrow="MAHRAJ / PRICING"
-        titleLight="PRICING &"
-        titleDark="Service Models"
-        description="High-performance engineering teams, precision-built MVPs, and redundant maintenance protocols. Select the engagement layer that aligns with your technical roadmap."
+        titleLight="Our Pricing"
+        titleDark="Structure"
+        description="At Mahraj Technologies, we offer a transparent and flexible pricing structure designed to match business goals, ensuring value-driven digital solutions for every client."
       />
 
       {/* Pricing Cards Section */}

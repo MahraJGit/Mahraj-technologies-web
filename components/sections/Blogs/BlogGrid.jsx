@@ -5,16 +5,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Terminal } from 'lucide-react';
-import blogImg from '@/public/BlogImg.png';
-import { blogPosts } from '@/lib/blog-data';
+import { urlFor } from '@/lib/sanity';
 
-export default function BlogGrid() {
+export default function BlogGrid({ posts = [] }) {
   const [activeFilter, setActiveFilter] = useState("ALL");
   const filters = ["ALL", "SYSTEMS", "NEURAL", "UI/UX"];
 
   const filteredPosts = activeFilter === "ALL"
-    ? blogPosts
-    : blogPosts.filter(post => post.filter === activeFilter);
+    ? posts
+    : posts.filter(post => post.filter === activeFilter);
 
   return (
     <section className="py-24 bg-black">
@@ -22,8 +21,8 @@ export default function BlogGrid() {
         {/* Protocol Logs Header & Filter */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
           <div>
-            <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-4">Protocol Logs</h2>
-            <p className="text-zinc-500 text-sm font-bold uppercase tracking-widest">Deep dives into our recent technical breakthroughs.</p>
+            <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-4">Our Blogs</h2>
+            <p className="text-zinc-500 text-sm font-bold uppercase tracking-widest">Stay updated with our latest blogs.</p>
           </div>
 
           <div className="flex items-center gap-6 lg:gap-10">
@@ -49,7 +48,7 @@ export default function BlogGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
           {filteredPosts.map((post, index) => (
-            <Link key={post.id} href={`/blogs/${post.slug}`}>
+            <Link key={post._id} href={`/blogs/${post.slug}`}>
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -59,25 +58,35 @@ export default function BlogGrid() {
               >
                 {/* Thumbnail */}
                 <div className="relative aspect-video overflow-hidden rounded-sm bg-zinc-900 mb-8 border border-white/5">
-                  <Image
-                    src={blogImg}
-                    alt={post.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                  />
+                  {post.mainImage ? (
+                    <Image
+                      src={urlFor(post.mainImage).url()}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-zinc-900">
+                      <Terminal className="w-8 h-8 text-zinc-800" />
+                    </div>
+                  )}
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[#E4242F] text-white text-[10px] font-black tracking-widest px-3 py-1.5 uppercase">
-                      {post.category}
-                    </span>
-                  </div>
+                  {post.category && (
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-[#E4242F] text-white text-[10px] font-black tracking-widest px-3 py-1.5 uppercase">
+                        {post.category}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Metadata */}
                 <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
-                  <span className="text-[10px] font-bold text-zinc-500 tracking-[0.2em]">{post.ref}</span>
-                  <span className="text-[10px] font-bold text-zinc-500 tracking-[0.2em]">{post.date}</span>
+                  <span className="text-[10px] font-bold text-zinc-500 tracking-[0.2em]">{post.ref || 'REF: INTERNAL'}</span>
+                  <span className="text-[10px] font-bold text-zinc-500 tracking-[0.2em]">
+                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'LOG_PENDING'}
+                  </span>
                 </div>
 
                 {/* Content */}
@@ -111,10 +120,10 @@ export default function BlogGrid() {
               <Terminal className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-4">
-              Join the Dev Network
+              Join our newsletter
             </h3>
             <p className="text-zinc-500 text-sm font-medium mb-10 max-w-[280px]">
-              Receive technical briefs and node updates directly to your terminal.
+              Get the latest updates and insights delivered straight to your inbox.
             </p>
 
             <div className="w-full space-y-4">
@@ -124,7 +133,7 @@ export default function BlogGrid() {
                 className="w-full bg-black border border-white/10 px-6 py-4 text-xs font-bold tracking-widest text-white uppercase focus:outline-none focus:border-primary transition-colors"
               />
               <button className="w-full bg-white text-black font-black text-[11px] uppercase tracking-[0.3em] py-5 hover:bg-primary hover:text-white transition-all transform active:scale-95">
-                Initialize Subscription
+                SUBSCRIBE
               </button>
             </div>
           </motion.div>
