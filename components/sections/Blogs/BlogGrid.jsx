@@ -9,7 +9,7 @@ import { urlFor } from '@/lib/sanity';
 
 export default function BlogGrid({ posts = [] }) {
   const [activeFilter, setActiveFilter] = useState("ALL");
-  const filters = ["ALL", "SYSTEMS", "NEURAL", "UI/UX"];
+  const filters = ["ALL", "WEB DEVELOPMENT", "APP DEVELOPMENT", "SOFTWARE DEVELOPMENT", "DIGITAL MARKETING", "GRAPHIC DESIGNING"];
 
   const filteredPosts = activeFilter === "ALL"
     ? posts
@@ -25,12 +25,12 @@ export default function BlogGrid({ posts = [] }) {
             <p className="text-zinc-500 text-sm font-bold uppercase tracking-widest">Stay updated with our latest blogs.</p>
           </div>
 
-          <div className="flex items-center gap-6 lg:gap-10">
+          <div className="flex items-center gap-6 lg:gap-10 overflow-x-auto whitespace-nowrap pb-2 scrollbar-none max-w-full scroll-smooth">
             {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => setActiveFilter(f)}
-                className={`text-[11px] font-black uppercase tracking-[0.3em] transition-all relative py-2 ${activeFilter === f ? "text-primary" : "text-zinc-600 hover:text-white"
+                className={`text-[11px] font-black uppercase tracking-[0.3em] transition-all relative py-2 ${activeFilter === f ? "text-primary" : "text-white hover:text-primary"
                   }`}
               >
                 {f}
@@ -100,7 +100,7 @@ export default function BlogGrid({ posts = [] }) {
                 {/* Link */}
                 <div className="flex items-center gap-2 group/link">
                   <span className="text-[11px] font-black text-white uppercase tracking-[0.3em] group-hover:text-primary transition-colors">
-                    Read Protocol
+                    Read MORE
                   </span>
                   <ArrowRight className="w-4 h-4 text-primary transition-transform group-hover/link:translate-x-2" />
                 </div>

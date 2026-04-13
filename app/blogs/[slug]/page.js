@@ -20,30 +20,17 @@ function calculateReadingTime(content) {
   return Math.ceil(wordCount / wordsPerMinute);
 }
 
-// Helper: Generate TOC from headings
-function generateTOC(content) {
-  if (!content) return [];
-  return content
-    .filter((block) => block._type === 'block' && /^h[23]$/.test(block.style))
-    .map((block) => ({
-      text: block.children.map((child) => child.text).join(''),
-      level: block.style,
-      id: block.children.map((child) => child.text).join('')
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w-]/g, ''),
-    }));
-}
+
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   if (!slug) return { title: "Protocol Logs | Mahraj Technologies" };
-  
+
   const post = await client.fetch(getPostBySlug, { slug });
   if (!post) return { title: "Protocol Not Found" };
 
   const canonical = `https://mahraj.tech/blogs/${post.slug}`;
-  
+
   return {
     title: post.seo?.metaTitle || `${post.title} | Mahraj Technologies`,
     description: post.seo?.metaDescription || post.excerpt,
@@ -81,12 +68,13 @@ export default async function BlogDetailPage({ params }) {
   }
 
   const readingTime = calculateReadingTime(post.content);
-  const toc = generateTOC(post.content);
 
-  // Fetch all posts for navigation logic
+
+  // Fetch all posts for sidebar logic
   const allPosts = await client.fetch(getAllPosts);
-  const currentIndex = allPosts.findIndex((p) => p.slug === post.slug);
-  const nextPost = allPosts[(currentIndex + 1) % allPosts.length];
+  const recentPosts = allPosts
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 5);
 
   // Technical SEO: JSON-LD
   const jsonLd = {
@@ -136,7 +124,7 @@ export default async function BlogDetailPage({ params }) {
           className="inline-flex items-center gap-2 text-zinc-500 hover:text-primary transition-colors text-[10px] font-black uppercase tracking-[0.3em] mb-12 group"
         >
           <ArrowLeft className="w-3 h-3 group-hover:-translate-x-1 transition-transform" />
-          Back to Protocol Logs
+          Back to Blogs
         </Link>
 
         <div className="space-y-8 max-w-4xl">
@@ -155,47 +143,33 @@ export default async function BlogDetailPage({ params }) {
               {readingTime} MIN READ
             </div>
           </div>
-          
-          <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] border-l-4 border-primary pl-8">
+
+          <h1 className="text-4xl md:text-6xl text-white uppercase tracking-tighter leading-[0.9]">
             {post.title}
           </h1>
-          
+
           <p className="text-zinc-500 text-xl font-medium leading-relaxed max-w-2xl">
             {post.excerpt}
           </p>
 
-          {post.author && (
-            <div className="flex items-center gap-4 pt-4">
-              <div className="relative w-12 h-12 rounded-full overflow-hidden bg-zinc-900 border border-zinc-800">
-                {post.author.image ? (
-                  <Image src={urlFor(post.author.image).url()} alt={post.author.name} fill className="object-cover" />
-                ) : (
-                  <User className="w-6 h-6 m-3 text-zinc-700" />
-                )}
-              </div>
-              <div className="flex flex-col">
-                <span className="text-zinc-600 text-[10px] font-black uppercase tracking-widest">ARCHITECT</span>
-                <span className="text-white font-bold uppercase tracking-tight">{post.author.name}</span>
-              </div>
-            </div>
-          )}
         </div>
       </header>
 
       {/* Main Image */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-sm border border-white/5">
+      <section className="max-w-[750px] mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm border border-white/5">
           {post.mainImage ? (
             <Image
               src={urlFor(post.mainImage).url()}
               alt={post.mainImage.alt || post.title}
               fill
+              sizes="(max-width: 750px) 100vw, 750px"
               className="object-cover opacity-90"
               priority
             />
           ) : (
             <div className="w-full h-full bg-zinc-950 flex items-center justify-center">
-               <Hash className="w-12 h-12 text-zinc-900" />
+              <Hash className="w-12 h-12 text-zinc-900" />
             </div>
           )}
         </div>
@@ -203,43 +177,48 @@ export default async function BlogDetailPage({ params }) {
 
       {/* Article Content Area */}
       <section className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-20">
-        
-        {/* Table of Contents - Sidebar Left */}
-        <aside className="lg:col-span-3 hidden lg:block">
-          <div className="sticky top-32">
-            <h4 className="text-white text-[10px] font-black uppercase tracking-[0.4em] mb-8 flex items-center gap-3">
-              <span className="w-6 h-[1px] bg-primary" />
-              NAV_INDEX
-            </h4>
-            <nav className="space-y-4">
-              {toc.length > 0 ? toc.map((item, i) => (
-                <a
-                  key={i}
-                  href={`#${item.id}`}
-                  className={`block text-[11px] font-black uppercase tracking-widest transition-all hover:text-primary ${item.level === 'h3' ? 'pl-6 text-zinc-600' : 'text-zinc-500'}`}
-                >
-                  {item.text}
-                </a>
-              )) : (
-                <span className="text-zinc-800 text-[10px] font-bold uppercase tracking-widest italic">PROTOCOL_LINEAR</span>
-              )}
-            </nav>
-          </div>
-        </aside>
 
         {/* Main Protocol Content */}
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-9">
           <div className="prose prose-invert prose-zinc max-w-none">
             <PortableText value={post.content} />
           </div>
+
+          {/* Author Signature Section */}
+          {post.author && (
+            <div className="mt-20 p-8 bg-zinc-950 border border-zinc-900 rounded-sm flex flex-col md:flex-row items-center md:items-start gap-8">
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 shrink-0">
+                {post.author.image ? (
+                  <Image 
+                    src={urlFor(post.author.image).url()} 
+                    alt={post.author.name} 
+                    fill 
+                    sizes="96px"
+                    className="object-cover" 
+                  />
+                ) : (
+                  <User className="w-12 h-12 m-6 text-zinc-800" />
+                )}
+              </div>
+              <div className="flex flex-col text-center md:text-left">
+                <span className="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-2">AUTHOR</span>
+                <h4 className="text-white text-2xl font-black uppercase tracking-tight mb-4">{post.author.name}</h4>
+                {post.author.bio && (
+                  <p className="text-zinc-500 text-sm leading-relaxed max-w-xl">
+                    {post.author.bio}
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Structured FAQs */}
           {post.faqs && post.faqs.length > 0 && (
             <div className="mt-32 border-t border-zinc-900 pt-20">
               <h3 className="text-white text-3xl font-black uppercase tracking-tight mb-12 flex items-center gap-4">
-                <span className="text-primary">//</span> FAQ PROTOCOL
+                <span className="text-primary">//</span> FREQUENTLY ASKED QUESTIONS
               </h3>
-              <div className="space-y-8">
+              <div className="space-y-3">
                 {post.faqs.map((faq, i) => (
                   <div key={i} className="bg-zinc-950/50 p-8 border border-zinc-900 group transition-colors hover:border-zinc-800">
                     <div className="flex items-start gap-4 mb-4">
@@ -270,30 +249,27 @@ export default async function BlogDetailPage({ params }) {
         {/* Sidebar Right - Actions */}
         <aside className="lg:col-span-3">
           <div className="sticky top-32 space-y-12">
-            <div className="p-8 bg-zinc-950 border border-zinc-900 rounded-sm">
-              <h4 className="text-white font-black uppercase tracking-tighter text-xl mb-4">Subscribe</h4>
-              <p className="text-zinc-500 text-xs font-medium mb-6 uppercase tracking-wider leading-relaxed">Stay synchronized with our latest digital breakthroughs.</p>
-              <Link
-                href="/contact"
-                className="inline-block w-full bg-white text-black font-black text-[10px] uppercase tracking-[0.2em] py-4 text-center hover:bg-primary hover:text-white transition-all"
-              >
-                Join Network
-              </Link>
+            <div>
+              <span className="text-[10px] font-bold text-zinc-700 uppercase tracking-[0.3em] mb-8 block flex items-center gap-3">
+                <span className="w-6 h-[1px] bg-primary" />
+                RECENT BLOGS
+              </span>
+              <div className="space-y-8">
+                {recentPosts.map((rPost) => (
+                  <Link key={rPost.slug} href={`/blogs/${rPost.slug}`} className="group block">
+                    <div className="flex flex-col gap-2">
+                      <h5 className="text-white font-black uppercase tracking-tight text-xs leading-tight group-hover:text-primary transition-colors line-clamp-2">
+                        {rPost.title}
+                      </h5>
+                      <div className="flex items-center gap-2 text-zinc-600 font-bold uppercase text-[8px] tracking-[0.2em]">
+                        {new Date(rPost.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}
+                        <ChevronRight className="w-2 h-2 group-hover:translate-x-1 transition-transform text-primary" />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
-
-            {nextPost && (
-              <Link href={`/blogs/${nextPost.slug}`} className="group block">
-                <span className="text-[10px] font-bold text-zinc-700 uppercase tracking-[0.3em] mb-4 block">Up Next</span>
-                <div className="p-4 bg-zinc-950 border border-zinc-900 group-hover:border-primary/30 transition-all">
-                   <h5 className="text-white font-black uppercase tracking-tight text-sm mb-4 leading-tight group-hover:text-primary transition-colors">
-                    {nextPost.title}
-                  </h5>
-                  <div className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest">
-                    Next Protocol <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            )}
           </div>
         </aside>
       </section>

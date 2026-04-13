@@ -7,7 +7,7 @@ const components = {
     h2: ({ children }) => {
       const id = children[0]?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
       return (
-        <h2 id={id} className="text-white text-3xl font-black uppercase tracking-tight mt-16 mb-8 border-l-2 border-primary pl-6 scroll-mt-32">
+        <h2 id={id} className="text-white text-3xl tracking-tight mt-16 mb-8 scroll-mt-32">
           {children}
         </h2>
       );
@@ -15,7 +15,7 @@ const components = {
     h3: ({ children }) => {
       const id = children[0]?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
       return (
-        <h3 id={id} className="text-white text-2xl font-black uppercase tracking-tight mt-12 mb-6 scroll-mt-32">
+        <h3 id={id} className="text-white text-2xl tracking-tight mt-12 mb-6 scroll-mt-32">
           {children}
         </h3>
       );
@@ -34,7 +34,7 @@ const components = {
           alt={value.alt || 'Content Image'}
           fill
           className="object-cover opacity-90"
-          sizes="(max-width: 768px) 100vw, 1200px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 800px, 1200px"
         />
       </div>
     ),
@@ -49,6 +49,14 @@ const components = {
         </a>
       );
     },
+  },
+  list: {
+    bullet: ({ children }) => <ul className="list-disc pl-10 space-y-4 mb-8 marker:text-primary">{children}</ul>,
+    number: ({ children }) => <ol className="list-decimal pl-10 space-y-4 mb-8 marker:text-primary">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }) => <li className="text-zinc-400 text-lg leading-relaxed">{children}</li>,
+    number: ({ children }) => <li className="text-zinc-400 text-lg leading-relaxed">{children}</li>,
   },
 };
 

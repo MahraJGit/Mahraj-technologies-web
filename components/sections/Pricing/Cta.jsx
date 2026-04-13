@@ -18,6 +18,7 @@ export default function Cta() {
                         alt="CTA Background"
                         fill
                         className="object-cover"
+                        sizes="100vw"
                         priority
                     />
                 </div>
