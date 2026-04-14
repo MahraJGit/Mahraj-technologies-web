@@ -2,38 +2,50 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import team1 from "@/public/team1.jpg";
+// import team1 from "@/public/team1.jpg";
+import ceo from "@/public/ceo.webp"
+import cfo from "@/public/cfo.jpg"
+import ecommerce from "@/public/ecommerce.png"
+import seo from "@/public/seo.png"
+import contentwriter from "@/public/contentwriter.jpeg"
+import dev from "@/public/dev.png"
 
 const teamMembers = [
   {
     id: 1,
-    name: "Aahil Ahmed",
-    designation: "Chief Technical Architect",
-    image: team1,
+    name: "Muhammad Bin Majid(MBM)",
+    designation: "C.E.O",
+    image: ceo,
   },
   {
     id: 2,
-    name: "Zoya Malik",
-    designation: "Lead Systems Engineer",
-    image: team1,
+    name: "Usama Shareef",
+    designation: "C.T.O",
+    image: cfo,
   },
   {
     id: 3,
-    name: "Rayan Khan",
-    designation: "AI Research Lead",
-    image: team1,
+    name: "Ammar Ahmed",
+    designation: "E-commerce",
+    image: ecommerce,
   },
   {
     id: 4,
-    name: "Sarah Sheikh",
-    designation: "Backend Engineering Lead",
-    image: team1,
+    name: "Sabir Hussain",
+    designation: "SEO Specialist",
+    image: seo,
   },
   {
     id: 5,
-    name: "Ibrahim Noor",
-    designation: "Cloud Infrastructure Specialist",
-    image: team1,
+    name: "Tanzeela Abrar",
+    designation: "Content Writer",
+    image: contentwriter,
+  },
+  {
+    id: 6,
+    name: "Muhammad Ahmed",
+    designation: "Full Stack Developer",
+    image: dev,
   },
 ];
 
@@ -58,7 +70,7 @@ const TeamMemberCard = ({ member }) => {
           alt={member.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover"
+          className="object-cover object-top"
         />
       </motion.div>
 

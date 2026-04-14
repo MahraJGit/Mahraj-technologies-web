@@ -9,7 +9,7 @@ const nodes = [
     location: "ISLAMABAD, PK",
     coordinates: "33.5194° N, 73.1549° E",
     status: "ACTIVE",
-    address: "Office # 4087, 4th Floor, World Trade Center, Islamabad, Pakistan",
+    address: "World Trade Center - Office Number - 4087 - Islamabad - Pakistan",
     role: "ENGINEERING HUB",
     mapSrc: "https://maps.google.com/maps?q=33.5194,73.1549&z=15&output=embed"
   },

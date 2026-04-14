@@ -10,13 +10,13 @@ const pricingData = [
         title: "Dedicated Team",
         subtitle: "Long-term strategic partnership.",
         icon: <Users className="w-6 h-6 text-primary" />,
-        price: "$4,000",
-        priceSub: "/mo",
-        startingText: "Starting from (up to $5,600)",
+        price: "$3,000",
+        priceSub: "/months",
+        startingText: "Starting from (up to $3,000)",
         features: [
-            { label: "1 Developer", value: "$4,000 - $5,600/mo", detail: "EST. 10 MONTHS" },
-            { label: "3 Developers", value: "$11,000 - $15,000/mo", detail: "EST. 7 MONTHS" },
-            { label: "5+ Developers", value: "$17,000 - $24,000/mo", detail: "SCALES INSTANTLY" }
+            { label: "1 Developer", value: "$3,000 - $7,000/mo", detail: "EST. 10 MONTHS" },
+            { label: "3 Developers", value: "$10,000 - $15,000/mo", detail: "EST. 7 MONTHS" },
+            { label: "5+ Developers", value: "$15,000 - $20,000/mo", detail: "SCALES INSTANTLY" }
         ],
         buttonText: "Build Your Team",
         isPrimary: false
@@ -26,15 +26,15 @@ const pricingData = [
         title: "Project-Based",
         subtitle: "End-to-end MVP development.",
         icon: <DraftingCompass className="w-6 h-6 text-primary" />,
-        price: "$15k",
+        price: "$10k",
         priceRange: "$40k",
         priceSub: "/total",
         startingText: "Flat fee for MVP/Small App",
         badge: "ARCHITECT FAVORITE",
         features: [
-            { label: "Small App/MVP", value: "$15k - $40k", detail: "8-12 WEEKS" },
-            { label: "Medium Platform", value: "$40k - $80k", detail: "4-6 MONTHS" },
-            { label: "Enterprise System", value: "$80k - $150k+", detail: "6+ MONTHS" }
+            { label: "Small App/MVP", value: "$10k - $40k", detail: "8-12 WEEKS" },
+            { label: "Medium Platform", value: "$30k - $80k", detail: "4-6 MONTHS" },
+            { label: "Enterprise System", value: "$70k - $150k+", detail: "6+ MONTHS" }
         ],
         buttonText: "Discuss Your Project",
         isPrimary: true
@@ -45,12 +45,12 @@ const pricingData = [
         subtitle: "Infrastructure continuity.",
         icon: <ShieldCheck className="w-6 h-6 text-primary" />,
         price: "$1,500",
-        priceSub: "/mo",
+        priceSub: "/months",
         startingText: "Essential Protection Package",
         features: [
             { label: "Essential", value: "$1,500/mo", detail: "15H INCLUDED" },
-            { label: "Professional", value: "$3,500/mo", detail: "40H INCLUDED" },
-            { label: "Enterprise", value: "$7,000+/mo", detail: "100H INCLUDED" }
+            { label: "Professional", value: "$3,000/mo", detail: "40H INCLUDED" },
+            { label: "Enterprise", value: "$6,000+/mo", detail: "100H INCLUDED" }
         ],
         buttonText: "Get a Quote",
         isPrimary: false
