@@ -19,10 +19,10 @@ const toPlainText = (blocks = []) => {
 
 export default function JobCards({ jobs = [] }) {
   return (
-    <section className="relative w-full py-20 px-4 sm:px-6 lg:px-8 xl:px-12 bg-black border-b border-zinc-900/50">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative w-full py-20 bg-black border-b border-zinc-900/50">
+      <div className="site-container">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">Current Job Openings</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-white uppercase">Current Job Openings</h2>
           <p className="text-zinc-400 mt-4 max-w-2xl text-sm md:text-base">
             Explore exciting roles at Mahraj Technologies and become part of our growing, innovative digital team today.
           </p>
@@ -40,13 +40,13 @@ export default function JobCards({ jobs = [] }) {
               className="bg-zinc-900/40 border border-zinc-800 hover:border-[#E4242F]/50 transition-all duration-300 rounded-xl p-6 group cursor-pointer flex flex-col"
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E4242F]/10 text-[#E4242F] text-xs font-semibold tracking-wide uppercase border border-[#E4242F]/20">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E4242F]/10 text-[#E4242F] text-xs font-semibold uppercase border border-[#E4242F]/20">
                   {job.location || 'Remote'}
                 </div>
                 {job.type && (
-                   <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
-                     {job.type}
-                   </div>
+                  <div className="text-[10px] text-zinc-500 font-bold uppercase">
+                    {job.type}
+                  </div>
                 )}
               </div>
 
@@ -55,11 +55,11 @@ export default function JobCards({ jobs = [] }) {
               </h3>
 
               <p className="text-zinc-400 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
-                {toPlainText(job.description) || 'Technical detailed role within our engineering hub.'}
+                {toPlainText(job.description) || 'We are looking for passionate individuals to join our team.'}
               </p>
 
               <div className="mt-auto pt-4 border-t border-zinc-800/50">
-                <Link 
+                <Link
                   href={`/careers/apply?job=${encodeURIComponent(job.title)}`}
                   className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#E4242F] transition-colors"
                 >
@@ -71,10 +71,10 @@ export default function JobCards({ jobs = [] }) {
               </div>
             </motion.div>
           ))}
-          
+
           {jobs.length === 0 && (
             <div className="col-span-full py-20 text-center border border-zinc-900 rounded-xl">
-               <p className="text-zinc-500 font-bold uppercase tracking-[0.2em]">No open positions at this node.</p>
+              <p className="text-zinc-500 font-bold uppercase">No open positions at this time. Check back later.</p>
             </div>
           )}
         </div>

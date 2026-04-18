@@ -11,8 +11,8 @@ export default function ApplyPage() {
     <main className="min-h-screen bg-black text-white pt-20">
       <Suspense fallback={
         <div className="flex items-center justify-center min-h-[60vh]">
-          <div className="text-primary text-xs tracking-[0.4em] uppercase font-bold animate-pulse">
-            LOADING_APPLICATION_SYSTEM...
+          <div className="text-primary text-xs uppercase font-bold animate-pulse">
+            Loading Application Form...
           </div>
         </div>
       }>

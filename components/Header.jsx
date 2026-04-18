@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header className="w-full relative z-50">
-      <nav className="flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-4 lg:py-5">
+      <nav className="site-container flex items-center justify-between py-4 lg:py-5">
 
         <div className="flex-shrink-0 flex items-center">
           <Link href="/" className="flex items-center gap-2 lg:gap-3">
@@ -38,7 +38,7 @@ export default function Header() {
               height={40}
               className="w-auto h-8 lg:h-10 object-contain"
             />
-            <span className="font-semibold text-white text-lg xl:text-xl tracking-tight hidden sm:block lg:hidden xl:block">
+            <span className="font-semibold text-white text-lg xl:text-xl hidden sm:block lg:hidden xl:block">
               Mahraj Technologies
             </span>
           </Link>
@@ -67,7 +67,7 @@ export default function Header() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="inline-flex items-center justify-center bg-[#E4242F] text-white px-5 py-2.5 lg:px-7 lg:py-3 rounded-md font-bold text-xs md:text-sm tracking-widest uppercase hover:bg-[#c91d26] transition-colors shadow-lg"
+            className="inline-flex items-center justify-center bg-[#E4242F] text-white px-5 py-2.5 lg:px-7 lg:py-3 rounded-md font-bold text-xs md:text-sm uppercase hover:bg-[#c91d26] transition-colors shadow-lg"
           >
             SCHEDULE A CALL
           </motion.button>
@@ -97,7 +97,7 @@ export default function Header() {
               key={link.name}
               href={link.href}
               onClick={closeMenu}
-              className={`text-base tracking-wide font-medium transition-colors ${pathname === link.href ? "text-primary px-2 border-l-2 border-primary" : "text-gray-300 hover:text-white"}`}
+              className={`text-base font-medium transition-colors ${pathname === link.href ? "text-primary px-2 border-l-2 border-primary" : "text-gray-300 hover:text-white"}`}
             >
               {link.name}
             </Link>

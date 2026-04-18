@@ -17,7 +17,7 @@ const roles = [
 const InputField = ({ label, placeholder, type = "text", name }) => {
   return (
     <div className="relative group/field mt-12">
-      <label className="block text-primary text-xs tracking-[0.4em] uppercase mb-3 font-bold group-focus-within/field:opacity-100 opacity-60 transition-opacity">
+      <label className="block text-primary text-xs uppercase mb-3 font-bold group-focus-within/field:opacity-100 opacity-60 transition-opacity">
         {label}
       </label>
       <input
@@ -109,7 +109,7 @@ export default function ApplicationForm() {
       const data = await response.json();
 
       if (data.success) {
-        setResult("APPLICATION_SUBMITTED");
+        setResult("SUCCESS");
         event.target.reset();
       } else {
         console.log("Error", data);
@@ -128,13 +128,13 @@ export default function ApplicationForm() {
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col gap-12 bg-zinc-950/40 p-8 md:p-16 border border-zinc-900/50 rounded-2xl backdrop-blur-xl">
           <div className="space-y-4 text-center mb-4">
-            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase">Submit Application</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white uppercase">Submit Application</h2>
             <p className="text-zinc-400 max-w-xl mx-auto text-sm md:text-base">
               Ready to join the team? Fill out the form below and we'll be in touch as soon as possible.
             </p>
           </div>
 
-          {result === "APPLICATION_SUBMITTED" ? (
+          {result === "SUCCESS" ? (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -145,13 +145,13 @@ export default function ApplicationForm() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-black text-white uppercase tracking-tight">Application Received</h3>
-              <p className="text-zinc-400 text-sm uppercase tracking-widest max-w-xs mx-auto leading-relaxed">
-                Your profile has been logged. Our recruiters will review your details shortly.
+              <h3 className="text-3xl font-black text-white uppercase">Application Received</h3>
+              <p className="text-zinc-400 text-sm uppercase max-w-xs mx-auto leading-relaxed">
+                Thank you for your interest. Our HR team will review your application and contact you if there's a match.
               </p>
               <button
                 onClick={() => setResult("")}
-                className="text-primary text-[10px] tracking-[0.4em] uppercase font-bold mt-8 border-b border-primary/20 hover:border-primary transition-all"
+                className="text-primary text-[10px] uppercase font-bold mt-8 border-b border-primary/20 hover:border-primary transition-all"
               >
                 Submit Another
               </button>
@@ -174,7 +174,7 @@ export default function ApplicationForm() {
 
               {/* Resume Upload Section */}
               <div className="relative group/field mt-12 py-6 border-b border-zinc-800">
-                <label className="hidden sm:block text-primary text-xs tracking-[0.4em] uppercase mb-6 font-bold opacity-60">
+                <label className="hidden sm:block text-primary text-xs uppercase mb-6 font-bold opacity-60">
                   Resume (PDF Only, Max 8MB)
                 </label>
                 <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -192,7 +192,7 @@ export default function ApplicationForm() {
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
                     disabled={isUploading}
-                    className="w-full sm:w-auto bg-zinc-900 border border-zinc-800 hover:border-primary text-zinc-400 font-bold text-xs uppercase tracking-widest px-8 py-4 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto bg-zinc-900 border border-zinc-800 hover:border-primary text-zinc-400 font-bold text-xs uppercase px-8 py-4 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isUploading ? "Uploading..." : "CHOOSE FILE"}
                   </button>
@@ -200,7 +200,7 @@ export default function ApplicationForm() {
 
                   {isUploading && (
                     <div className="flex-1 max-w-xs space-y-2">
-                      <div className="flex justify-between text-[10px] text-primary font-bold uppercase tracking-widest">
+                      <div className="flex justify-between text-[10px] text-primary font-bold uppercase">
                         <span>Uploading...</span>
                         <span>{uploadProgress}%</span>
                       </div>
@@ -230,7 +230,7 @@ export default function ApplicationForm() {
               <div className="grid grid-cols-1 gap-0">
                 {/* Custom High-Fidelity Dropdown */}
                 <div className="relative group/field mt-12">
-                  <label className="block text-primary text-xs tracking-[0.4em] uppercase mb-3 font-bold opacity-60">
+                  <label className="block text-primary text-xs uppercase mb-3 font-bold opacity-60">
                     Applying For
                   </label>
                   <div className="relative">
@@ -259,7 +259,7 @@ export default function ApplicationForm() {
                               setSelectedRole(role);
                               setIsOpen(false);
                             }}
-                            className="p-4 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-md cursor-pointer transition-colors text-sm uppercase tracking-widest"
+                            className="p-4 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-md cursor-pointer transition-colors text-sm uppercase"
                           >
                             {role}
                           </div>
@@ -273,7 +273,7 @@ export default function ApplicationForm() {
 
               {/* Cover Letter */}
               <div className="relative group/field mt-16 mb-16">
-                <label className="block text-primary text-xs tracking-[0.4em] uppercase mb-3 font-bold opacity-60">
+                <label className="block text-primary text-xs uppercase mb-3 font-bold opacity-60">
                   Cover Letter / Note
                 </label>
                 <textarea
@@ -294,12 +294,12 @@ export default function ApplicationForm() {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
-                className={`w-full ${isSubmitting ? 'bg-zinc-800 cursor-not-allowed' : 'bg-primary hover:bg-[#c91d26]'} text-white font-black text-sm tracking-[0.3em] uppercase py-5 rounded-xl transition-colors shadow-[0_0_40px_-10px_rgba(228,36,47,0.5)]`}
+                className={`w-full ${isSubmitting ? 'bg-zinc-800 cursor-not-allowed' : 'bg-primary hover:bg-[#c91d26]'} text-white font-black text-sm uppercase py-5 rounded-xl transition-colors shadow-[0_0_40px_-10px_rgba(228,36,47,0.5)]`}
               >
                 {isSubmitting ? result : "Submit Application"}
               </motion.button>
 
-              {result && !isSubmitting && result !== "APPLICATION_SUBMITTED" && (
+              {result && !isSubmitting && result !== "SUCCESS" && (
                 <p className="text-xs font-bold text-red-500 text-center mt-4 uppercase">
                   Error: {result}
                 </p>

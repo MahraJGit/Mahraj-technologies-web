@@ -13,7 +13,7 @@ export default function ContactPage() {
       />
 
       <section className="relative py-24 lg:py-32 overflow-hidden bg-[radial-gradient(circle_at_1px_1px,#18181b_1px,transparent_0)] bg-[size:40px_40px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start">
             <ContactInfo />
             <ContactForm />

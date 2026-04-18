@@ -6,14 +6,14 @@ import aboutImg from "@/public/about.png";
 export default function About() {
   return (
     <section className="w-full bg-[#050505] py-16 md:py-32 relative z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="site-container">
 
         {/* Section Heading */}
         <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase">
             About
           </h2>
-          <p className="text-zinc-400 text-lg font-medium tracking-wide">
+          <p className="text-zinc-400 text-lg font-medium">
             What Makes Mahraj Technologies Different?
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function About() {
 
           {/* Text Column */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
-            {/* <h3 className="text-2xl md:text-[32px] font-bold text-white mb-6 tracking-wide leading-tight">
+            {/* <h3 className="text-2xl md:text-[32px] font-bold text-white mb-6 leading-tight">
               Enterprise Logistics Platform
             </h3> */}
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium">

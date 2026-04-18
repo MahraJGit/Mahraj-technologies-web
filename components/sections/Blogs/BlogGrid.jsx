@@ -17,12 +17,12 @@ export default function BlogGrid({ posts = [] }) {
 
   return (
     <section className="py-24 bg-black">
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="site-container">
         {/* Protocol Logs Header & Filter */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
           <div>
-            <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-4">Our Blogs</h2>
-            <p className="text-zinc-500 text-sm font-bold uppercase tracking-widest">Stay updated with our latest blogs.</p>
+            <h2 className="text-3xl font-black text-white uppercase mb-4">Our Blogs</h2>
+            <p className="text-zinc-500 text-sm font-bold uppercase">Stay updated with our latest blogs.</p>
           </div>
 
           <div className="flex items-center gap-6 lg:gap-10 overflow-x-auto whitespace-nowrap pb-2 scrollbar-none max-w-full scroll-smooth">
@@ -30,7 +30,7 @@ export default function BlogGrid({ posts = [] }) {
               <button
                 key={f}
                 onClick={() => setActiveFilter(f)}
-                className={`text-[11px] font-black uppercase tracking-[0.3em] transition-all relative py-2 ${activeFilter === f ? "text-primary" : "text-white hover:text-primary"
+                className={`text-[11px] font-black uppercase transition-all relative py-2 ${activeFilter === f ? "text-primary" : "text-white hover:text-primary"
                   }`}
               >
                 {f}
@@ -74,7 +74,7 @@ export default function BlogGrid({ posts = [] }) {
                   {/* Category Badge */}
                   {post.category && (
                     <div className="absolute top-4 left-4">
-                      <span className="bg-[#E4242F] text-white text-[10px] font-black tracking-widest px-3 py-1.5 uppercase">
+                      <span className="bg-[#E4242F] text-white text-[10px] font-black px-3 py-1.5 uppercase">
                         {post.category}
                       </span>
                     </div>
@@ -83,14 +83,14 @@ export default function BlogGrid({ posts = [] }) {
 
                 {/* Metadata */}
                 <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
-                  <span className="text-[10px] font-bold text-zinc-500 tracking-[0.2em]">{post.ref || 'REF: INTERNAL'}</span>
-                  <span className="text-[10px] font-bold text-zinc-500 tracking-[0.2em]">
+                  <span className="text-[10px] font-bold text-zinc-500">{post.ref || 'REF: INTERNAL'}</span>
+                  <span className="text-[10px] font-bold text-zinc-500">
                     {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'LOG_PENDING'}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-black text-white uppercase tracking-tight leading-none mb-6 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-black text-white uppercase leading-none mb-6 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
                 <p className="text-zinc-500 text-sm font-medium leading-relaxed mb-8 line-clamp-3">
@@ -99,7 +99,7 @@ export default function BlogGrid({ posts = [] }) {
 
                 {/* Link */}
                 <div className="flex items-center gap-2 group/link">
-                  <span className="text-[11px] font-black text-white uppercase tracking-[0.3em] group-hover:text-primary transition-colors">
+                  <span className="text-[11px] font-black text-white uppercase group-hover:text-primary transition-colors">
                     Read MORE
                   </span>
                   <ArrowRight className="w-4 h-4 text-primary transition-transform group-hover/link:translate-x-2" />
@@ -119,7 +119,7 @@ export default function BlogGrid({ posts = [] }) {
             <div className="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8">
               <Terminal className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-4">
+            <h3 className="text-2xl font-black text-white uppercase mb-4">
               Join our newsletter
             </h3>
             <p className="text-zinc-500 text-sm font-medium mb-10 max-w-[280px]">
@@ -130,9 +130,9 @@ export default function BlogGrid({ posts = [] }) {
               <input
                 type="email"
                 placeholder="EMAIL_ADDRESS"
-                className="w-full bg-black border border-white/10 px-6 py-4 text-xs font-bold tracking-widest text-white uppercase focus:outline-none focus:border-primary transition-colors"
+                className="w-full bg-black border border-white/10 px-6 py-4 text-xs font-bold text-white uppercase focus:outline-none focus:border-primary transition-colors"
               />
-              <button className="w-full bg-white text-black font-black text-[11px] uppercase tracking-[0.3em] py-5 hover:bg-primary hover:text-white transition-all transform active:scale-95">
+              <button className="w-full bg-white text-black font-black text-[11px] uppercase py-5 hover:bg-primary hover:text-white transition-all transform active:scale-95">
                 SUBSCRIBE
               </button>
             </div>

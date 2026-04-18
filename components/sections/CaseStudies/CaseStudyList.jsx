@@ -73,24 +73,24 @@ const CaseStudyRow = ({ project, index }) => {
       >
         {/* Meta Info */}
         <div className="flex items-center gap-4 mb-6">
-          <span className="text-primary  text-[10px] tracking-[0.3em] font-bold uppercase transition-colors hover:text-white cursor-default">
+          <span className="text-primary  text-[10px] font-bold uppercase transition-colors hover:text-white cursor-default">
             {project.category}
           </span>
           <div className="w-8 h-[1px] bg-zinc-800" />
-          <span className="text-zinc-600  text-[10px] tracking-widest">
+          <span className="text-zinc-600  text-[10px]">
             {project.year}
           </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-white text-3xl lg:text-5xl font-black tracking-tight uppercase leading-none mb-12">
+        <h3 className="text-white text-3xl lg:text-5xl font-black uppercase leading-none mb-12">
           {project.title}
         </h3>
 
         {/* Breakdown Sections */}
         <div className="space-y-12">
           <div>
-            <h4 className="text-primary  text-[13px] tracking-[0.4em] uppercase font-bold mb-4 flex items-center gap-2">
+            <h4 className="text-primary  text-[13px] uppercase font-bold mb-4 flex items-center gap-2">
               <span className="w-2 h-[1px] bg-primary" />
               PROBLEM
             </h4>
@@ -100,7 +100,7 @@ const CaseStudyRow = ({ project, index }) => {
           </div>
 
           <div>
-            <h4 className="text-primary  text-[13px] tracking-[0.4em] uppercase font-bold mb-4 flex items-center gap-2">
+            <h4 className="text-primary  text-[13px] uppercase font-bold mb-4 flex items-center gap-2">
               <span className="w-2 h-[1px] bg-primary" />
               SOLUTION
             </h4>
@@ -110,10 +110,10 @@ const CaseStudyRow = ({ project, index }) => {
           </div>
 
           <div className="pt-10 border-t border-zinc-900">
-            <h4 className="text-primary  text-[13px] tracking-[0.4em] uppercase font-bold mb-6">
+            <h4 className="text-primary  text-[13px] uppercase font-bold mb-6">
               OUTCOME
             </h4>
-            <div className="text-white font-black text-2xl tracking-tight leading-tight">
+            <div className="text-white font-black text-2xl leading-tight">
               {project.outcome.split('. ').map((stat, i) => (
                 <span key={i} className="block">
                   {stat.match(/\d+%|\d+x|\d+\.\d+%|[+\-]|Zero/i) ? (
@@ -139,7 +139,7 @@ const CaseStudyRow = ({ project, index }) => {
 export default function CaseStudyList() {
   return (
     <section className="bg-black py-12">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="site-container">
         {projects.map((project, index) => (
           <CaseStudyRow key={project.id} project={project} index={index} />
         ))}

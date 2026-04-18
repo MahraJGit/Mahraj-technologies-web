@@ -4,17 +4,17 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const services = [
-  "MOBILE INFRASTRUCTURE",
-  "WEB ARCHITECTURE",
-  "CLOUD STABILITY PROTOCOL",
-  "ENTERPRISE DIGITAL SUITE",
+  "MOBILE DEVELOPMENT",
+  "WEB DEVELOPMENT",
+  "CRM & ERP SOLUTIONS",
+  "DIGITAL MARKETING",
   "OTHER"
 ];
 
 const InputField = ({ label, placeholder, type = "text", name }) => {
   return (
     <div className="relative group/field mt-12">
-      <label className="block text-primary text-xs tracking-[0.4em] uppercase mb-3 font-bold group-focus-within/field:opacity-100 opacity-60 transition-opacity">
+      <label className="block text-primary text-xs uppercase mb-3 font-bold group-focus-within/field:opacity-100 opacity-60 transition-opacity">
         {label}
       </label>
       <input
@@ -53,7 +53,7 @@ export default function ContactForm() {
       const data = await response.json();
 
       if (data.success) {
-        setResult("TRANSMISSION_SUCCESS");
+        setResult("SUCCESS");
         event.target.reset();
       } else {
         console.log("Error", data);
@@ -61,7 +61,7 @@ export default function ContactForm() {
       }
     } catch (error) {
       console.log("Error", error);
-      setResult("CONNECTION_ERROR");
+      setResult("ERROR");
     } finally {
       setIsSubmitting(false);
     }
@@ -70,10 +70,10 @@ export default function ContactForm() {
   return (
     <div className="flex flex-col gap-12 bg-zinc-950/40 p-8 md:p-16 border border-zinc-900/50 rounded-2xl backdrop-blur-xl">
       <div className="space-y-4">
-        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase">Let's Connect</h2>
+        <h2 className="text-4xl md:text-5xl font-black text-white uppercase">Let's Connect</h2>
       </div>
 
-      {result === "TRANSMISSION_SUCCESS" ? (
+      {result === "SUCCESS" ? (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,15 +84,15 @@ export default function ContactForm() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-3xl font-black text-white uppercase tracking-tight">Handshake Complete</h3>
-          <p className="text-zinc-400  text-sm uppercase tracking-widest max-w-xs mx-auto leading-relaxed">
-            Data received. Our lead architects will initialize contact shortly.
+          <h3 className="text-3xl font-black text-white uppercase">Message Sent</h3>
+          <p className="text-zinc-400  text-sm uppercase max-w-xs mx-auto leading-relaxed">
+            Thank you for reaching out. We have received your message and will get back to you shortly.
           </p>
           <button
             onClick={() => setResult("")}
-            className="text-primary  text-[10px] tracking-[0.4em] uppercase font-bold mt-8 border-b border-primary/20 hover:border-primary transition-all"
+            className="text-primary  text-[10px] uppercase font-bold mt-8 border-b border-primary/20 hover:border-primary transition-all"
           >
-            Re-initiate Protocol
+            Send another message
           </button>
         </motion.div>
       ) : (
@@ -113,7 +113,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 gap-0">
 
             <div className="relative group/field mt-12">
-              <label className="block text-primary  text-xs tracking-[0.4em] uppercase mb-3 font-bold opacity-60">
+              <label className="block text-primary  text-xs uppercase mb-3 font-bold opacity-60">
                 Service
               </label>
               <div className="relative">
@@ -142,7 +142,7 @@ export default function ContactForm() {
                           setSelectedService(service);
                           setIsOpen(false);
                         }}
-                        className="p-4 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-md cursor-pointer transition-colors  text-sm uppercase tracking-widest"
+                        className="p-4 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-md cursor-pointer transition-colors text-sm uppercase"
                       >
                         {service}
                       </div>
@@ -155,7 +155,7 @@ export default function ContactForm() {
           </div>
 
           <div className="relative group/field mt-16 mb-16">
-            <label className="block text-primary  text-xs tracking-[0.4em] uppercase mb-3 font-bold opacity-60">
+            <label className="block text-primary  text-xs uppercase mb-3 font-bold opacity-60">
               Project Brief
             </label>
             <textarea
@@ -174,7 +174,7 @@ export default function ContactForm() {
             disabled={isSubmitting}
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
-            className={`w-full ${isSubmitting ? 'bg-zinc-800 cursor-not-allowed' : 'bg-primary hover:bg-[#c91d26]'} text-white font-black text-sm tracking-[0.3em] uppercase py-5 rounded-xl transition-colors shadow-[0_0_40px_-10px_rgba(228,36,47,0.5)]`}
+            className={`w-full ${isSubmitting ? 'bg-zinc-800 cursor-not-allowed' : 'bg-primary hover:bg-[#c91d26]'} text-white font-black text-sm uppercase py-5 rounded-xl transition-colors shadow-[0_0_40px_-10px_rgba(228,36,47,0.5)]`}
           >
             {isSubmitting ? result : "Submit"}
           </motion.button>

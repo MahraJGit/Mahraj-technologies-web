@@ -23,7 +23,7 @@ export default function ServiceCta() {
                 <div className="absolute inset-0 bg-black/40" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div className="relative z-10 site-container text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -31,12 +31,12 @@ export default function ServiceCta() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     {/* Main Heading */}
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase mb-8 leading-none">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase mb-8 leading-none">
                         Want smoother business operations?
                     </h2>
 
                     {/* Technical Subheading */}
-                    <p className="max-w-xl mx-auto text-zinc-400  text-sm md:text-lg leading-relaxed mb-12 opacity-80 tracking-wide">
+                    <p className="max-w-xl mx-auto text-zinc-400  text-sm md:text-lg leading-relaxed mb-12 opacity-80">
                         Let&apos;s streamline your operations for better efficiency, productivity, and smooth business workflow management.
                     </p>
 
@@ -50,7 +50,7 @@ export default function ServiceCta() {
                                     color: "#E4242F"
                                 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full sm:w-auto px-10 py-5 bg-primary border border-zinc-700 text-white text-xs tracking-[0.3em] uppercase font-bold transition-colors shadow-lg "
+                                className="w-full sm:w-auto px-10 py-5 bg-primary border border-zinc-700 text-white text-xs uppercase font-bold transition-colors shadow-lg "
                             >
                                 Contact Us
                             </motion.button>
@@ -64,25 +64,13 @@ export default function ServiceCta() {
                                 color: "#ffffff"
                             }}
                             whileTap={{ scale: 0.98 }}
-                            className="w-full sm:w-auto px-10 py-5 bg-white border border-zinc-700 text-black text-xs tracking-[0.3em] uppercase font-bold transition-all"
+                            className="w-full sm:w-auto px-10 py-5 bg-white border border-zinc-700 text-black text-xs uppercase font-bold transition-all"
                         >
                             Schedule a Call
                         </motion.button>
                     </div>
                 </motion.div>
 
-                {/* Secondary Status Decoration */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.3 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                    className="mt-24 pt-8 border-t border-zinc-900 flex justify-between items-center text-[8px]  text-zinc-500 uppercase tracking-[0.5em]"
-                >
-                    <span>System Integrity: Verified</span>
-                    <span className="hidden md:block">Session: Encrypted_AES_256</span>
-                    <span>Status: Standby</span>
-                </motion.div>
             </div>
         </section>
     );

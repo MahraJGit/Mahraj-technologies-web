@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#050505] mt-auto border-t border-zinc-900/50">
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24">
+      <div className="site-container py-16 lg:py-24">
         <div className="flex flex-col md:flex-row justify-between gap-12 lg:gap-23">
 
           {/* Brand Column */}
@@ -19,7 +19,7 @@ export default function Footer() {
                 height={40}
                 className="w-auto h-10 object-contain"
               />
-              <span className="font-semibold text-white text-xl tracking-tight">
+              <span className="font-semibold text-white text-xl">
                 Mahraj Technologies
               </span>
             </Link>
@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Links Columns */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-12 md:gap-16 lg:gap-26">
             <div>
-              <h3 className="text-white font-bold text-base mb-6 tracking-wide">Company</h3>
+              <h3 className="text-white font-bold text-base mb-6">Company</h3>
               <ul className="space-y-4">
                 <li>
                   <Link href="/about" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-white font-bold text-base mb-6 tracking-wide">Legal</h3>
+              <h3 className="text-white font-bold text-base mb-6">Legal</h3>
               <ul className="space-y-4">
                 <li>
                   <Link href="/privacy" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
@@ -69,7 +69,7 @@ export default function Footer() {
 
             {/* Contact Us Column */}
             <div className="max-w-[280px]">
-              <h3 className="text-white font-bold text-base mb-6 tracking-wide">Contact Us</h3>
+              <h3 className="text-white font-bold text-base mb-6">Contact Us</h3>
               <ul className="space-y-4">
                 <li className="text-zinc-400 text-sm font-medium leading-relaxed">
                   B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai
@@ -93,7 +93,7 @@ export default function Footer() {
 
       {/* Bottom Copyright Bar */}
       <div className="bg-black py-6 border-t border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 text-center text-xs text-zinc-500 font-medium tracking-wide">
+        <div className="site-container text-center text-xs text-zinc-500 font-medium">
           © {new Date().getFullYear()} Mahraj Technologies. All rights reserved.
         </div>
       </div>

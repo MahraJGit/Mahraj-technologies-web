@@ -54,7 +54,7 @@ export default function CalendlyModal() {
             <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-zinc-900/50">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                <span className="text-[10px] font-black text-white uppercase tracking-[0.3em]">
+                <span className="text-[10px] font-black text-white uppercase">
                   Schedule Strategy Session
                 </span>
               </div>
@@ -79,11 +79,6 @@ export default function CalendlyModal() {
                ></iframe>
             </div>
 
-            {/* Footer Footer Info */}
-            <div className="px-6 py-3 border-t border-white/5 bg-black text-[8px] text-zinc-600 tracking-widest uppercase flex justify-between">
-                <span>SECURE_ENCLAVE_READY</span>
-                <span>MAHRAJ_INTERNAL_SCHEDULER_V2</span>
-            </div>
           </motion.div>
         </div>
       )}

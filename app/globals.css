@@ -96,7 +96,13 @@
   }
 
   .scrollbar-none {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .site-container {
+    @apply max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full;
   }
 }

@@ -92,10 +92,10 @@ const TeamMemberCard = ({ member }) => {
         transition={{ duration: 0.4 }}
         className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-end p-8 pointer-events-none z-10"
       >
-        <span className="text-primary  text-[10px] tracking-widest uppercase font-bold mb-2">
+        <span className="text-primary  text-[10px] uppercase font-bold mb-2">
           {member.designation}
         </span>
-        <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight uppercase leading-none">
+        <h3 className="text-2xl md:text-3xl font-black text-white uppercase leading-none">
           {member.name}
         </h3>
       </motion.div>
@@ -109,12 +109,12 @@ export default function TeamMarquee() {
 
   return (
     <section className="w-full bg-[#050505] py-24 overflow-hidden border-t border-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mb-16">
+      <div className="site-container mb-16">
         <div className="flex flex-col gap-4 text-center">
-          {/* <span className="text-primary  text-sm tracking-[0.4em] uppercase font-bold">
+          {/* <span className="text-primary  text-sm uppercase font-bold">
             Our Personnel // MAHRAJ_CORE
           </span> */}
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9]">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white uppercase leading-[0.9]">
             Meet <br />
             <span className="text-zinc-600">Our Team</span>
           </h2>

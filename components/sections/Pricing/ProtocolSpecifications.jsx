@@ -53,9 +53,9 @@ export default function ProtocolSpecifications() {
 
   return (
     <section className="py-24 bg-[#050505] border-t border-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="site-container">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-white uppercase">
             Protocol <br />
             <span className="text-zinc-600">Specifications</span>
           </h2>
@@ -66,10 +66,10 @@ export default function ProtocolSpecifications() {
             <thead>
               <tr className="border-b border-zinc-900 pb-12">
                 {headers.map((header) => (
-                  <th 
-                    key={header.col} 
-                    className={`py-8 px-4 font-black uppercase tracking-widest transition-colors duration-300
-                      ${header.col === 0 ? 'text-xs tracking-[0.3em]' : 'text-base'}
+                  <th
+                    key={header.col}
+                    className={`py-8 px-4 font-black uppercase transition-colors duration-300
+                      ${header.col === 0 ? 'text-xs' : 'text-base'}
                       ${hoveredCol === header.col ? 'text-white' : 'text-zinc-600'}
                     `}
                   >
@@ -91,18 +91,18 @@ export default function ProtocolSpecifications() {
                   }}
                   className="transition-colors"
                 >
-                  <td 
+                  <td
                     className="py-10 px-4 cursor-default"
                     onMouseEnter={() => handleMouseEnter(rIndex, 0)}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <span className={`text-sm font-bold uppercase tracking-widest transition-colors duration-300
+                    <span className={`text-sm font-bold uppercase transition-colors duration-300
                       ${hoveredRow === rIndex ? 'text-white' : 'text-zinc-600'}
                     `}>
                       {spec.feature}
                     </span>
                   </td>
-                  <td 
+                  <td
                     className="py-10 px-4 cursor-default"
                     onMouseEnter={() => handleMouseEnter(rIndex, 1)}
                     onMouseLeave={handleMouseLeave}
@@ -113,7 +113,7 @@ export default function ProtocolSpecifications() {
                       {spec.dedicated}
                     </span>
                   </td>
-                  <td 
+                  <td
                     className="py-10 px-4 cursor-default"
                     onMouseEnter={() => handleMouseEnter(rIndex, 2)}
                     onMouseLeave={handleMouseLeave}
@@ -124,7 +124,7 @@ export default function ProtocolSpecifications() {
                       {spec.project}
                     </span>
                   </td>
-                  <td 
+                  <td
                     className="py-10 px-4 cursor-default"
                     onMouseEnter={() => handleMouseEnter(rIndex, 3)}
                     onMouseLeave={handleMouseLeave}

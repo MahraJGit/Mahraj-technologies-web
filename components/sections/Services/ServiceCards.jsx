@@ -6,7 +6,7 @@ import {
   BarChart3,
   Search,
   UserPlus,
-  Funnel,
+  Filter,
   Code,
   Smartphone,
   Layout,
@@ -46,7 +46,7 @@ const services = [
     title: "SALES FUNNEL DEVELOPMENT",
     description: "We design high-converting sales funnels that guide potential customers through structured digital journeys to maximize conversions and business growth.",
     features: ["CONVERSION-FOCUSED FLOW", "AUDIENCE BEHAVIOR MAPPING", "LEAD NURTURING SYSTEM", "REVENUE OPTIMIZATION SYSTEM"],
-    icon: Funnel
+    icon: Filter
   },
   {
     id: "05",
@@ -101,7 +101,8 @@ const services = [
 export default function ServiceCards() {
   return (
     <section className="bg-black">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-t border-zinc-800/80">
+      <div className="site-container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-t border-x border-zinc-800/80">
         {services.map((service) => (
           <div
             key={service.id}
@@ -123,14 +124,13 @@ export default function ServiceCards() {
                 <div className="text-primary transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                   <service.icon size={32} strokeWidth={1.5} />
                 </div>
-                <div className="text-[10px]  text-zinc-600 tracking-widest pt-2">
+                <div className="text-[10px]  text-zinc-600 pt-2">
                   {service.id} / {service.code}
                 </div>
               </div>
 
               {/* Title */}
-              {/* Title */}
-              <h3 className="text-white text-3xl font-bold tracking-tight mb-6 leading-[1.1] group-hover:text-primary transition-colors min-h-[70px]">
+              <h3 className="text-white text-3xl font-bold mb-6 leading-[1.1] group-hover:text-primary transition-colors min-h-[70px]">
                 {service.title}
               </h3>
 
@@ -143,7 +143,7 @@ export default function ServiceCards() {
               <div className="mt-auto">
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-[11px]  text-zinc-400 tracking-widest uppercase group-hover:text-zinc-300 transition-colors">
+                    <li key={idx} className="flex items-center gap-3 text-[11px]  text-zinc-400 uppercase group-hover:text-zinc-300 transition-colors">
                       {/* <span className="w-1.5 h-1.5 bg-primary shadow-[0_0_5px_rgba(228,36,47,0.4)]" /> */}
                       {/* <Terminal size={20} strokeWidth={1.5} className="text-primary" /> */}
                       <span className='text-primary text-1xl'>&gt;</span>
@@ -155,6 +155,7 @@ export default function ServiceCards() {
             </motion.div>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

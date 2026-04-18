@@ -60,7 +60,7 @@ const pricingData = [
 export default function PricingCards() {
     return (
         <section className="py-24 bg-[#050505]">
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="site-container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
                     {pricingData.map((card, index) => (
                         <motion.div
@@ -82,7 +82,7 @@ export default function PricingCards() {
                             {/* ... existing header and pricing content ... */}
                             <div className="mb-6">
                                 <div className="mb-5 text-primary">{card.icon}</div>
-                                <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2 leading-none">
+                                <h3 className="text-xl font-black text-white uppercase mb-2 leading-none">
                                     {card.title}
                                 </h3>
                                 <p className="text-zinc-500 text-sm font-medium">
@@ -92,15 +92,15 @@ export default function PricingCards() {
 
                             <div className="mb-8">
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-4xl font-black text-white tracking-tighter">
+                                    <span className="text-4xl font-black text-white">
                                         {card.price}
                                     </span>
                                     {card.priceRange && (
-                                        <span className="text-xl font-black text-zinc-700 tracking-tighter mx-1">- {card.priceRange}</span>
+                                        <span className="text-xl font-black text-zinc-700 mx-1">- {card.priceRange}</span>
                                     )}
                                     <span className="text-base font-bold text-zinc-500 uppercase">{card.priceSub}</span>
                                 </div>
-                                <p className="text-[11px] text-zinc-600 font-bold tracking-widest uppercase mt-3 opacity-80 font-mono">
+                                <p className="text-[11px] text-zinc-600 font-bold uppercase mt-3 opacity-80 font-mono">
                                     {card.startingText}
                                 </p>
                             </div>
@@ -110,11 +110,11 @@ export default function PricingCards() {
                                     <div key={idx} className="flex items-center justify-between border-b border-zinc-900 pb-4">
                                         <div className="flex items-center gap-3">
                                             <CheckCircle2 className="w-4 h-4 text-primary opacity-80 shrink-0" />
-                                            <span className="text-xs font-bold text-zinc-300 uppercase tracking-tight">{feature.label}</span>
+                                            <span className="text-xs font-bold text-zinc-300 uppercase">{feature.label}</span>
                                         </div>
                                         <div className="text-right ml-2">
                                             <p className="text-sm font-black text-white">{feature.value}</p>
-                                            <p className="text-[10px] text-zinc-600 font-bold tracking-tight uppercase mt-0.5">{feature.detail}</p>
+                                            <p className="text-[10px] text-zinc-600 font-bold uppercase mt-0.5">{feature.detail}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -124,7 +124,7 @@ export default function PricingCards() {
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full py-5 rounded-2xl font-black text-sm uppercase tracking-[0.25em] transition-all duration-300 bg-zinc-900 text-white border border-zinc-800 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_10px_30px_-10px_rgba(228,36,47,0.4)]"
+                                className="w-full py-5 rounded-2xl font-black text-sm uppercase transition-all duration-300 bg-zinc-900 text-white border border-zinc-800 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_10px_30px_-10px_rgba(228,36,47,0.4)]"
                             >
                                 {card.buttonText}
                             </motion.button>

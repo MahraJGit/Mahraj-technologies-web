@@ -4,18 +4,20 @@ import Image from 'next/image';
 
 const components = {
   block: {
-    h2: ({ children }) => {
-      const id = children[0]?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+    h2: ({ children, value }) => {
+      const text = value?.children?.map(child => child.text).join('') || '';
+      const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
       return (
-        <h2 id={id} className="text-white text-3xl tracking-tight mt-16 mb-8 scroll-mt-32">
+        <h2 id={id} className="text-white text-3xl mt-16 mb-8 scroll-mt-32">
           {children}
         </h2>
       );
     },
-    h3: ({ children }) => {
-      const id = children[0]?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+    h3: ({ children, value }) => {
+      const text = value?.children?.map(child => child.text).join('') || '';
+      const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
       return (
-        <h3 id={id} className="text-white text-2xl tracking-tight mt-12 mb-6 scroll-mt-32">
+        <h3 id={id} className="text-white text-2xl mt-12 mb-6 scroll-mt-32">
           {children}
         </h3>
       );

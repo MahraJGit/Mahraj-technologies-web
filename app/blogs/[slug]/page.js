@@ -121,7 +121,7 @@ export default async function BlogDetailPage({ params }) {
       <header className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <Link
           href="/blogs"
-          className="inline-flex items-center gap-2 text-zinc-500 hover:text-primary transition-colors text-[10px] font-black uppercase tracking-[0.3em] mb-12 group"
+          className="inline-flex items-center gap-2 text-zinc-500 hover:text-primary transition-colors text-[10px] font-black uppercase mb-12 group"
         >
           <ArrowLeft className="w-3 h-3 group-hover:-translate-x-1 transition-transform" />
           Back to Blogs
@@ -130,21 +130,21 @@ export default async function BlogDetailPage({ params }) {
         <div className="space-y-8 max-w-4xl">
           <div className="flex flex-wrap items-center gap-6">
             {post.category && (
-              <span className="bg-primary/10 text-primary text-[10px] font-black tracking-widest px-4 py-2 uppercase border border-primary/20">
+              <span className="bg-primary/10 text-primary text-[10px] font-black px-4 py-2 uppercase border border-primary/20">
                 {post.category}
               </span>
             )}
-            <div className="flex items-center gap-2 text-zinc-500 text-[10px] font-bold uppercase tracking-widest">
+            <div className="flex items-center gap-2 text-zinc-500 text-[10px] font-bold uppercase">
               <Calendar className="w-3 h-3" />
               {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'LOG_PENDING'}
             </div>
-            <div className="flex items-center gap-2 text-zinc-500 text-[10px] font-bold uppercase tracking-widest">
+            <div className="flex items-center gap-2 text-zinc-500 text-[10px] font-bold uppercase">
               <Clock className="w-3 h-3" />
               {readingTime} MIN READ
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl text-white uppercase tracking-tighter leading-[0.9]">
+          <h1 className="text-4xl md:text-6xl text-white uppercase leading-[0.9]">
             {post.title}
           </h1>
 
@@ -201,8 +201,8 @@ export default async function BlogDetailPage({ params }) {
                 )}
               </div>
               <div className="flex flex-col text-center md:text-left">
-                <span className="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-2">AUTHOR</span>
-                <h4 className="text-white text-2xl font-black uppercase tracking-tight mb-4">{post.author.name}</h4>
+                <span className="text-primary text-[10px] font-black uppercase mb-2">AUTHOR</span>
+                <h4 className="text-white text-2xl font-black uppercase mb-4">{post.author.name}</h4>
                 {post.author.bio && (
                   <p className="text-zinc-500 text-sm leading-relaxed max-w-xl">
                     {post.author.bio}
@@ -215,7 +215,7 @@ export default async function BlogDetailPage({ params }) {
           {/* Structured FAQs */}
           {post.faqs && post.faqs.length > 0 && (
             <div className="mt-32 border-t border-zinc-900 pt-20">
-              <h3 className="text-white text-3xl font-black uppercase tracking-tight mb-12 flex items-center gap-4">
+              <h3 className="text-white text-3xl font-black uppercase mb-12 flex items-center gap-4">
                 <span className="text-primary">//</span> FREQUENTLY ASKED QUESTIONS
               </h3>
               <div className="space-y-3">
@@ -223,7 +223,7 @@ export default async function BlogDetailPage({ params }) {
                   <div key={i} className="bg-zinc-950/50 p-8 border border-zinc-900 group transition-colors hover:border-zinc-800">
                     <div className="flex items-start gap-4 mb-4">
                       <span className="text-primary font-black pt-1">Q_</span>
-                      <h4 className="text-white font-bold uppercase tracking-tight text-lg">{faq.question}</h4>
+                      <h4 className="text-white font-bold uppercase text-lg">{faq.question}</h4>
                     </div>
                     <div className="flex items-start gap-4 text-zinc-500 leading-relaxed text-sm pl-8">
                       {faq.answer}
@@ -238,7 +238,7 @@ export default async function BlogDetailPage({ params }) {
           {post.tags && (
             <div className="mt-20 flex flex-wrap gap-3">
               {post.tags.map((tag) => (
-                <span key={tag} className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest border border-zinc-900 px-3 py-1 bg-zinc-950">
+                <span key={tag} className="text-[10px] font-bold text-zinc-600 uppercase border border-zinc-900 px-3 py-1 bg-zinc-950">
                   #{tag}
                 </span>
               ))}
@@ -250,7 +250,7 @@ export default async function BlogDetailPage({ params }) {
         <aside className="lg:col-span-3">
           <div className="sticky top-32 space-y-12">
             <div>
-              <span className="text-[10px] font-bold text-zinc-700 uppercase tracking-[0.3em] mb-8 block flex items-center gap-3">
+              <span className="text-[10px] font-bold text-zinc-700 uppercase mb-8 block flex items-center gap-3">
                 <span className="w-6 h-[1px] bg-primary" />
                 RECENT BLOGS
               </span>
@@ -258,10 +258,10 @@ export default async function BlogDetailPage({ params }) {
                 {recentPosts.map((rPost) => (
                   <Link key={rPost.slug} href={`/blogs/${rPost.slug}`} className="group block">
                     <div className="flex flex-col gap-2">
-                      <h5 className="text-white font-black uppercase tracking-tight text-xs leading-tight group-hover:text-primary transition-colors line-clamp-2">
+                      <h5 className="text-white font-black uppercase text-xs leading-tight group-hover:text-primary transition-colors line-clamp-2">
                         {rPost.title}
                       </h5>
-                      <div className="flex items-center gap-2 text-zinc-600 font-bold uppercase text-[8px] tracking-[0.2em]">
+                      <div className="flex items-center gap-2 text-zinc-600 font-bold uppercase text-[8px]">
                         {new Date(rPost.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}
                         <ChevronRight className="w-2 h-2 group-hover:translate-x-1 transition-transform text-primary" />
                       </div>
