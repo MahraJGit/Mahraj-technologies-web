@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { client, urlFor } from "@/lib/sanity";
 import { getPostBySlug, getAllPosts } from "@/lib/queries";
 import PortableText from "@/components/PortableText";
+import RecentPostsSidebar from "@/components/sections/Blogs/RecentPostsSidebar";
 
 export const revalidate = 60;
 
@@ -24,10 +25,10 @@ function calculateReadingTime(content) {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  if (!slug) return { title: "Protocol Logs | Mahraj Technologies" };
+  if (!slug) return { title: "Insights & Articles | Mahraj Technologies" };
 
   const post = await client.fetch(getPostBySlug, { slug });
-  if (!post) return { title: "Protocol Not Found" };
+  if (!post) return { title: "Article Not Found" };
 
   const canonical = `https://mahraj.tech/blogs/${post.slug}`;
 
@@ -86,7 +87,7 @@ export default async function BlogDetailPage({ params }) {
     "datePublished": post.publishedAt,
     "author": {
       "@type": "Person",
-      "name": post.author?.name || "Mahraj Architect"
+      "name": post.author?.name || "Mahraj Expert"
     }
   };
 
@@ -136,7 +137,7 @@ export default async function BlogDetailPage({ params }) {
             )}
             <div className="flex items-center gap-2 text-zinc-500 text-[10px] font-bold uppercase">
               <Calendar className="w-3 h-3" />
-              {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'LOG_PENDING'}
+              {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'PUBLISHED'}
             </div>
             <div className="flex items-center gap-2 text-zinc-500 text-[10px] font-bold uppercase">
               <Clock className="w-3 h-3" />
@@ -216,13 +217,13 @@ export default async function BlogDetailPage({ params }) {
           {post.faqs && post.faqs.length > 0 && (
             <div className="mt-32 border-t border-zinc-900 pt-20">
               <h3 className="text-white text-3xl font-black uppercase mb-12 flex items-center gap-4">
-                <span className="text-primary">//</span> FREQUENTLY ASKED QUESTIONS
+                FREQUENTLY ASKED QUESTIONS
               </h3>
               <div className="space-y-3">
                 {post.faqs.map((faq, i) => (
                   <div key={i} className="bg-zinc-950/50 p-8 border border-zinc-900 group transition-colors hover:border-zinc-800">
                     <div className="flex items-start gap-4 mb-4">
-                      <span className="text-primary font-black pt-1">Q_</span>
+                      <span className="text-primary font-black pt-1">Q:</span>
                       <h4 className="text-white font-bold uppercase text-lg">{faq.question}</h4>
                     </div>
                     <div className="flex items-start gap-4 text-zinc-500 leading-relaxed text-sm pl-8">
@@ -246,30 +247,10 @@ export default async function BlogDetailPage({ params }) {
           )}
         </div>
 
-        {/* Sidebar Right - Actions */}
+        {/* Sidebar Right - Recent Articles */}
         <aside className="lg:col-span-3">
-          <div className="sticky top-32 space-y-12">
-            <div>
-              <span className="text-[10px] font-bold text-zinc-700 uppercase mb-8 block flex items-center gap-3">
-                <span className="w-6 h-[1px] bg-primary" />
-                RECENT BLOGS
-              </span>
-              <div className="space-y-8">
-                {recentPosts.map((rPost) => (
-                  <Link key={rPost.slug} href={`/blogs/${rPost.slug}`} className="group block">
-                    <div className="flex flex-col gap-2">
-                      <h5 className="text-white font-black uppercase text-xs leading-tight group-hover:text-primary transition-colors line-clamp-2">
-                        {rPost.title}
-                      </h5>
-                      <div className="flex items-center gap-2 text-zinc-600 font-bold uppercase text-[8px]">
-                        {new Date(rPost.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}
-                        <ChevronRight className="w-2 h-2 group-hover:translate-x-1 transition-transform text-primary" />
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
+          <div className="sticky top-32">
+            <RecentPostsSidebar recentPosts={recentPosts} />
           </div>
         </aside>
       </section>

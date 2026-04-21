@@ -7,37 +7,31 @@ const phases = [
   {
     id: "01",
     title: "Administrative Support",
-    code: "SYST_AUDIT_0x1",
     description: "We provide reliable administrative support to manage emails, scheduling, documentation, and reporting. Our virtual assistance services improve business efficiency, streamline operations, and help teams focus on core growth activities.",
   },
   {
     id: "02",
     title: "Task Management Assistance",
-    code: "STR_BUILD_0x2",
     description: "Our team handles task management with proper organization and follow-ups. We ensure smooth workflow coordination, timely execution, and productivity improvement using digital tools and structured virtual support systems for businesses.",
   },
   {
     id: "03",
     title: "Calendar & Email Management",
-    code: "STAGED_SYNC_0x3",
     description: "We manage calendars and emails professionally to avoid missed opportunities and delays. Our virtual assistants organize meetings, prioritize communication, and maintain smooth scheduling for better time management and workflow efficiency.",
   },
   {
     id: "04",
     title: "Customer Support Handling",
-    code: "FORENSIC_QA_0x4",
     description: "We provide responsive customer support assistance to maintain client satisfaction. Our virtual assistance ensures timely replies, query handling, and professional communication that improve customer experience and strengthen brand trust online.",
   },
   {
     id: "05",
     title: "Data Entry & Research",
-    code: "EDGE_OPT_0x5",
     description: "Our team handles accurate data entry and detailed online research tasks. Our virtual assistants ensure error-free documentation, organized data systems, and insightful research that supports business decisions and operational improvements effectively.",
   },
   {
     id: "06",
     title: "Business Operations Support",
-    code: "AI_WATCH_0x6",
     description: "We assist in daily business operations to reduce workload and improve productivity. Our virtual assistance services help streamline processes, manage repetitive tasks, and ensure the smooth execution of business activities consistently.",
   },
 ];

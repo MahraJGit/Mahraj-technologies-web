@@ -7,8 +7,8 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 export async function generateMetadata() {
   return {
-    title: "Protocol Logs | Mahraj Technologies",
-    description: "Deep dives into real-time 3D engines, edge protocols, and neural architectures. Access the technical breakthroughs of Mahraj Technologies.",
+    title: "Insights & Articles | Mahraj Technologies",
+    description: "Explore the latest expert insights, digital strategies, and industry trends from Mahraj Technologies to help grow your business online.",
   };
 }
 

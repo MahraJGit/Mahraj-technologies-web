@@ -6,28 +6,38 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Terminal } from 'lucide-react';
 import { urlFor } from '@/lib/sanity';
 import { useRouter } from 'next/navigation';
+import { useTransition } from 'react';
+import LoadingOverlay from '@/components/ui/LoadingOverlay';
 
 export default function BlogGrid({ posts = [], totalPages, currentPage, activeFilter }) {
   const router = useRouter();
+  const [isPending, startTransition] = useTransition();
   const filters = ["ALL", "WEB DEVELOPMENT", "APP DEVELOPMENT", "SOFTWARE DEVELOPMENT", "DIGITAL MARKETING", "GRAPHIC DESIGNING"];
 
   const handleFilterChange = (filter) => {
-    const params = new URLSearchParams();
-    if (filter !== "ALL") params.set('filter', filter);
-    params.set('page', '1'); // Reset to page 1 on filter change
-    router.push(`/blogs?${params.toString()}`, { scroll: false });
+    startTransition(() => {
+      const params = new URLSearchParams();
+      if (filter !== "ALL") params.set('filter', filter);
+      params.set('page', '1'); // Reset to page 1 on filter change
+      router.push(`/blogs?${params.toString()}`, { scroll: false });
+    });
   };
 
   const handlePageChange = (page) => {
-    const params = new URLSearchParams();
-    if (activeFilter !== "ALL") params.set('filter', activeFilter);
-    params.set('page', page.toString());
-    router.push(`/blogs?${params.toString()}`, { scroll: false });
+    startTransition(() => {
+      const params = new URLSearchParams();
+      if (activeFilter !== "ALL") params.set('filter', activeFilter);
+      params.set('page', page.toString());
+      router.push(`/blogs?${params.toString()}`, { scroll: false });
+    });
   };
 
   return (
-    <section className="py-16 lg:py-24 bg-black">
-      <div className="site-container">
+    <section className="py-16 lg:py-24 bg-black relative">
+      {/* Loading Overlay */}
+      <LoadingOverlay isPending={isPending} message="Loading latest updates..." />
+      
+      <div className="site-container font-sans">
         {/* Protocol Logs Header & Filter */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
           <div>
@@ -58,7 +68,15 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
           {posts.map((post, index) => (
-            <Link key={post._id} href={`/blogs/${post.slug}`}>
+            <div 
+              key={post._id} 
+              onClick={() => {
+                startTransition(() => {
+                  router.push(`/blogs/${post.slug}`);
+                });
+              }}
+              className="contents cursor-pointer"
+            >
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -93,9 +111,9 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
 
                 {/* Metadata */}
                 <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
-                  <span className="text-[10px] font-bold text-zinc-500">{post.ref || 'REF: INTERNAL'}</span>
+                  <span className="text-[10px] font-bold text-zinc-500">{post.ref || 'MAHRAJ / INSIGHTS'}</span>
                   <span className="text-[10px] font-bold text-zinc-500">
-                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'LOG_PENDING'}
+                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'PUBLISHED'}
                   </span>
                 </div>
 
@@ -115,7 +133,7 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
                   <ArrowRight className="w-4 h-4 text-primary transition-transform group-hover/link:translate-x-2" />
                 </div>
               </motion.article>
-            </Link>
+            </div>
           ))}
 
           {/* Newsletter Card Integration */}
@@ -159,7 +177,7 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
                 ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'text-white hover:bg-white hover:text-black'}
               `}
             >
-              PREV_LOG
+              PREVIOUS
             </button>
             
             <div className="flex items-center gap-2">
@@ -186,7 +204,7 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
                 ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'text-white hover:bg-white hover:text-black'}
               `}
             >
-              NEXT_LOG
+              NEXT
             </button>
           </div>
         )}

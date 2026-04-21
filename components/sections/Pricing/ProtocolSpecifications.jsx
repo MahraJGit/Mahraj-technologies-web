@@ -56,7 +56,7 @@ export default function ProtocolSpecifications() {
       <div className="site-container">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white uppercase">
-            Protocol <br />
+            Service <br />
             <span className="text-zinc-600">Specifications</span>
           </h2>
         </div>
