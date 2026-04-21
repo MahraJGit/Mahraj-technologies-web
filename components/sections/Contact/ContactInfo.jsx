@@ -64,7 +64,7 @@ export default function ContactInfo() {
               </div>
 
               {/* Embedded Map */}
-              <div className="mt-4 rounded-lg overflow-hidden h-40 border border-zinc-800/50">
+              <div className="mt-4 rounded-lg overflow-hidden h-80 border border-zinc-800/50">
                 <iframe
                   src={node.mapSrc}
                   width="100%"
@@ -87,7 +87,7 @@ export default function ContactInfo() {
         <div className="grid gap-8">
           <div className="flex flex-col">
             <span className="text-xs  text-primary uppercase mb-2 font-bold select-none opacity-70">Phone</span>
-            <span className="text-white text-2xl">+971 58 585 8585</span>
+            <span className="text-white text-2xl">+971 50 883 1201</span>
           </div>
           <div className="flex flex-col">
             <span className="text-xs  text-primary uppercase mb-2 font-bold select-none opacity-70">Email</span>

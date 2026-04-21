@@ -34,7 +34,7 @@ export default function Footer() {
               <h3 className="text-white font-bold text-base mb-6">Company</h3>
               <ul className="space-y-4">
                 <li>
-                  <Link href="/about" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                  <Link href="/#about" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
                     About
                   </Link>
                 </li>
@@ -44,8 +44,8 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
-                    Blog
+                  <Link href="/blogs" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                    Blogs
                   </Link>
                 </li>
               </ul>

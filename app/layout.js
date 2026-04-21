@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CalendlyProvider } from "@/context/CalendlyContext";
 import CalendlyModal from "@/components/ui/CalendlyModal";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "@/app/api/uploadthing/core";
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
           <main className="flex-1">{children}</main>
           <Footer />
           <CalendlyModal />
+          <WhatsAppButton />
         </CalendlyProvider>
       </body>
     </html>

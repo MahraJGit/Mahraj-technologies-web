@@ -5,7 +5,7 @@ import aboutImg from "@/public/about.png";
 
 export default function About() {
   return (
-    <section className="w-full bg-[#050505] py-16 md:py-32 relative z-10">
+    <section id="about" className="w-full bg-[#050505] py-16 lg:py-24 relative z-10">
       <div className="site-container">
 
         {/* Section Heading */}

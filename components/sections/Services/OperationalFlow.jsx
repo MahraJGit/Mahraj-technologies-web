@@ -93,13 +93,13 @@ const PhaseContent = ({ phase, index, scrollProgress }) => {
       className="absolute inset-0 flex items-center justify-start pointer-events-none"
     >
       <div className="site-container w-full h-full flex items-center">
-        <div className="w-full md:w-4/5 lg:w-3/4 xl:w-1/2 p-6 lg:p-12 xl:p-24 text-left relative">
+        <div className="w-full md:w-4/5 lg:w-3/4 xl:w-4/5 p-6 lg:p-12 xl:p-24 text-left relative">
           <div className="relative z-10 flex flex-col items-start gap-8 lg:gap-12">
             <div className="flex flex-col gap-6">
               {/* <span className="text-primary text-[10px] md:text-xs font-black uppercase">
                 PHASE_0{phase.id}
               </span> */}
-              <h3 className="text-white text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black uppercase leading-[0.95] max-w-4xl">
+              <h3 className="text-white text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black uppercase leading-[0.95] max-w-6xl">
                 {phase.title}
               </h3>
 
@@ -119,7 +119,7 @@ const PhaseContent = ({ phase, index, scrollProgress }) => {
 
 const MobileFlow = () => {
   return (
-    <div className="py-20 px-6 space-y-32 flex flex-col">
+    <div className="py-16 px-6 space-y-32 flex flex-col">
       <div className="space-y-4">
         <div className="flex items-center gap-4">
           <div className="w-12 h-[1px] bg-primary" />
@@ -183,7 +183,7 @@ export default function OperationalFlow() {
             </div>
 
             {/* Top Label */}
-            <div className="absolute top-12 left-12 z-50 pointer-events-none text-left">
+            <div className="absolute top-8 left-12 z-[100] pointer-events-none text-left">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-[1px] bg-primary" />
                 <span className="text-white text-[10px] uppercase font-bold">
@@ -193,7 +193,7 @@ export default function OperationalFlow() {
             </div>
 
             {/* Central Phases */}
-            <div className="relative flex-1">
+            <div className="relative flex-1 mt-24">
               {phases.map((phase, index) => (
                 <PhaseContent key={phase.id} phase={phase} index={index} scrollProgress={smoothProgress} />
               ))}

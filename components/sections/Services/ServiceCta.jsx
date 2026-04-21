@@ -8,7 +8,7 @@ export default function ServiceCta() {
     const { openModal } = useCalendly();
 
     return (
-        <section className="relative w-full py-20 md:py-48 overflow-hidden bg-black">
+        <section className="relative w-full py-16 lg:py-24 overflow-hidden bg-black">
             {/* Background Image with Cinematic Overlay */}
             <div className="absolute inset-0 z-0">
                 <div

@@ -52,7 +52,7 @@ export default function ProtocolSpecifications() {
   };
 
   return (
-    <section className="py-24 bg-[#050505] border-t border-zinc-900/50">
+    <section className="py-16 lg:py-24 bg-[#050505] border-t border-zinc-900/50">
       <div className="site-container">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white uppercase">

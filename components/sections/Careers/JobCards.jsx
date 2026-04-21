@@ -19,7 +19,7 @@ const toPlainText = (blocks = []) => {
 
 export default function JobCards({ jobs = [] }) {
   return (
-    <section className="relative w-full py-20 bg-black border-b border-zinc-900/50">
+    <section className="relative w-full py-16 lg:py-24 bg-black border-b border-zinc-900/50">
       <div className="site-container">
         <div className="mb-12">
           <h2 className="text-3xl md:text-5xl font-black text-white uppercase">Current Job Openings</h2>

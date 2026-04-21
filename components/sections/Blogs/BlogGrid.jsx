@@ -1,22 +1,32 @@
 "use client";
 
-import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Terminal } from 'lucide-react';
 import { urlFor } from '@/lib/sanity';
+import { useRouter } from 'next/navigation';
 
-export default function BlogGrid({ posts = [] }) {
-  const [activeFilter, setActiveFilter] = useState("ALL");
+export default function BlogGrid({ posts = [], totalPages, currentPage, activeFilter }) {
+  const router = useRouter();
   const filters = ["ALL", "WEB DEVELOPMENT", "APP DEVELOPMENT", "SOFTWARE DEVELOPMENT", "DIGITAL MARKETING", "GRAPHIC DESIGNING"];
 
-  const filteredPosts = activeFilter === "ALL"
-    ? posts
-    : posts.filter(post => post.filter === activeFilter);
+  const handleFilterChange = (filter) => {
+    const params = new URLSearchParams();
+    if (filter !== "ALL") params.set('filter', filter);
+    params.set('page', '1'); // Reset to page 1 on filter change
+    router.push(`/blogs?${params.toString()}`, { scroll: false });
+  };
+
+  const handlePageChange = (page) => {
+    const params = new URLSearchParams();
+    if (activeFilter !== "ALL") params.set('filter', activeFilter);
+    params.set('page', page.toString());
+    router.push(`/blogs?${params.toString()}`, { scroll: false });
+  };
 
   return (
-    <section className="py-24 bg-black">
+    <section className="py-16 lg:py-24 bg-black">
       <div className="site-container">
         {/* Protocol Logs Header & Filter */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
@@ -29,7 +39,7 @@ export default function BlogGrid({ posts = [] }) {
             {filters.map((f) => (
               <button
                 key={f}
-                onClick={() => setActiveFilter(f)}
+                onClick={() => handleFilterChange(f)}
                 className={`text-[11px] font-black uppercase transition-all relative py-2 ${activeFilter === f ? "text-primary" : "text-white hover:text-primary"
                   }`}
               >
@@ -47,7 +57,7 @@ export default function BlogGrid({ posts = [] }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
-          {filteredPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <Link key={post._id} href={`/blogs/${post.slug}`}>
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
@@ -138,6 +148,48 @@ export default function BlogGrid({ posts = [] }) {
             </div>
           </motion.div>
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="mt-20 flex items-center justify-center gap-4">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`px-6 py-3 border border-zinc-800 text-[10px] font-black uppercase transition-all
+                ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'text-white hover:bg-white hover:text-black'}
+              `}
+            >
+              PREV_LOG
+            </button>
+            
+            <div className="flex items-center gap-2">
+              {[...Array(totalPages)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => handlePageChange(i + 1)}
+                  className={`w-10 h-10 flex items-center justify-center text-[10px] font-black transition-all border
+                    ${currentPage === i + 1 
+                      ? 'bg-primary border-primary text-white' 
+                      : 'border-zinc-800 text-zinc-500 hover:border-white hover:text-white'
+                    }
+                  `}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`px-6 py-3 border border-zinc-800 text-[10px] font-black uppercase transition-all
+                ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'text-white hover:bg-white hover:text-black'}
+              `}
+            >
+              NEXT_LOG
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

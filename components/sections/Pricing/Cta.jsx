@@ -9,7 +9,7 @@ import { useCalendly } from "@/context/CalendlyContext";
 export default function Cta() {
     const { openModal } = useCalendly();
     return (
-        <section className="py-24 bg-[#050505]">
+        <section className="py-16 lg:py-20 bg-[#050505]">
             <div className="site-container">
                 <div className="relative rounded-[2.5rem] overflow-hidden border border-zinc-900 bg-black flex flex-col items-center group shadow-2xl">
                 {/* Understated Background Layer - Restored Object-Cover */}

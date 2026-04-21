@@ -41,7 +41,7 @@ const CaseStudyRow = ({ project, index }) => {
   const isEven = index % 2 === 0;
 
   return (
-    <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-24 py-20 lg:py-32 border-b border-zinc-900/50 last:border-0`}>
+    <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-24 py-16 lg:py-24 border-b border-zinc-900/50 last:border-0`}>
 
       {/* Image Column */}
       <motion.div
@@ -138,7 +138,7 @@ const CaseStudyRow = ({ project, index }) => {
 
 export default function CaseStudyList() {
   return (
-    <section className="bg-black py-12">
+    <section className="bg-black py-16 lg:py-24">
       <div className="site-container">
         {projects.map((project, index) => (
           <CaseStudyRow key={project.id} project={project} index={index} />

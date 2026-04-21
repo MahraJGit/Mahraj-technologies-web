@@ -56,6 +56,16 @@ export default {
       name: 'category',
       title: 'Category',
       type: 'string',
+      options: {
+        list: [
+          { title: 'Web Development', value: 'WEB DEVELOPMENT' },
+          { title: 'App Development', value: 'APP DEVELOPMENT' },
+          { title: 'Software Development', value: 'SOFTWARE DEVELOPMENT' },
+          { title: 'Digital Marketing', value: 'DIGITAL MARKETING' },
+          { title: 'Graphic Designing', value: 'GRAPHIC DESIGNING' },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'tags',

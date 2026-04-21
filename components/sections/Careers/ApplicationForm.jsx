@@ -124,7 +124,7 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section className="relative w-full py-20 px-4 sm:px-6 lg:px-8 xl:px-12 bg-black border-b border-zinc-900/50">
+    <section className="relative w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-12 bg-black border-b border-zinc-900/50">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col gap-12 bg-zinc-950/40 p-8 md:p-16 border border-zinc-900/50 rounded-2xl backdrop-blur-xl">
           <div className="space-y-4 text-center mb-4">
@@ -170,6 +170,11 @@ export default function ApplicationForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
                 <InputField label="Phone" placeholder="Phone Number" type="tel" name="phone" />
                 <InputField label="Portfolio URL" placeholder="https://..." name="portfolio" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
+                <InputField label="Current Salary" placeholder="e.g. 50,000" name="current_salary" />
+                <InputField label="Salary Expectations" placeholder="e.g. 70,000" name="salary_expectations" />
               </div>
 
               {/* Resume Upload Section */}

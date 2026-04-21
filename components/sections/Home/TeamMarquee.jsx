@@ -108,7 +108,7 @@ export default function TeamMarquee() {
   const displayTeam = [...teamMembers, ...teamMembers];
 
   return (
-    <section className="w-full bg-[#050505] py-24 overflow-hidden border-t border-zinc-900/50">
+    <section className="w-full bg-[#050505] py-16 lg:py-20 overflow-hidden border-t border-zinc-900/50">
       <div className="site-container mb-16">
         <div className="flex flex-col gap-4 text-center">
           {/* <span className="text-primary  text-sm uppercase font-bold">
