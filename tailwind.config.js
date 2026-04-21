@@ -13,8 +13,9 @@ module.exports = {
         body: "var(--color-body)",
       },
       fontFamily: {
-        sans: ["Space Grotesk", "sans-serif"],
-        grotesk: ["Space Grotesk", "sans-serif"],
+        sans: ["var(--font-poppins)", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        "bebas-neue": ["var(--font-bebas-neue)", "cursive"],
       },
     },
   },

@@ -1,4 +1,4 @@
-import { Poppins } from "next/font/google";
+import { Poppins, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,15 +14,15 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-space-grotesk",
+  variable: "--font-poppins",
 });
 
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weight: ["300", "400", "500", "600", "700"],
-//   display: "swap",
-//   variable: "--font-poppins",
-// });
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-bebas-neue",
+});
 
 export const metadata = {
   icons: {
@@ -35,7 +35,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable} data-scroll-behavior="smooth">
+    <html lang="en" className={`${poppins.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth">
       <body className="min-h-screen flex flex-col antialiased">
         <CalendlyProvider>
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />

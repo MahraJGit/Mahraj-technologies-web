@@ -38,7 +38,7 @@ export default function Header() {
               height={40}
               className="w-auto h-8 lg:h-10 object-contain"
             />
-            <span className="font-semibold text-white text-lg xl:text-xl hidden sm:block lg:hidden xl:block">
+            <span className="text-white text-lg xl:text-xl hidden sm:block lg:hidden xl:block font-bebas-neue">
               Mahraj Technologies
             </span>
           </Link>
