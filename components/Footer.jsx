@@ -55,13 +55,13 @@ export default function Footer() {
               <h3 className="text-white font-bold text-base mb-6">Legal</h3>
               <ul className="space-y-4">
                 <li>
-                  <Link href="/privacy" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                  <Link href="/privacy-policy" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
-                    Terms of Service
+                  <Link href="/terms-and-conditions" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                    Terms & Conditions
                   </Link>
                 </li>
               </ul>

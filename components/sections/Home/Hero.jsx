@@ -1,12 +1,14 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import NeuralNetworkBackground from './NeuralNetworkBackground';
 import Link from 'next/link';
 
 export default function Hero() {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   return (
-    <section className="relative flex min-h-[calc(100vh-100px)] py-12 md:py-24 items-center justify-center bg-primary overflow-hidden px-4">
+    <section className={`relative flex min-h-[calc(100vh-100px)] py-12 md:py-24 items-center justify-center overflow-hidden px-4 transition-colors duration-700 ${isVideoLoaded ? 'bg-primary' : 'bg-[#050505]'}`}>
       {/* Dynamic Background */}
       {/* <NeuralNetworkBackground /> */}
 
@@ -16,7 +18,8 @@ export default function Hero() {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        onLoadedData={() => setIsVideoLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ mixBlendMode: 'luminosity' }}
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
