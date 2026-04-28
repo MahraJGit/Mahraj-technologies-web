@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-12 md:gap-16 lg:gap-26">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-12 md:gap-16 lg:gap-22">
             <div>
               <h3 className="text-white font-bold text-base mb-6">Company</h3>
               <ul className="space-y-4">

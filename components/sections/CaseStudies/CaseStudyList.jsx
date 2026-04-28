@@ -3,6 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import cs1 from '@/public/casestudy-1.png';
+import cs2 from '@/public/casestudy-2.png';
+import cs3 from '@/public/casestudy-3.png';
 
 const projects = [
   {
@@ -13,7 +16,7 @@ const projects = [
     problem: "The client struggled with low website traffic, poor conversions, and inconsistent lead generation, resulting in weak online sales performance.",
     solution: "We implemented SEO optimization, targeted digital marketing campaigns, and a structured sales funnel that increased traffic by 68% and conversions by 42%.",
     outcome: "68% Increase in Website Traffic. 42% Boost in Conversion Rate.",
-    image: "/casestudy1.png"
+    image: cs1
   },
   {
     id: "02",
@@ -23,7 +26,7 @@ const projects = [
     problem: "The business had minimal online visibility, low-quality leads, and inefficient customer acquisition strategies, limiting consistent monthly revenue growth opportunities significantly.",
     solution: "We built a lead generation system using SEO, landing pages, and paid campaigns, resulting in 3x more qualified leads within months.",
     outcome: "3x Growth in Qualified Leads. 55% Improvement in Lead Quality",
-    image: "/casestudy2.png"
+    image: cs2
   },
   {
     id: "03",
@@ -33,7 +36,7 @@ const projects = [
     problem: "The SaaS platform faced high bounce rates, unclear UI structure, and very low trial sign-ups despite having a strong market product.",
     solution: "We redesigned UX with conversion-focused wireframes, A/B tested onboarding flows, and optimized interactions to boost engagement and retention effectively.",
     outcome: "60% Increase in User Engagement. 48% Higher Trial Sign-ups",
-    image: "/casestudy3.png"
+    image: cs3
   }
 ];
 
