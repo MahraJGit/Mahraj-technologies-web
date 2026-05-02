@@ -18,7 +18,7 @@ export default function TermsAndConditionsPage() {
       <section className="relative py-16 lg:py-24 overflow-hidden bg-[radial-gradient(circle_at_1px_1px,#18181b_1px,transparent_0)] bg-[size:40px_40px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-zinc-300">
           <div className="space-y-12">
-            
+
             <div className="space-y-4">
               <p className="text-lg leading-relaxed">
                 If you do not agree with any part of these terms, you must discontinue use of our services immediately.
@@ -188,11 +188,11 @@ export default function TermsAndConditionsPage() {
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                  <strong className="text-white w-20">Phone:</strong> +971 50 883 1201
+                  <strong className="text-white w-20">Phone:</strong> +971 52 785 1523
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
-                  <strong className="text-white w-20 flex-shrink-0">Address:</strong> 
+                  <strong className="text-white w-20 flex-shrink-0">Address:</strong>
                   <span>B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai</span>
                 </li>
               </ul>

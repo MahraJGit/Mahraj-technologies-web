@@ -54,7 +54,7 @@ const TeamMemberCard = ({ member }) => {
     <motion.div
       whileHover="hover"
       initial="initial"
-      className="relative w-[280px] md:w-[300px] aspect-[4/5] mx-4 flex-shrink-0 overflow-hidden bg-zinc-900 rounded-lg shadow-2xl"
+      className="relative w-[280px] md:w-[300px] aspect-[4/5] mx-4 flex-shrink-0 overflow-hidden bg-zinc-900 rounded-lg shadow-2xl group/card"
     >
       {/* Grayscale to Color Image */}
       <motion.div
@@ -80,7 +80,8 @@ const TeamMemberCard = ({ member }) => {
           initial: { opacity: 0 },
           hover: { opacity: 1 }
         }}
-        className="absolute inset-0 border border-primary/70 rounded-lg pointer-events-none z-20"
+        transition={{ duration: 0.3 }}
+        className="absolute inset-0 border-[2px] border-primary/70 rounded-lg pointer-events-none z-20"
       />
 
       {/* Overlay with details */}
@@ -125,10 +126,10 @@ export default function TeamMarquee() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative py-4 flex overflow-hidden lg:hover:pause-track"
+        className="relative py-4 flex overflow-hidden group"
       >
         {/* Infinite Scrolling Track */}
-        <div className="flex w-max animate-marquee-infinite">
+        <div className="flex w-max animate-marquee-infinite group-hover:[animation-play-state:paused]">
           {displayTeam.map((member, index) => (
             <TeamMemberCard key={`${member.id}-${index}`} member={member} />
           ))}

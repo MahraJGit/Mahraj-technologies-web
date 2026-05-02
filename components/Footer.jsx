@@ -76,7 +76,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a href="tel:+971508831201" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors cursor-pointer">
-                    +971 50 883 1201
+                    +971 52 785 1523
                   </a>
                 </li>
                 <li className="text-zinc-400 text-sm font-medium pt-2">

@@ -87,7 +87,7 @@ export default function ContactInfo() {
         <div className="grid gap-8">
           <div className="flex flex-col">
             <span className="text-xs  text-primary uppercase mb-2 font-bold select-none opacity-70">Phone</span>
-            <span className="text-white text-2xl">+971 50 883 1201</span>
+            <span className="text-white text-2xl">+971 52 785 1523</span>
           </div>
           <div className="flex flex-col">
             <span className="text-xs  text-primary uppercase mb-2 font-bold select-none opacity-70">Email</span>

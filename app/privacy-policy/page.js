@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
       <section className="relative py-16 lg:py-24 overflow-hidden bg-[radial-gradient(circle_at_1px_1px,#18181b_1px,transparent_0)] bg-[size:40px_40px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-zinc-300">
           <div className="space-y-12">
-            
+
             <div className="space-y-4">
               <p className="text-lg leading-relaxed">
                 Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you visit our website or use our services.
@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold text-white border-l-4 border-primary pl-4">Information We Collect</h2>
-              
+
               <h3 className="text-xl font-semibold text-white mt-6">Personal Information</h3>
               <p className="leading-relaxed">We may collect personal information that you voluntarily provide, including but not limited to:</p>
               <ul className="list-disc pl-6 space-y-2 text-zinc-400">
@@ -149,11 +149,11 @@ export default function PrivacyPolicyPage() {
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                  <strong className="text-white w-20">Phone:</strong> +971 50 883 1201
+                  <strong className="text-white w-20">Phone:</strong> +971 52 785 1523
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
-                  <strong className="text-white w-20 flex-shrink-0">Address:</strong> 
+                  <strong className="text-white w-20 flex-shrink-0">Address:</strong>
                   <span>B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai</span>
                 </li>
               </ul>
