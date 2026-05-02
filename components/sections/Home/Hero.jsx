@@ -50,7 +50,7 @@ export default function Hero() {
         <source src="/herobg.webm" type="video/webm" />
       </video>
 
-      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#000000] pointer-events-none ${isVideoLoaded ? 'opacity-35' : 'opacity-0'}`} />
+      <div className={`absolute inset-0 bg-[#000000] pointer-events-none transition-opacity duration-300 ${isVideoLoaded ? 'opacity-40' : 'opacity-0'}`} />
 
       <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`} />
 
@@ -83,22 +83,22 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-zinc-800/50 pt-12 max-w-3xl mx-auto">
+        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-3xl mx-auto">
           <div>
             <div className="text-2xl font-bold text-white mb-1">95%</div>
-            <div className="text-[10px] text-primary uppercase">Client Satisfaction</div>
+            <div className="text-[10px] text-zinc-300 uppercase">Client Satisfaction</div>
           </div>
           <div>
             <div className="text-2xl font-bold text-white mb-1">80%</div>
-            <div className="text-[10px] text-primary uppercase">Visibility Growth</div>
+            <div className="text-[10px] text-zinc-300 uppercase">Visibility Growth</div>
           </div>
           <div>
             <div className="text-2xl font-bold text-white mb-1">70%</div>
-            <div className="text-[10px] text-primary uppercase">Conversion Increase</div>
+            <div className="text-[10px] text-zinc-300 uppercase">Conversion Increase</div>
           </div>
           <div>
             <div className="text-2xl font-bold text-white mb-1">60%</div>
-            <div className="text-[10px] text-primary uppercase">Lead Growth</div>
+            <div className="text-[10px] text-zinc-300 uppercase">Lead Growth</div>
           </div>
         </div>
       </div>
