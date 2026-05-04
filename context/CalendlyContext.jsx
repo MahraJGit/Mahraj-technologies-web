@@ -6,7 +6,7 @@ const CalendlyContext = createContext();
 
 export function CalendlyProvider({ children }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [calendlyUrl, setCalendlyUrl] = useState("https://calendly.com/muhammadahmed2k5/30min");
+  const [calendlyUrl, setCalendlyUrl] = useState("https://calendly.com/inquiries-mahrajtechnologies/30min");
 
   const openModal = (url) => {
     if (url) setCalendlyUrl(url);
