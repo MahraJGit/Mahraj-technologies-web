@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const nodes = [
   {
     id: "01",
-    location: "Isalamabad, Pakistan",
+    location: "Islamabad, Pakistan",
     address: "World Trade Center, Office Number 4087, Islamabad, Pakistan",
     role: "Engineering Hub",
     mapSrc: "https://maps.google.com/maps?q=33.5194,73.1549&z=15&output=embed"
