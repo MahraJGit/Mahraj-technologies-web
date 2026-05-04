@@ -34,6 +34,26 @@ export default function Footer() {
               <h3 className="text-white font-bold text-base mb-6">Company</h3>
               <ul className="space-y-4">
                 <li>
+                  <Link href="/services" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/case-studies" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                    Case Studies
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
                   <Link href="/#about" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
                     About
                   </Link>
@@ -46,6 +66,11 @@ export default function Footer() {
                 <li>
                   <Link href="/blogs" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
                     Blogs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sitemap" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
+                    Sitemap
                   </Link>
                 </li>
               </ul>
