@@ -108,9 +108,12 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="text-zinc-400 text-sm font-medium pt-2">
-                  <span className="block text-white mb-1">Open Hours:</span>
-                  Mon – Sat: 9 am – 6 pm<br />
-                  Sunday: CLOSED
+                  <span className="block text-white mb-2">Open Hours:</span>
+                  <div className="flex flex-col gap-1">
+                    <span>Mon – Fri: 9 am – 6 pm</span>
+                    <span>Saturday: 9 am – 4 pm</span>
+                    <span>Sunday: CLOSED</span>
+                  </div>
                 </li>
               </ul>
             </div>
