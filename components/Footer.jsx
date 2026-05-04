@@ -99,8 +99,11 @@ export default function Footer() {
                 <li className="text-zinc-400 text-sm font-medium leading-relaxed">
                   B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai
                 </li>
+                <li className="text-zinc-400 text-sm font-medium leading-relaxed">
+                  World Trade Center - Office Number - 4087 - Islamabad, Pakistan
+                </li>
                 <li>
-                  <a href="tel:+971508831201" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors cursor-pointer">
+                  <a href="tel:+971527851523" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors cursor-pointer">
                     +971 52 785 1523
                   </a>
                 </li>
