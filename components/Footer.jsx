@@ -97,7 +97,7 @@ export default function Footer() {
               <h3 className="text-white font-bold text-base mb-6">Contact Us</h3>
               <ul className="space-y-4">
                 <li className="text-zinc-400 text-sm font-medium leading-relaxed">
-                  B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai
+                  B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai - UAE
                 </li>
                 <li className="text-zinc-400 text-sm font-medium leading-relaxed">
                   World Trade Center - Office Number - 4087 - Islamabad, Pakistan

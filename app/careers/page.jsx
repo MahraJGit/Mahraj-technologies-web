@@ -6,8 +6,11 @@ import { getAllJobs } from "@/lib/queries";
 export const revalidate = 60;
 
 export const metadata = {
-  title: 'Careers | Mahraj Technologies',
-  description: 'Join the Mahraj Technologies team. We are looking for talented individuals to help us build the future.',
+  title: 'Build the Future Tech Careers |Mahraj Technologies',
+  description: 'We offer career opportunities at Mahraj Technologies where you can grow your skills, join innovative teams, and build the future tech careers with us.',
+  alternates: {
+    canonical: "https://www.mahrajtechnologies.com/careers",
+  },
 };
 
 export default async function CareersPage() {

@@ -2,8 +2,8 @@ import PageHero from "@/components/sections/PageHero";
 import CaseStudyList from "@/components/sections/CaseStudies/CaseStudyList";
 
 export const metadata = {
-  title: "Case Studies | Mahraj Technologies",
-  description: "Explore how we solve complex structural problems through aggressive clarity and technical soul.",
+  title: "Digital Solutions Case Studies |Mahraj Technologies",
+  description: "Our digital solutions case studies showcase real projects, results, and success stories, showing how strategies and technology drive business growth smoothly.",
 };
 
 export default function CaseStudiesPage() {

@@ -128,7 +128,7 @@ export default function ServiceCards() {
   return (
     <section className="bg-black">
       <div className="site-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-t border-x border-zinc-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-x border-zinc-800/80">
           {services.map((service) => (
             <div
               key={service.id}
@@ -161,7 +161,7 @@ export default function ServiceCards() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-zinc-500  text-base leading-relaxed mb-8 max-w-xs group-hover:text-zinc-400 transition-colors">
+                <p className="text-zinc-500  text-base leading-relaxed mb-8 max-w-md group-hover:text-zinc-400 transition-colors">
                   {service.description}
                 </p>
 

@@ -4,7 +4,11 @@ import OperationalFlow from "@/components/sections/Services/OperationalFlow";
 import ServiceCta from "@/components/sections/Services/ServiceCta";
 
 export const metadata = {
-  title: "Services | Mahraj Technologies",
+  title: "Core Digital Services | Mahraj Technologies",
+  description: "Our core digital services Mahraj Technologies deliver web development, SEO, automation, and marketing solutions to help businesses grow online.",
+  alternates: {
+    canonical: "https://www.mahrajtechnologies.com/services",
+  },
 };
 
 export default function ServicesPage() {

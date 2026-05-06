@@ -7,8 +7,11 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 export async function generateMetadata() {
   return {
-    title: "Insights & Articles | Mahraj Technologies",
-    description: "Explore the latest expert insights, digital strategies, and industry trends from Mahraj Technologies to help grow your business online.",
+    title: "Digital Business Blogs |Mahraj Technologies",
+    description: "We share insights and updates on our digital business blog, covering trends, strategies, and ideas to help businesses grow with modern digital solutions.",
+    alternates: {
+      canonical: "https://www.mahrajtechnologies.com/blogs",
+    },
   };
 }
 
@@ -22,13 +25,13 @@ export default async function BlogsPage({ searchParams }) {
 
   // Fetch posts and total count in parallel
   const [posts, totalCount] = await Promise.all([
-    client.fetch(getPaginatedPosts, { 
-      category: activeFilter, 
-      start, 
-      end 
+    client.fetch(getPaginatedPosts, {
+      category: activeFilter,
+      start,
+      end
     }),
-    client.fetch(getPostsCount, { 
-      category: activeFilter 
+    client.fetch(getPostsCount, {
+      category: activeFilter
     })
   ]);
 
@@ -42,9 +45,9 @@ export default async function BlogsPage({ searchParams }) {
         titleDark="Knowledge HUB"
         description="Explore our expert insights, digital strategies, and industry trends to help grow your business online."
       />
-      <BlogGrid 
-        posts={posts} 
-        totalPages={totalPages} 
+      <BlogGrid
+        posts={posts}
+        totalPages={totalPages}
         currentPage={currentPage}
         activeFilter={activeFilter}
       />

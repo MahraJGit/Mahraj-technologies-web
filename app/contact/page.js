@@ -2,6 +2,14 @@ import PageHero from "@/components/sections/PageHero";
 import ContactForm from "@/components/sections/Contact/ContactForm";
 import ContactInfo from "@/components/sections/Contact/ContactInfo";
 
+export const metadata = {
+  title: "Contact Mahraj Technologies",
+  description: "We make it easy to connect for inquiries, support, or project discussions. Contact Mahraj Technologies to get expert digital solutions and quick assistance.",
+  alternates: {
+    canonical: "https://www.mahrajtechnologies.com/contact",
+  },
+};
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#050505]">

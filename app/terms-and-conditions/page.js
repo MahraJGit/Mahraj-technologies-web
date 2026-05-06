@@ -1,8 +1,11 @@
 import PageHero from "@/components/sections/PageHero";
 
 export const metadata = {
-  title: "Terms & Conditions | Mahraj Technologies",
-  description: "Terms and Conditions for Mahraj Technologies",
+  title: "Mahraj Technologies Terms & Conditions Legal Guide",
+  description: "We outline clear terms & conditions at Mahraj Technologies to ensure transparency, fair use, and trust across all our digital services and users globally.",
+  alternates: {
+    canonical: "https://www.mahrajtechnologies.com/terms-and-conditions",
+  },
 };
 
 export default function TermsAndConditionsPage() {
@@ -194,7 +197,7 @@ export default function TermsAndConditionsPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
                   <strong className="text-white w-20 flex-shrink-0">Address:</strong>
                   <div className="flex flex-col gap-2">
-                    <span>B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai</span>
+                    <span>B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai - UAE</span>
                     <span>World Trade Center - Office Number - 4087 - Islamabad, Pakistan</span>
                   </div>
                 </li>

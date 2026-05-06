@@ -21,7 +21,7 @@ export default function OurTeam() {
                             <div className="flex w-max animate-marquee-infinite whitespace-nowrap opacity-20">
                                 {[...Array(8)].map((_, i) => (
                                     <span key={i} className="text-white text-6xl md:text-9xl font-black uppercase px-12">
-                                        WE GROW TOGETHER
+                                        our strength behind success
                                     </span>
                                 ))}
                             </div>
