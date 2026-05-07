@@ -34,7 +34,10 @@ export const metadata = {
   alternates: {
     canonical: "https://mahrajtechnologies.com",
   },
-  publisher: "Mahraj Technologies"
+  publisher: "Mahraj Technologies",
+  verification: {
+    google: "zvJrwFGTgqB2HemXDyuoIc5jSoz7Cp1pG430dOPXU40",
+  }
 };
 
 export default function RootLayout({ children }) {
