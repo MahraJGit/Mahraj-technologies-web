@@ -8,6 +8,7 @@ export const metadata = {
   alternates: {
     canonical: "https://mahrajtechnologies.com/contact",
   },
+  publisher: "Mahraj Technologies"
 };
 
 export default function ContactPage() {

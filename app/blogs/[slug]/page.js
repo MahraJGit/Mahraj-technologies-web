@@ -39,6 +39,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: canonical,
     },
+    publisher: "Mahraj Technologies",
     openGraph: {
       title: post.seo?.metaTitle || post.title,
       description: post.seo?.metaDescription || post.excerpt,

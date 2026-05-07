@@ -6,6 +6,7 @@ export const metadata = {
   alternates: {
     canonical: "https://mahrajtechnologies.com/privacy-policy",
   },
+  publisher: "Mahraj Technologies"
 };
 
 export default function PrivacyPolicyPage() {

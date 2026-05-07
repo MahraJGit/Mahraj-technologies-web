@@ -6,7 +6,8 @@ export const metadata = {
   description: "Our digital solutions case studies showcase real projects, results, and success stories, showing how strategies and technology drive business growth smoothly.",
   alternates: {
     canonical: "https://mahrajtechnologies.com/case-studies",
-  }
+  },
+  publisher: "Mahraj Technologies"
 };
 
 export default function CaseStudiesPage() {

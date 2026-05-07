@@ -9,6 +9,7 @@ export const metadata = {
   alternates: {
     canonical: "https://mahrajtechnologies.com/pricing",
   },
+  publisher: "Mahraj Technologies"
 };
 
 export default function PricingPage() {

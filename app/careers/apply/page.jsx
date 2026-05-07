@@ -4,6 +4,10 @@ import ApplicationForm from '@/components/sections/Careers/ApplicationForm';
 export const metadata = {
   title: 'Apply Now | Mahraj Technologies',
   description: 'Submit your application to join the Mahraj Technologies team.',
+  alternates: {
+    canonical: "https://mahrajtechnologies.com/careers/apply",
+  },
+  publisher: "Mahraj Technologies"
 };
 
 export default function ApplyPage() {

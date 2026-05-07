@@ -11,6 +11,7 @@ export const metadata = {
   alternates: {
     canonical: "https://mahrajtechnologies.com/careers",
   },
+  publisher: "Mahraj Technologies"
 };
 
 export default async function CareersPage() {

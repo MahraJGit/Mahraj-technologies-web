@@ -12,6 +12,7 @@ export async function generateMetadata() {
     alternates: {
       canonical: "https://mahrajtechnologies.com/blogs",
     },
+    publisher: "Mahraj Technologies"
   };
 }
 
