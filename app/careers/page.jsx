@@ -9,7 +9,7 @@ export const metadata = {
   title: 'Build the Future Tech Careers |Mahraj Technologies',
   description: 'We offer career opportunities at Mahraj Technologies where you can grow your skills, join innovative teams, and build the future tech careers with us.',
   alternates: {
-    canonical: "https://www.mahrajtechnologies.com/careers",
+    canonical: "https://mahrajtechnologies.com/careers",
   },
 };
 
@@ -19,7 +19,7 @@ export default async function CareersPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <PageHero
-        eyebrow="MAHRAJ / CAREERS"
+        eyebrow="HOME / CAREERS"
         titleLight="Join"
         titleDark="Our Team"
         description="At Mahraj Technologies, we welcome passionate professionals to grow, innovate, and build impactful digital solutions together."

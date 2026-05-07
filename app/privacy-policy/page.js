@@ -4,7 +4,7 @@ export const metadata = {
   title: "Privacy Policy | Mahraj Technologies",
   description: "We value your privacy and are committed to protecting your personal data. Discover here how Mahraj Technologies collects, uses, and safeguards information.",
   alternates: {
-    canonical: "https://www.mahrajtechnologies.com/privacy-policy",
+    canonical: "https://mahrajtechnologies.com/privacy-policy",
   },
 };
 
@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-[#050505]">
       <PageHero
-        eyebrow="MAHRAJ / LEGAL"
+        eyebrow="HOME / LEGAL"
         titleLight="Privacy"
         titleDark=" Policy"
         description="Learn how we collect, use, disclose, and safeguard your data when you visit our website or use our services."

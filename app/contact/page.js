@@ -6,7 +6,7 @@ export const metadata = {
   title: "Contact Mahraj Technologies",
   description: "We make it easy to connect for inquiries, support, or project discussions. Contact Mahraj Technologies to get expert digital solutions and quick assistance.",
   alternates: {
-    canonical: "https://www.mahrajtechnologies.com/contact",
+    canonical: "https://mahrajtechnologies.com/contact",
   },
 };
 
@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#050505]">
       <PageHero
-        eyebrow="MAHRAJ / CONTACT"
+        eyebrow="HOME / CONTACT"
         titleLight="Get"
         titleDark=" In Touch"
         description="Have questions or ready to start your project? At Mahraj Technologies, we’re here to connect and support your digital journey."

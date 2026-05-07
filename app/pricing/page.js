@@ -7,7 +7,7 @@ export const metadata = {
   title: "Digital Service Price Plan |Mahraj Technologies",
   description: "We offer digital service price plan options to fit business needs. Our pricing page helps you choose affordable digital solutions for growth and success.",
   alternates: {
-    canonical: "https://www.mahrajtechnologies.com/pricing",
+    canonical: "https://mahrajtechnologies.com/pricing",
   },
 };
 
@@ -15,7 +15,7 @@ export default function PricingPage() {
   return (
     <main className="min-h-screen bg-[#050505]">
       <PageHero
-        eyebrow="MAHRAJ / PRICING"
+        eyebrow="HOME / PRICING"
         titleLight="Our Pricing"
         titleDark="Structure"
         description="At Mahraj Technologies, we offer a transparent and flexible pricing structure designed to match business goals, ensuring value-driven digital solutions for every client."

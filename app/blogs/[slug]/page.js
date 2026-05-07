@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
   const post = await client.fetch(getPostBySlug, { slug });
   if (!post) return { title: "Article Not Found" };
 
-  const canonical = `https://mahraj.tech/blogs/${post.slug}`;
+  const canonical = `https://mahrajtechnologies.com/blogs/${post.slug}`;
 
   return {
     title: post.seo?.metaTitle || `${post.title} | Mahraj Technologies`,
@@ -190,12 +190,12 @@ export default async function BlogDetailPage({ params }) {
             <div className="mt-20 p-8 bg-zinc-950 border border-zinc-900 rounded-sm flex flex-col md:flex-row items-center md:items-start gap-8">
               <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 shrink-0">
                 {post.author.image ? (
-                  <Image 
-                    src={urlFor(post.author.image).url()} 
-                    alt={post.author.name} 
-                    fill 
+                  <Image
+                    src={urlFor(post.author.image).url()}
+                    alt={post.author.name}
+                    fill
                     sizes="96px"
-                    className="object-cover" 
+                    className="object-cover"
                   />
                 ) : (
                   <User className="w-12 h-12 m-6 text-zinc-800" />

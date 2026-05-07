@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Links Columns */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-12 md:gap-16 lg:gap-22">
             <div>
-              <h3 className="text-white font-bold text-base mb-6">Company</h3>
+              <h4 className="text-white font-bold text-base mb-6">Company</h4>
               <ul className="space-y-4">
                 <li>
                   <Link href="/services" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
@@ -77,7 +77,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-white font-bold text-base mb-6">Legal</h3>
+              <h4 className="text-white font-bold text-base mb-6">Legal</h4>
               <ul className="space-y-4">
                 <li>
                   <Link href="/privacy-policy" className="text-zinc-400 hover:text-white text-sm font-medium transition-colors">
@@ -94,7 +94,7 @@ export default function Footer() {
 
             {/* Contact Us Column */}
             <div className="max-w-[280px]">
-              <h3 className="text-white font-bold text-base mb-6">Contact Us</h3>
+              <h4 className="text-white font-bold text-base mb-6">Contact Us</h4>
               <ul className="space-y-4">
                 <li className="text-zinc-400 text-sm font-medium leading-relaxed">
                   B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai - UAE

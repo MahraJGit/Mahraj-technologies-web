@@ -31,6 +31,9 @@ export const metadata = {
   title: "Mahraj Technologies | Digital Innovation Agency",
   description:
     "Mahraj Technologies is a cutting-edge digital agency delivering world-class web development, app development, AI solutions, and product design services.",
+  alternates: {
+    canonical: "https://mahrajtechnologies.com",
+  }
 };
 
 export default function RootLayout({ children }) {

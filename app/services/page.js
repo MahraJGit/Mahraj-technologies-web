@@ -7,7 +7,7 @@ export const metadata = {
   title: "Core Digital Services | Mahraj Technologies",
   description: "Our core digital services Mahraj Technologies deliver web development, SEO, automation, and marketing solutions to help businesses grow online.",
   alternates: {
-    canonical: "https://www.mahrajtechnologies.com/services",
+    canonical: "https://mahrajtechnologies.com/services",
   },
 };
 
@@ -15,7 +15,7 @@ export default function ServicesPage() {
   return (
     <main className="w-full">
       <PageHero
-        eyebrow="MAHRAJ / SERVICES"
+        eyebrow="HOME / SERVICES"
         titleLight="Our Core"
         titleDark="Digital Solutions"
         description="At Mahraj Technologies, we deliver integrated digital solutions designed to drive growth, performance, and business success."

@@ -10,7 +10,7 @@ export async function generateMetadata() {
     title: "Digital Business Blogs |Mahraj Technologies",
     description: "We share insights and updates on our digital business blog, covering trends, strategies, and ideas to help businesses grow with modern digital solutions.",
     alternates: {
-      canonical: "https://www.mahrajtechnologies.com/blogs",
+      canonical: "https://mahrajtechnologies.com/blogs",
     },
   };
 }
@@ -40,7 +40,7 @@ export default async function BlogsPage({ searchParams }) {
   return (
     <main className="min-h-screen bg-black">
       <PageHero
-        eyebrow="MAHRAJ / BLOGS"
+        eyebrow="HOME / BLOGS"
         titleLight="Our"
         titleDark="Knowledge HUB"
         description="Explore our expert insights, digital strategies, and industry trends to help grow your business online."

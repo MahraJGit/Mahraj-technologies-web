@@ -128,17 +128,11 @@ export default function ServiceCards() {
   return (
     <section className="bg-black">
       <div className="site-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-x border-zinc-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
           {services.map((service) => (
             <div
               key={service.id}
-              className="relative border-b border-zinc-900/80 
-                       md:border-r md:[&:nth-child(2n)]:border-r-0 
-                       lg:[&:nth-child(2n)]:border-r 
-                       lg:[&:nth-child(3n)]:border-r-0 
-                       xl:[&:nth-child(3n)]:border-r
-                       xl:[&:nth-child(4n)]:border-r-0 
-                       bg-black group overflow-hidden"
+              className="relative border border-zinc-900/80"
             >
               <motion.div
                 whileHover={{ scale: 1.03 }}

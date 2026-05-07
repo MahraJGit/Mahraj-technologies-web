@@ -4,7 +4,7 @@ export const metadata = {
   title: "Mahraj Technologies Terms & Conditions Legal Guide",
   description: "We outline clear terms & conditions at Mahraj Technologies to ensure transparency, fair use, and trust across all our digital services and users globally.",
   alternates: {
-    canonical: "https://www.mahrajtechnologies.com/terms-and-conditions",
+    canonical: "https://mahrajtechnologies.com/terms-and-conditions",
   },
 };
 
@@ -12,7 +12,7 @@ export default function TermsAndConditionsPage() {
   return (
     <main className="min-h-screen bg-[#050505]">
       <PageHero
-        eyebrow="MAHRAJ / LEGAL"
+        eyebrow="HOME / LEGAL"
         titleLight="Terms &"
         titleDark=" Conditions"
         description="These Terms & Conditions govern your access to and use of our website and services. By using our website, you agree to comply with and be bound by these terms."
