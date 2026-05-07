@@ -34,6 +34,7 @@ export default function Header() {
             <Image
               src={logo}
               alt="Mahraj Technologies"
+              title="Mahraj Technologies Brand Logo"
               width={40}
               height={40}
               className="w-auto h-8 lg:h-10 object-contain"

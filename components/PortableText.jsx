@@ -34,6 +34,7 @@ const components = {
         <Image
           src={urlFor(value).url()}
           alt={value.alt || 'Content Image'}
+          title={value.originalFilename || value.alt || 'Content Image'}
           fill
           className="object-cover opacity-90"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 800px, 1200px"

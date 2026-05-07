@@ -16,7 +16,8 @@ const projects = [
     problem: "The client struggled with low website traffic, poor conversions, and inconsistent lead generation, resulting in weak online sales performance.",
     solution: "We implemented SEO optimization, targeted digital marketing campaigns, and a structured sales funnel that increased traffic by 68% and conversions by 42%.",
     outcome: "68% Increase in Website Traffic. 42% Boost in Conversion Rate.",
-    image: cs1
+    image: cs1,
+    imgTitle: "E-Commerce Growth System"
   },
   {
     id: "02",
@@ -26,7 +27,8 @@ const projects = [
     problem: "The business had minimal online visibility, low-quality leads, and inefficient customer acquisition strategies, limiting consistent monthly revenue growth opportunities significantly.",
     solution: "We built a lead generation system using SEO, landing pages, and paid campaigns, resulting in 3x more qualified leads within months.",
     outcome: "3x Growth in Qualified Leads. 55% Improvement in Lead Quality",
-    image: cs2
+    image: cs2,
+    imgTitle: "Local Business Lead Expansion"
   },
   {
     id: "03",
@@ -36,7 +38,8 @@ const projects = [
     problem: "The SaaS platform faced high bounce rates, unclear UI structure, and very low trial sign-ups despite having a strong market product.",
     solution: "We redesigned UX with conversion-focused wireframes, A/B tested onboarding flows, and optimized interactions to boost engagement and retention effectively.",
     outcome: "60% Increase in User Engagement. 48% Higher Trial Sign-ups",
-    image: cs3
+    image: cs3,
+    imgTitle: "SaaS Platform User Growth"
   }
 ];
 
@@ -58,6 +61,7 @@ const CaseStudyRow = ({ project, index }) => {
           <Image
             src={project.image}
             alt={project.title}
+            title={project.imgTitle}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
             className="object-cover transition-transform duration-700 group-hover:scale-105"

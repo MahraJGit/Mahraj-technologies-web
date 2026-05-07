@@ -164,6 +164,7 @@ export default async function BlogDetailPage({ params }) {
             <Image
               src={urlFor(post.mainImage).url()}
               alt={post.mainImage.alt || post.title}
+              title={post.mainImage.originalFilename || post.title}
               fill
               sizes="(max-width: 750px) 100vw, 750px"
               className="object-cover opacity-90"
@@ -194,6 +195,7 @@ export default async function BlogDetailPage({ params }) {
                   <Image
                     src={urlFor(post.author.image).url()}
                     alt={post.author.name}
+                    title={post.author.image.originalFilename || post.author.name}
                     fill
                     sizes="96px"
                     className="object-cover"

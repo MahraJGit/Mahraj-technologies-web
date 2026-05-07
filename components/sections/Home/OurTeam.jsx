@@ -1,4 +1,5 @@
 import teamImg from "@/public/team.png";
+import Image from "next/image";
 
 export default function OurTeam() {
     return (
@@ -27,10 +28,12 @@ export default function OurTeam() {
                             </div>
                         </div>
 
-                        <img
-                            src={teamImg.src}
-                            alt="Mahraj Team"
+                        <Image
+                            src={teamImg}
+                            alt="Mahraj Technologies Team"
                             className="relative z-10 w-full h-auto"
+                            title="Our Mahraj Technologies Team Members"
+
                         />
                     </div>
 

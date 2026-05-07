@@ -9,7 +9,6 @@ export default function ServiceCta() {
 
     return (
         <section className="relative w-full py-16 lg:py-24 overflow-hidden bg-black">
-            {/* Background Image with Cinematic Overlay */}
             <div className="absolute inset-0 z-0">
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-65"
@@ -17,7 +16,6 @@ export default function ServiceCta() {
                         backgroundImage: 'url("/ServiceCtaSection.png")',
                     }}
                 />
-                {/* Vignette and Gradient Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-transparent to-black/90" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-transparent to-black/90" />
                 <div className="absolute inset-0 bg-black/40" />

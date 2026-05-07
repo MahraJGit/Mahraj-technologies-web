@@ -26,6 +26,7 @@ export default function About() {
             <Image
               src={aboutImg}
               alt="Enterprise Logistics Platform rendering"
+              title="Enterprise Delivery Management Solution"
               className="w-full h-auto rounded-2xl object-cover border border-zinc-800/60 shadow-2xl shadow-primary/5"
             />
           </div>
