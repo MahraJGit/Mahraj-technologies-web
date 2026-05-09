@@ -7,6 +7,10 @@ export default function robots() {
         disallow: '/api/',
       },
     ],
-    sitemap: 'https://mahrajtechnologies.com/sitemap.xml',
+    sitemap: [
+      "https://mahrajtechnologies.com/sitemap.xml",
+      "https://mahrajtechnologies.com/static-sitemap.xml",
+      "https://mahrajtechnologies.com/blog-sitemap.xml",
+    ],
   }
 }
