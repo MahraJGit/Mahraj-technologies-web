@@ -43,6 +43,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth">
+      <head>
+        <link rel="preload" href="/hero-bg-poster.png" as="image" />
+      </head>
       <body className="min-h-screen flex flex-col antialiased">
         <CalendlyProvider>
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />

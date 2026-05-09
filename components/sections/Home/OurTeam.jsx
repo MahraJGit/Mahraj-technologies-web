@@ -21,7 +21,7 @@ export default function OurTeam() {
                         <div className="absolute top-[30%] -translate-y-1/2 left-0 w-full z-0 pointer-events-none">
                             <div className="flex w-max animate-marquee-infinite whitespace-nowrap opacity-20">
                                 {[...Array(8)].map((_, i) => (
-                                    <span key={i} className="text-white text-6xl md:text-9xl font-black uppercase px-12">
+                                    <span key={i} className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase px-8 md:px-12">
                                         our strength behind success
                                     </span>
                                 ))}
@@ -33,7 +33,7 @@ export default function OurTeam() {
                             alt="Mahraj Technologies Team"
                             className="relative z-10 w-full h-auto"
                             title="Our Mahraj Technologies Team Members"
-
+                            priority={true}
                         />
                     </div>
 

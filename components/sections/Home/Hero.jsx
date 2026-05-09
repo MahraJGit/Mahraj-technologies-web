@@ -50,6 +50,7 @@ export default function Hero() {
         loop
         muted
         playsInline
+        poster="/hero-bg-poster.png"
         onCanPlay={() => setIsVideoLoaded(true)}
         onError={() => setIsVideoLoaded(true)}
         className={`absolute inset-0 w-full h-full object-cover transition-none ${isVideoLoaded ? 'opacity-60' : 'opacity-0'}`}
