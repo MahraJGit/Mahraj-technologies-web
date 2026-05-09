@@ -13,6 +13,13 @@ export default function Hero() {
     if (videoRef.current && videoRef.current.readyState >= 2) {
       setIsVideoLoaded(true);
     }
+
+    // Fallback: Force load after 2.5 seconds in case video is blocked (e.g. iOS low power mode) or unsupported
+    const fallbackTimeout = setTimeout(() => {
+      setIsVideoLoaded(true);
+    }, 2500);
+
+    return () => clearTimeout(fallbackTimeout);
   }, []);
 
   return (
@@ -44,6 +51,7 @@ export default function Hero() {
         muted
         playsInline
         onCanPlay={() => setIsVideoLoaded(true)}
+        onError={() => setIsVideoLoaded(true)}
         className={`absolute inset-0 w-full h-full object-cover transition-none ${isVideoLoaded ? 'opacity-60' : 'opacity-0'}`}
         style={{ mixBlendMode: 'luminosity' }}
       >
