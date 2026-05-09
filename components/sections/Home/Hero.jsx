@@ -6,42 +6,12 @@ import NeuralNetworkBackground from './NeuralNetworkBackground';
 import Link from 'next/link';
 
 export default function Hero() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current && videoRef.current.readyState >= 2) {
-      setIsVideoLoaded(true);
-    }
-
-    // Fallback: Force load after 2.5 seconds in case video is blocked (e.g. iOS low power mode) or unsupported
-    const fallbackTimeout = setTimeout(() => {
-      setIsVideoLoaded(true);
-    }, 2500);
-
-    return () => clearTimeout(fallbackTimeout);
-  }, []);
 
   return (
     <section className="relative flex min-h-[calc(100vh-100px)] py-12 md:py-24 items-center justify-center overflow-hidden px-4 bg-[#050505]">
-      <AnimatePresence>
-        {!isVideoLoaded && (
-          <motion.div
-            key="preloader"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.1 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#050505]"
-          >
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <div
-        className={`absolute inset-0 bg-primary pointer-events-none ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
+        className="absolute inset-0 bg-primary pointer-events-none opacity-100"
       />
 
       <video
@@ -51,19 +21,17 @@ export default function Hero() {
         muted
         playsInline
         poster="/hero-bg-poster.png"
-        onCanPlay={() => setIsVideoLoaded(true)}
-        onError={() => setIsVideoLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover transition-none ${isVideoLoaded ? 'opacity-60' : 'opacity-0'}`}
+        className="absolute inset-0 w-full h-full object-cover transition-none opacity-60"
         style={{ mixBlendMode: 'luminosity' }}
       >
         <source src="/herobg.webm" type="video/webm" />
       </video>
 
-      <div className={`absolute inset-0 bg-[#000000] pointer-events-none transition-opacity duration-300 ${isVideoLoaded ? 'opacity-40' : 'opacity-0'}`} />
+      <div className="absolute inset-0 bg-[#000000] pointer-events-none opacity-40" />
 
-      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none opacity-100" />
 
-      <div className={`relative z-10 max-w-5xl mx-auto text-center pt-8 transition-opacity duration-300 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className="relative z-10 max-w-5xl mx-auto text-center pt-8 opacity-100">
         <h1 className="text-3xl sm:text-4xl md:text-7xl font-black text-white mb-8">
           Your Trusted Digital <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary animate-gradient-x">
