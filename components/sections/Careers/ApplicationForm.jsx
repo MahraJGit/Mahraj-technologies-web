@@ -191,7 +191,7 @@ export default function ApplicationForm() {
                     className="hidden"
                     accept=".pdf"
                   />
-                  
+
                   {/* Custom Styled Button */}
                   <button
                     type="button"
