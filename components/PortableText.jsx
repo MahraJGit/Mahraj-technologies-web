@@ -40,7 +40,14 @@ const components = {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 800px, 1200px"
         />
       </div>
-    ),
+    ), htmlEmbed: ({ value }) => {
+      return (
+        <div
+          className="my-10 overflow-x-auto"
+          dangerouslySetInnerHTML={{ __html: value.code }}
+        />
+      )
+    },
   },
   marks: {
     strong: ({ children }) => <strong className="text-white font-bold">{children}</strong>,
@@ -60,35 +67,6 @@ const components = {
   listItem: {
     bullet: ({ children }) => <li className="text-zinc-300 text-lg leading-relaxed">{children}</li>,
     number: ({ children }) => <li className="text-zinc-300 text-lg leading-relaxed">{children}</li>,
-    table: ({ value }) => {
-      return (
-        <table>
-          <style>{`
-            table {
-              border-collapse: collapse;
-              width: 100%;
-              border: 1px solid #f97316;
-            }
-
-            td {
-              border: 1px solid #3f3f46;
-              padding: 12px;
-              color: white;
-              font-size: 1rem;
-            }
-          `}</style>
-          <tbody>
-            {value.rows.map((row, i) => (
-              <tr key={i}>
-                {row.cells.map((cell, j) => (
-                  <td key={j}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )
-    }
   },
 };
 

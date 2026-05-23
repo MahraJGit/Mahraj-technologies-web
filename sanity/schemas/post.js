@@ -77,7 +77,7 @@ export default {
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }, { type: 'image' }, { type: 'table' }],
+      of: [{ type: 'block' }, { type: 'image' }, { type: 'htmlEmbed' }],
     },
     {
       name: 'faqs',
@@ -128,3 +128,4 @@ export default {
     },
   ],
 };
+
