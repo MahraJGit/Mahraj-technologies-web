@@ -9,20 +9,20 @@ export const metadata = {
   description: "Navigate easily through the Mahraj Technologies website with our complete HTML sitemap.",
 };
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 3600; // Revalidate every 60 seconds
 
 // Helper to format path string into Title Case name
 function formatName(basePath) {
   if (basePath === '') return 'Home';
-  
+
   // Remove leading slash and split by slash
   const parts = basePath.replace(/^\//, '').split('/');
-  
+
   // Format each part (e.g., "case-studies" -> "Case Studies")
   const formattedParts = parts.map(part => {
     return part.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
   });
-  
+
   return formattedParts.join(' ');
 }
 
@@ -72,7 +72,7 @@ export default async function SitemapPage() {
       <section className="relative py-16 lg:py-24 overflow-hidden bg-[radial-gradient(circle_at_1px_1px,#18181b_1px,transparent_0)] bg-[size:40px_40px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-zinc-300">
           <div className="space-y-12">
-            
+
             <div className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold text-white border-l-4 border-primary pl-4">Main Pages</h2>
               <ol className="flex flex-col space-y-3 mt-6 list-decimal pl-5 text-zinc-500">

@@ -3,7 +3,7 @@ import JobCards from '@/components/sections/Careers/JobCards';
 import { client } from "@/lib/sanity";
 import { getAllJobs } from "@/lib/queries";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export const metadata = {
   title: 'Build the Future Tech Careers |Mahraj Technologies',

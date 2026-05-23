@@ -117,7 +117,7 @@ const services = [
   {
     id: "13",
     code: "SFT_DEV",
-    title: "Software Development Services",
+    title: "Software Development",
     description: "We deliver custom software solutions designed for business needs, ensuring scalability, performance, and seamless integration for long-term growth.",
     features: ["Software product development", "Software development consulting", "Custom Software Development", "Enterprise Software Solutions"],
     icon: Headphones

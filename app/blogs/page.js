@@ -3,7 +3,7 @@ import BlogGrid from "@/components/sections/Blogs/BlogGrid";
 import { client } from "@/lib/sanity";
 import { getPaginatedPosts, getPostsCount } from "@/lib/queries";
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 3600; // Revalidate every 60 seconds
 
 export async function generateMetadata() {
   return {

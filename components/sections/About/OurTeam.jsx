@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function OurTeam() {
     return (
-        <section className="bg-body py-20 overflow-hidden">
+        <section className="bg-body py-12 lg:py-18 overflow-hidden">
             <div className="w-full relative">
                 <div className="site-container mb-12">
                     <div className="flex flex-col gap-4 text-center">

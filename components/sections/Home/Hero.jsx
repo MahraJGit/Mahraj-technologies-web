@@ -60,7 +60,7 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-3xl mx-auto">
+        {/* <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-3xl mx-auto">
           <div>
             <div className="text-2xl font-bold text-white mb-1">95%</div>
             <div className="text-[10px] text-zinc-300 uppercase">Client Satisfaction</div>
@@ -77,7 +77,7 @@ export default function Hero() {
             <div className="text-2xl font-bold text-white mb-1">60%</div>
             <div className="text-[10px] text-zinc-300 uppercase">Lead Growth</div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

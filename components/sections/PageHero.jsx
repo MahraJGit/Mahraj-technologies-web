@@ -19,7 +19,7 @@ export default function PageHero({
             {eyebrow}
           </p>
 
-          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[90px] font-black leading-[0.9] uppercase mb-2">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[80px] font-black leading-[0.9] uppercase mb-2">
             <span className="block text-white mb-2">{titleLight + " "}</span>
             <span className="block text-zinc-400">{titleDark}</span>
           </h1>

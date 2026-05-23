@@ -23,7 +23,7 @@ const components = {
       );
     },
     normal: ({ children }) => (
-      <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+      <p className="text-zinc-300 text-lg leading-relaxed mb-8">
         {children}
       </p>
     ),
@@ -58,8 +58,37 @@ const components = {
     number: ({ children }) => <ol className="list-decimal pl-10 space-y-4 mb-8 marker:text-primary">{children}</ol>,
   },
   listItem: {
-    bullet: ({ children }) => <li className="text-zinc-400 text-lg leading-relaxed">{children}</li>,
-    number: ({ children }) => <li className="text-zinc-400 text-lg leading-relaxed">{children}</li>,
+    bullet: ({ children }) => <li className="text-zinc-300 text-lg leading-relaxed">{children}</li>,
+    number: ({ children }) => <li className="text-zinc-300 text-lg leading-relaxed">{children}</li>,
+    table: ({ value }) => {
+      return (
+        <table>
+          <style>{`
+            table {
+              border-collapse: collapse;
+              width: 100%;
+              border: 1px solid #f97316;
+            }
+
+            td {
+              border: 1px solid #3f3f46;
+              padding: 12px;
+              color: white;
+              font-size: 1rem;
+            }
+          `}</style>
+          <tbody>
+            {value.rows.map((row, i) => (
+              <tr key={i}>
+                {row.cells.map((cell, j) => (
+                  <td key={j}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )
+    }
   },
 };
 

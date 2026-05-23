@@ -7,7 +7,7 @@ import { getPostBySlug, getAllPosts } from "@/lib/queries";
 import PortableText from "@/components/PortableText";
 import RecentPostsSidebar from "@/components/sections/Blogs/RecentPostsSidebar";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 // Helper: Calculate Reading Time
 function calculateReadingTime(content) {
@@ -150,7 +150,7 @@ export default async function BlogDetailPage({ params }) {
             {post.title}
           </h1>
 
-          <p className="text-zinc-500 text-xl font-medium leading-relaxed max-w-2xl">
+          <p className="text-zinc-300 text-xl font-medium leading-relaxed max-w-2xl">
             {post.excerpt}
           </p>
 
@@ -158,7 +158,7 @@ export default async function BlogDetailPage({ params }) {
       </header>
 
       {/* Main Image */}
-      <section className="max-w-[750px] mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm border border-white/5">
           {post.mainImage ? (
             <Image
@@ -166,7 +166,7 @@ export default async function BlogDetailPage({ params }) {
               alt={post.mainImage.alt || post.title}
               title={post.mainImage.originalFilename || post.title}
               fill
-              sizes="(max-width: 750px) 100vw, 750px"
+              sizes="(max-width: 1000px) 100vw, 1000px"
               className="object-cover opacity-90"
               priority
             />
