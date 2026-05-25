@@ -12,7 +12,7 @@ import LoadingOverlay from '@/components/ui/LoadingOverlay';
 export default function BlogGrid({ posts = [], totalPages, currentPage, activeFilter }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
-  const filters = ["ALL", "WEB DEVELOPMENT", "APP DEVELOPMENT", "SOFTWARE DEVELOPMENT", "DIGITAL MARKETING", "GRAPHIC DESIGNING"];
+  const filters = ["ALL", "WEB DEVELOPMENT", "APP DEVELOPMENT", "SOFTWARE DEVELOPMENT", "DIGITAL MARKETING", "GRAPHIC DESIGNING", "ARTIFICIAL INTELLIGENCE"];
 
   const handleFilterChange = (filter) => {
     startTransition(() => {
@@ -36,7 +36,7 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
     <section className="py-16 lg:py-24 bg-black relative">
       {/* Loading Overlay */}
       <LoadingOverlay isPending={isPending} message="Loading latest updates..." />
-      
+
       <div className="site-container font-sans">
         {/* Protocol Logs Header & Filter */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
@@ -68,8 +68,8 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
           {posts.map((post, index) => (
-            <div 
-              key={post._id} 
+            <div
+              key={post._id}
               onClick={() => {
                 startTransition(() => {
                   router.push(`/blogs/${post.slug}`);
@@ -180,15 +180,15 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
             >
               PREVIOUS
             </button>
-            
+
             <div className="flex items-center gap-2">
               {[...Array(totalPages)].map((_, i) => (
                 <button
                   key={i}
                   onClick={() => handlePageChange(i + 1)}
                   className={`w-10 h-10 flex items-center justify-center text-[10px] font-black transition-all border
-                    ${currentPage === i + 1 
-                      ? 'bg-primary border-primary text-white' 
+                    ${currentPage === i + 1
+                      ? 'bg-primary border-primary text-white'
                       : 'border-zinc-800 text-zinc-500 hover:border-white hover:text-white'
                     }
                   `}

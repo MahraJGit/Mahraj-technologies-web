@@ -63,6 +63,7 @@ export default {
           { title: 'Software Development', value: 'SOFTWARE DEVELOPMENT' },
           { title: 'Digital Marketing', value: 'DIGITAL MARKETING' },
           { title: 'Graphic Designing', value: 'GRAPHIC DESIGNING' },
+          { title: 'Artificial Intelligence', value: 'ARTIFICIAL INTELLIGENCE' },
         ],
       },
       validation: (Rule) => Rule.required(),
