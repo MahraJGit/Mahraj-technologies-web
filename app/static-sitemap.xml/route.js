@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getAllServiceSlugs } from "@/lib/services/registry";
 
 export const revalidate = 3600;
 
@@ -18,6 +19,11 @@ export async function GET() {
             priority: 0.9,
             changeFrequency: "monthly",
         },
+        ...getAllServiceSlugs().map((slug) => ({
+            path: `/services/${slug}`,
+            priority: 0.85,
+            changeFrequency: "monthly",
+        })),
         {
             path: "/case-studies",
             priority: 0.8,

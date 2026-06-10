@@ -1,7 +1,10 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { serviceCodeToSlug } from '@/lib/services/registry';
 import {
   BarChart3,
   Search,
@@ -129,15 +132,26 @@ export default function ServiceCards() {
     <section className="bg-black">
       <div className="site-container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-          {services.map((service) => (
+          {services.map((service) => {
+            const detailSlug = serviceCodeToSlug[service.code];
+            const CardWrapper = detailSlug
+              ? ({ children }) => (
+                  <Link href={`/services/${detailSlug}`} className="block h-full group">
+                    {children}
+                  </Link>
+                )
+              : ({ children }) => <>{children}</>;
+
+            return (
             <div
               key={service.id}
               className="relative border border-zinc-900/80"
             >
+              <CardWrapper>
               <motion.div
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: detailSlug ? 1.02 : 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                className="p-8 h-full flex flex-col min-h-[300px] md:min-h-[380px] lg:min-h-[440px] cursor-default"
+                className={`p-8 h-full flex flex-col min-h-[300px] md:min-h-[380px] lg:min-h-[440px] ${detailSlug ? "cursor-pointer" : "cursor-default"}`}
               >
                 {/* Header: Icon and Index */}
                 <div className="flex justify-between items-start mb-8">
@@ -164,17 +178,23 @@ export default function ServiceCards() {
                   <ul className="space-y-3">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-3 text-[11px]  text-zinc-400 uppercase group-hover:text-zinc-300 transition-colors">
-                        {/* <span className="w-1.5 h-1.5 bg-primary shadow-[0_0_5px_rgba(228,36,47,0.4)]" /> */}
-                        {/* <Terminal size={20} strokeWidth={1.5} className="text-primary" /> */}
                         <span className='text-primary text-1xl'>&gt;</span>
                         {feature}
                       </li>
                     ))}
                   </ul>
+                  {detailSlug && (
+                    <p className="mt-8 inline-flex items-center gap-2 text-primary text-xs font-bold uppercase">
+                      View Service Details
+                      <ArrowRight className="w-4 h-4" />
+                    </p>
+                  )}
                 </div>
               </motion.div>
+              </CardWrapper>
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>
