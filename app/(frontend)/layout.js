@@ -8,6 +8,7 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "@/app/api/uploadthing/core";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 
 const poppins = Poppins({
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
         <link rel="preload" href="/hero-bg-poster.png" as="image" />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
+        <GoogleAnalytics />
         <CalendlyProvider>
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           <Header />
