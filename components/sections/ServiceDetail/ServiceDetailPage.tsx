@@ -63,12 +63,12 @@ export default function ServiceDetailPage({ service }: ServiceDetailPageProps) {
         <ComparisonSection comparison={service.comparison} />
       )}
 
-      {service.caseStudies && service.caseStudies.length > 0 && (
+      {/* {service.caseStudies && service.caseStudies.length > 0 && (
         <CaseStudiesSection
           heading={service.caseStudiesHeading}
           caseStudies={service.caseStudies}
         />
-      )}
+      )} */}
 
       {service.tools && service.tools.length > 0 && (
         <ToolsSection

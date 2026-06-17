@@ -1,12 +1,13 @@
 import type { ServiceDetailData } from "../types";
-import mailchimp from "@/public/CompanySvgs/mailchimp.svg";
-import adobe from "@/public/CompanySvgs/adobe.svg";
+import googleAds from "@/public/CompanySvgs/google_ads.svg";
+import hotjar from "@/public/CompanySvgs/hotjar.svg";
+import brevo from "@/public/CompanySvgs/brevo.svg";
 import hubspot from "@/public/CompanySvgs/hubspot.svg";
 import googleAnalytics from "@/public/CompanySvgs/googleAnalytics.svg";
 import canvas from "@/public/CompanySvgs/canva.svg";
 import moz from "@/public/CompanySvgs/moz.svg";
 import ahrefs from "@/public/CompanySvgs/ahrefs.svg";
-import consultingImage from "@/public/CompanySvgs/datadashboard.jpg";
+import consultingImage from "@/public/dashboard.jpg";
 
 export const digitalMarketingData: ServiceDetailData = {
   slug: "digital-marketing",
@@ -185,13 +186,16 @@ export const digitalMarketingData: ServiceDetailData = {
     "Our team uses advanced digital marketing tools to analyze performance, improve campaign effectiveness, and support data-driven growth strategies. These tools enable more accurate insights and better marketing outcomes.",
   tools: [
     {
-      icon: mailchimp,
+      icon: googleAds,
     },
     {
-      icon: adobe,
+      icon: brevo,
     },
     {
       icon: hubspot,
+    },
+    {
+      icon: hotjar,
     },
     {
       icon: googleAnalytics,
@@ -240,17 +244,17 @@ export const digitalMarketingData: ServiceDetailData = {
     "With a strong presence across multiple locations, our digital marketing agency delivers customized solutions to increase visibility, generate quality leads, and drive business growth. We combine strategic planning, creative execution, and performance-focused marketing to help brands succeed online.",
   locations: [
     {
-      title: "Web Design Agency in Dubai",
+      title: "Digital Marketing Agency in Dubai",
       officeAddress: "B2B Office Tower, Office Number 2205, Marasi Drive Street, Business Bay, Dubai, UAE",
       officePhone: "+971 52 785 1523",
     },
     {
-      title: "Web Design Agency in Islamabad",
+      title: "Digital Marketing Agency in Islamabad",
       officeAddress: "World Trade Center, Office Number 4087, Islamabad, Pakistan",
       officePhone: "+971 52 785 1523",
     },
     {
-      title: "Web Design Agency in USA",
+      title: "Digital Marketing Agency in USA",
       officeAddress: "Remote delivery across United States time zones",
       officePhone: "+971 52 785 1523",
     }

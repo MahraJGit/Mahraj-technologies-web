@@ -18,7 +18,7 @@ export default function ToolsSection({
   tools,
 }: ToolsSectionProps) {
   return (
-    <section className="bg-black py-12 lg:py-18 border-b border-zinc-900/50">
+    <section className="max-w-7xl mx-auto bg-black py-12 lg:py-18 border-b border-zinc-900/50">
         <SectionHeading
           title={heading}
           description={description}

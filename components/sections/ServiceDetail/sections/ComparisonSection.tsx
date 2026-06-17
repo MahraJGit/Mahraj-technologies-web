@@ -15,13 +15,14 @@ export default function ComparisonSection({ comparison }: ComparisonSectionProps
       <div className="site-container">
         {comparison.heading && (
           <SectionHeading
+            className="max-w-[700px]"
             title={comparison.heading}
             description={comparison.description}
           />
         )}
 
         <div className="overflow-x-auto rounded-2xl border border-zinc-900">
-          <table className="w-full text-left border-collapse">
+          <table className="min-w-[800px] w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-zinc-900 bg-zinc-950/80">
                 <th className="p-6 text-[10px] font-bold uppercase text-zinc-500 w-1/4">

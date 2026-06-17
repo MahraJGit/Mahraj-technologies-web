@@ -30,7 +30,7 @@ export default function LocationsSection({
     >
       <MapPin className="text-primary" size={28} strokeWidth={1.5} />
 
-      <h3 className="text-white text-2xl lg:text-3xl font-black uppercase">
+      <h3 className="text-white text-2xl lg:text-3xl h-17 font-black uppercase">
         {location.title}
       </h3>
 

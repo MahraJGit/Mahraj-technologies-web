@@ -21,17 +21,16 @@ export default function ProcessSection({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {steps.map((step, index) => (
-            <div key={step.step} className="relative pl-6 border-l border-zinc-800 lg:border-l-0 lg:pl-0 lg:pt-0 group">
-              <div className="hidden md:block absolute top-6 left-0 w-50 h-[1px] bg-primary z-0 group-hover:w-75 transition-all duration-500" />
-              <div className="bg-primary w-16 h-16 flex items-center justify-center rounded-2xl">
-                <span className="text-white text-[16px] font-bold uppercase tracking-widest">
+            <div key={step.step} className="relative border border-primary/20 p-6 rounded-lg flex flex-col items-center justify-center">
+              <div>
+                <span className="text-primary/70 font-bebas-neue text-[36px] font-bold uppercase tracking-widest">
                   {step.step}
                 </span>
               </div>
-              <h3 className="text-white text-2xl lg:text-3xl font-black uppercase leading-tight mt-4 mb-4">
+              <h3 className="text-primary text-sm font-black uppercase tracking-widest mt-4 mb-4">
                 {step.title}
               </h3>
-              <p className="text-zinc-400 text-sm lg:text-base leading-relaxed max-w-[300px]">
+              <p className="text-zinc-400 text-sm leading-relaxed">
                 {step.description}
               </p>
               {index < steps.length - 1 && (

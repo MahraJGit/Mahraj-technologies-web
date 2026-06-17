@@ -22,15 +22,16 @@ export default function ServiceTypesSection({
       <div className="site-container">
         <SectionHeading title={heading} description={description} />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((item, index) => {
             const Icon = getServiceIcon(item.icon);
             return (
-              <div key={item.title} className="relative border border-zinc-900/80 group overflow-hidden">
-                <div className="p-8 h-full flex flex-col min-h-[280px] transition-transform duration-500 ease-out group-hover:scale-[1.04]">
-                  <div className="mb-6 w-8 h-8 flex items-center justify-center">
-                    <div className="text-primary transition-all duration-500 group-hover:rotate-3 group-hover:scale-110">
-                      <Icon size={32} strokeWidth={1.5} />
+              <div key={item.title} className="relative border border-zinc-900/80 group overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-primary/10 blur-xl z-0" />
+                <div className="p-6 h-full flex flex-col min-h-[280px] transition-transform duration-500 ease-out group-hover:scale-[1.04]">
+                  <div className="mb-6 w-15 h-15 flex items-center justify-center border border-primary rounded-md">
+                    <div className="text-white transition-all duration-500 group-hover:rotate-3 group-hover:scale-110">
+                      <Icon size={28} strokeWidth={1.5} />
                     </div>
                   </div>
 

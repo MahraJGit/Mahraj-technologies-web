@@ -1,8 +1,10 @@
 import type { ServiceDetailData } from "./types";
 import { digitalMarketingData } from "./data/digital-marketing";
+import { searchEngineOptimizationData } from "./data/search-enginer-optimization";
 
 const servicesBySlug: Record<string, ServiceDetailData> = {
   [digitalMarketingData.slug]: digitalMarketingData,
+  [searchEngineOptimizationData.slug]: searchEngineOptimizationData,
 };
 
 export const allServices: ServiceDetailData[] = Object.values(servicesBySlug);
@@ -18,4 +20,5 @@ export function getAllServiceSlugs(): string[] {
 /** Maps ServiceCards `code` values to detail page slugs when a page exists */
 export const serviceCodeToSlug: Record<string, string> = {
   DIG_MKT: digitalMarketingData.slug,
+  SEO_OPT: searchEngineOptimizationData.slug,
 };

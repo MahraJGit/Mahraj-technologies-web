@@ -28,7 +28,7 @@ export default function ConsultingSection({
               alt="Consulting"
               width={700}
               height={700}
-              className="w-full h-auto object-cover rounded-lg"
+              className="w-full h-[600px] object-cover object-bottom rounded-lg"
             />
           </div>
 

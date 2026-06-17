@@ -24,7 +24,7 @@ export default function FAQSection({ faqs, heading = "FAQs" }: FAQSectionProps) 
       <div className="site-container relative z-10 max-w-4xl">
         <SectionHeading title={heading} />
 
-        <div className="space-y-4" role="list">
+        <div className="space-y-4 lg:w-1/2 md:w-full mx-auto" role="list">
           {faqs.map((item, index) => (
             <div
               key={index}
