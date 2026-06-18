@@ -11,6 +11,11 @@ import {
   TrendingUp,
   Users,
   Smartphone,
+  Settings,
+  MapPin,
+  ShoppingCart,
+  ShieldCheck,
+  ShieldAlert,
   type LucideIcon,
 } from "lucide-react";
 
@@ -27,6 +32,11 @@ export const serviceIcons = {
   trendUp: TrendingUp,
   users: Users,
   smartphone: Smartphone,
+  settings: Settings,
+  mapPin: MapPin,
+  shoppingCart: ShoppingCart,
+  shieldCheck: ShieldCheck,
+  shieldAlert: ShieldAlert,
 } as const;
 
 export type ServiceIconName = keyof typeof serviceIcons;

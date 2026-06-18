@@ -1,10 +1,12 @@
 import type { ServiceDetailData } from "./types";
 import { digitalMarketingData } from "./data/digital-marketing";
 import { searchEngineOptimizationData } from "./data/search-enginer-optimization";
+import { leadGenerationData } from "./data/lead-generation";
 
 const servicesBySlug: Record<string, ServiceDetailData> = {
   [digitalMarketingData.slug]: digitalMarketingData,
   [searchEngineOptimizationData.slug]: searchEngineOptimizationData,
+  [leadGenerationData.slug]: leadGenerationData,
 };
 
 export const allServices: ServiceDetailData[] = Object.values(servicesBySlug);
@@ -21,4 +23,5 @@ export function getAllServiceSlugs(): string[] {
 export const serviceCodeToSlug: Record<string, string> = {
   DIG_MKT: digitalMarketingData.slug,
   SEO_OPT: searchEngineOptimizationData.slug,
+  LEAD_GEN: leadGenerationData.slug,
 };

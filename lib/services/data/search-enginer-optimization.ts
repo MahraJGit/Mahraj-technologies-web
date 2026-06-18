@@ -28,49 +28,49 @@ export const searchEngineOptimizationData: ServiceDetailData = {
     serviceTypesDescription: "",
     serviceTypes: [
         {
-            icon: "link2",
+            icon: "fileText",
             title: "On-Page SEO",
             description:
                 "We optimize content, keywords, metadata, and site structure to help search engines rank your pages higher.",
         },
         {
-            icon: "fileText",
+            icon: "link2",
             title: "Off-Page SEO",
             description:
                 "We build your website's authority through earned backlinks, brand mentions, and strategic external optimization.",
         },
         {
-            icon: "mail",
+            icon: "settings",
             title: "Technical SEO",
             description:
                 "We fix crawlability and indexing issues, site speed, and technical gaps that quietly hold your rankings back.",
         },
         {
-            icon: "barChart3",
+            icon: "smartphone",
             title: "Mobile SEO",
             description:
                 "We optimize your site for mobile users, like faster load times, cleaner layouts, and a better overall experience.",
         },
         {
-            icon: "smartphone",
+            icon: "mapPin",
             title: "Local SEO",
             description:
                 "We improve your visibility in local search results so nearby customers find your business before your competitors.",
         },
         {
-            icon: "megaphone",
+            icon: "shoppingCart",
             title: "E-commerce SEO",
             description:
                 "We optimize product pages, categories, and site structure to drive more qualified traffic and increase online sales.",
         },
         {
-            icon: "search",
+            icon: "shieldCheck",
             title: "White-Hat SEO",
             description:
                 "We strictly follow search engine guidelines to build rankings the right way for results that actually last.",
         },
         {
-            icon: "share2",
+            icon: "shieldAlert",
             title: "Black-Hat SEO",
             description:
                 "We identify harmful SEO tactics used against your site and eliminate risks before they damage your rankings.",
