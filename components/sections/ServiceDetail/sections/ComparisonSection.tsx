@@ -9,14 +9,29 @@ interface ComparisonSectionProps {
   comparison: ServiceComparison;
 }
 
+function splitComparisonHeading(heading: string): { title: string; titleLine2: string } | null {
+  const match = heading.match(/^(.+?)\s+vs\.?\s+(.+)$/i);
+  if (!match) return null;
+
+  return {
+    title: `${match[1]} vs.`,
+    titleLine2: match[2],
+  };
+}
+
 export default function ComparisonSection({ comparison }: ComparisonSectionProps) {
+  const splitHeading = comparison.heading
+    ? splitComparisonHeading(comparison.heading)
+    : null;
+
   return (
     <section className="bg-black py-12 lg:py-18 border-b border-zinc-900/50">
       <div className="site-container">
         {comparison.heading && (
           <SectionHeading
-            className="max-w-[700px]"
-            title={comparison.heading}
+            className="max-w-none"
+            title={splitHeading?.title ?? comparison.heading}
+            titleLine2={splitHeading?.titleLine2}
             description={comparison.description}
           />
         )}
