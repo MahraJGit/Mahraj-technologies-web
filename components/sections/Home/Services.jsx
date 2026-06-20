@@ -16,7 +16,7 @@ export default function Services() {
         {
             id: "02",
             code: "MOB_DEV",
-            title: "MOBILE DEVELOPMENT",
+            title: "MOBILE APP DEVELOPMENT",
             description: "We build high-performance mobile applications that deliver smooth user experiences and scalable digital solutions for modern businesses.",
             features: ["NATIVE APP BUILDS", "CROSS-PLATFORM APPS", "PERFORMANCE OPTIMIZATION", "USER-FOCUSED DESIGN"],
             icon: Smartphone

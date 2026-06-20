@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const services = [
-  "MOBILE DEVELOPMENT",
+  "MOBILE APP DEVELOPMENT",
   "WEB DEVELOPMENT",
   "CRM & ERP SOLUTIONS",
   "DIGITAL MARKETING",

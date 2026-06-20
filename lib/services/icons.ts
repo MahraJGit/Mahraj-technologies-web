@@ -16,6 +16,11 @@ import {
   ShoppingCart,
   ShieldCheck,
   ShieldAlert,
+  Layout,
+  Server,
+  Layers,
+  Monitor,
+  Code,
   type LucideIcon,
 } from "lucide-react";
 
@@ -37,6 +42,11 @@ export const serviceIcons = {
   shoppingCart: ShoppingCart,
   shieldCheck: ShieldCheck,
   shieldAlert: ShieldAlert,
+  layout: Layout,
+  server: Server,
+  layers: Layers,
+  monitor: Monitor,
+  code: Code,
 } as const;
 
 export type ServiceIconName = keyof typeof serviceIcons;
