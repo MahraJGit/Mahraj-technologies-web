@@ -41,7 +41,7 @@ export default function ComparisonSection({ comparison }: ComparisonSectionProps
             <thead>
               <tr className="border-b border-zinc-900 bg-zinc-950/80">
                 <th className="p-6 text-[10px] font-bold uppercase text-zinc-500 w-1/4">
-                  Feature
+                  {comparison.featureColumnLabel ?? "Feature"}
                 </th>
                 <th className="p-6 text-sm font-black uppercase text-primary w-[37.5%]">
                   {comparison.columnDigital}

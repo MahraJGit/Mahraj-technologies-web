@@ -39,6 +39,7 @@ export interface ComparisonRow {
 export interface ServiceComparison {
   heading?: string;
   description?: string;
+  featureColumnLabel?: string;
   columnDigital: string;
   columnTraditional: string;
   rows: ComparisonRow[];

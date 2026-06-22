@@ -18,7 +18,9 @@ export default function ToolsSection({
   tools,
 }: ToolsSectionProps) {
   return (
-    <section className="max-w-7xl mx-auto bg-black py-12 lg:py-18 border-b border-zinc-900/50">
+    <section className="bg-black py-12 lg:py-18 border-b border-zinc-900/50">
+      <div className="max-w-7xl mx-auto ">
+
         <SectionHeading
           title={heading}
           description={description}
@@ -26,13 +28,13 @@ export default function ToolsSection({
 
         <motion.div
           className="relative overflow-hidden group mt-12"
-        >
+          >
           <div className="flex items-center gap-16 md:gap-24 w-max animate-marquee-infinite group-hover:[animation-play-state:paused]">
             {tools.map((tool, index) => {
 
               return (
                 <div
-                  key={`first-${index}`}
+                key={`first-${index}`}
                   className="flex-shrink-0"
                 >
                   <Image
@@ -50,8 +52,8 @@ export default function ToolsSection({
 
               return (
                 <div
-                  key={`second-${index}`}
-                  className="flex-shrink-0"
+                key={`second-${index}`}
+                className="flex-shrink-0"
                 >
                   <Image
                     src={tool.icon}
@@ -65,6 +67,7 @@ export default function ToolsSection({
             })}
           </div>
         </motion.div>
+                </div>
     </section>
   );
 }

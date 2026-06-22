@@ -4,6 +4,7 @@ import { searchEngineOptimizationData } from "./data/search-enginer-optimization
 import { leadGenerationData } from "./data/lead-generation";
 import { salesFunnelDevelopmentData } from "./data/sales-funnel-development";
 import { webDevelopmentData } from "./data/web-development";
+import { mobileAppDevelopmentData } from "./data/mobile-app-development";
 
 const servicesBySlug: Record<string, ServiceDetailData> = {
   [digitalMarketingData.slug]: digitalMarketingData,
@@ -11,6 +12,7 @@ const servicesBySlug: Record<string, ServiceDetailData> = {
   [leadGenerationData.slug]: leadGenerationData,
   [salesFunnelDevelopmentData.slug]: salesFunnelDevelopmentData,
   [webDevelopmentData.slug]: webDevelopmentData,
+  [mobileAppDevelopmentData.slug]: mobileAppDevelopmentData,
 };
 
 export const allServices: ServiceDetailData[] = Object.values(servicesBySlug);
@@ -30,4 +32,5 @@ export const serviceCodeToSlug: Record<string, string> = {
   LEAD_GEN: leadGenerationData.slug,
   FUNNEL_DEV: salesFunnelDevelopmentData.slug,
   WEB_DEV: webDevelopmentData.slug,
+  MOB_DEV: mobileAppDevelopmentData.slug,
 };
