@@ -33,6 +33,11 @@ function getAppRoutes(dir = path.join(process.cwd(), 'app'), basePath = '') {
 
     for (const entry of entries) {
       if (entry.isDirectory()) {
+        if (entry.name.startsWith('(') && entry.name.endsWith(')')) {
+          routes.push(...getAppRoutes(path.join(dir, entry.name), basePath));
+          continue;
+        }
+
         // Exclude specific directories, dynamic route segments (starting with '['), and route groups (starting with '(')
         if (
           !entry.name.startsWith('[') &&
