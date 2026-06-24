@@ -21,6 +21,8 @@ import {
   Layers,
   Monitor,
   Code,
+  PenTool,
+  Palette,
   type LucideIcon,
 } from "lucide-react";
 
@@ -47,6 +49,8 @@ export const serviceIcons = {
   layers: Layers,
   monitor: Monitor,
   code: Code,
+  penTool: PenTool,
+  palette: Palette,
 } as const;
 
 export type ServiceIconName = keyof typeof serviceIcons;
