@@ -105,7 +105,7 @@ export default function ServiceDetailPage({ service }: ServiceDetailPageProps) {
       )}  
 
       {service.faqs && service.faqs.length > 0 && (
-        <FAQSection faqs={service.faqs} />
+        <FAQSection faqs={service.faqs} heading={service.faqsHeading} />
       )}
     </main>
   );

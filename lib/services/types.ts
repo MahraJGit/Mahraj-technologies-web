@@ -107,4 +107,5 @@ export interface ServiceDetailData {
   locationsHeading?: string;
   locationsDescription?: string;
   faqs?: ServiceFaq[];
+  faqsHeading?: string;
 }
