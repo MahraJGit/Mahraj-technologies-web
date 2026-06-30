@@ -9,6 +9,7 @@ import { uiUxDesignData } from "./data/ui-ux-design";
 import { graphicDesignData } from "./data/graphic-design";
 import { softwareQualityAssuranceData } from "./data/software-quality-assurance";
 import { virtualAssistanceData } from "./data/virtual-assistance";
+import { cyberSecurityData } from "./data/cyber-security";
 
 const servicesBySlug: Record<string, ServiceDetailData> = {
   [digitalMarketingData.slug]: digitalMarketingData,
@@ -21,6 +22,7 @@ const servicesBySlug: Record<string, ServiceDetailData> = {
   [graphicDesignData.slug]: graphicDesignData,
   [softwareQualityAssuranceData.slug]: softwareQualityAssuranceData,
   [virtualAssistanceData.slug]: virtualAssistanceData,
+  [cyberSecurityData.slug]: cyberSecurityData,
 };
 
 export const allServices: ServiceDetailData[] = Object.values(servicesBySlug);
@@ -45,4 +47,5 @@ export const serviceCodeToSlug: Record<string, string> = {
   GRAPHICS: graphicDesignData.slug,
   QA_TEST: softwareQualityAssuranceData.slug,
   VIRT_AST: virtualAssistanceData.slug,
+  CYB_SEC: cyberSecurityData.slug,
 };
