@@ -123,7 +123,7 @@ const services = [
     title: "Software Development",
     description: "We deliver custom software solutions designed for business needs, ensuring scalability, performance, and seamless integration for long-term growth.",
     features: ["Software product development", "Software development consulting", "Custom Software Development", "Enterprise Software Solutions"],
-    icon: Headphones
+    icon: Code
   },
 ];
 

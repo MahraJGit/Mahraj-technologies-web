@@ -11,6 +11,7 @@ import { softwareQualityAssuranceData } from "./data/software-quality-assurance"
 import { virtualAssistanceData } from "./data/virtual-assistance";
 import { cyberSecurityData } from "./data/cyber-security";
 import { artificialIntelligenceData } from "./data/artificial-intelligence";
+import { softwareDevelopmentData } from "./data/software-development";
 
 const servicesBySlug: Record<string, ServiceDetailData> = {
   [digitalMarketingData.slug]: digitalMarketingData,
@@ -25,6 +26,7 @@ const servicesBySlug: Record<string, ServiceDetailData> = {
   [virtualAssistanceData.slug]: virtualAssistanceData,
   [cyberSecurityData.slug]: cyberSecurityData,
   [artificialIntelligenceData.slug]: artificialIntelligenceData,
+  [softwareDevelopmentData.slug]: softwareDevelopmentData,
 };
 
 export const allServices: ServiceDetailData[] = Object.values(servicesBySlug);
@@ -51,4 +53,5 @@ export const serviceCodeToSlug: Record<string, string> = {
   VIRT_AST: virtualAssistanceData.slug,
   CYB_SEC: cyberSecurityData.slug,
   ART_INT: artificialIntelligenceData.slug,
+  SFT_DEV: softwareDevelopmentData.slug,
 };
