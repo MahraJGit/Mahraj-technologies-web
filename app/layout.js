@@ -17,7 +17,7 @@ const bebasNeue = Bebas_Neue({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth">
+    <html lang="en-US" className={`${poppins.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth">
       <head>
         <link rel="preload" href="/hero-bg-poster.png" as="image" />
       </head>
