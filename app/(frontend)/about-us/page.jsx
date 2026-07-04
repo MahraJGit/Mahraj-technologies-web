@@ -12,7 +12,7 @@ export const metadata = {
     title: 'About Us | Mahraj Technologies - Digital Solutions Expert',
     description: 'Mahraj Technologies deliver exceptional web development, SEO, and digital marketing solutions designed to drive real business growth.',
     alternates: {
-        canonical: "https://mahrajtechnologies.com/about",
+        canonical: "https://mahrajtechnologies.com/about-us",
     },
     publisher: "Mahraj Technologies"
 };
