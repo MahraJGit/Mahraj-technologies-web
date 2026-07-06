@@ -2,6 +2,7 @@ import PageHero from "@/components/sections/PageHero";
 import ServiceCards from "@/components/sections/Services/ServiceCards";
 import OperationalFlow from "@/components/sections/Services/OperationalFlow";
 import ServiceCta from "@/components/sections/Services/ServiceCta";
+import { servicesPageCards } from "@/lib/services/data/services-page";
 
 export const metadata = {
   title: "Core Digital Services | Mahraj Technologies",
@@ -22,7 +23,7 @@ export default function ServicesPage() {
         description="At Mahraj Technologies, we deliver integrated digital solutions designed to drive growth, performance, and business success."
       />
 
-      <ServiceCards />
+      <ServiceCards services={servicesPageCards} />
 
       {/* Operational Flow Section */}
       <OperationalFlow />

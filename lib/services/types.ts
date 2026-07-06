@@ -78,6 +78,15 @@ export interface ServiceFaq {
   answer: string;
 }
 
+export interface ServicePageCard {
+  id: string;
+  code: string;
+  title: string;
+  description: string;
+  features: string[];
+  icon: ServiceIconName;
+}
+
 export interface ServiceDetailData {
   slug: string;
   title: string;
