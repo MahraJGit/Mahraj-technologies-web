@@ -4,13 +4,13 @@ export default function robots() {
       {
         userAgent: '*',
         allow: '/',
-        disallow: '/api/',
+        disallow: ['/api/', '/admin/'],
       },
     ],
     sitemap: [
-      "https://mahrajtechnologies.com/sitemap.xml",
-      "https://mahrajtechnologies.com/static-sitemap.xml",
-      "https://mahrajtechnologies.com/blog-sitemap.xml",
+      'https://mahrajtechnologies.com/sitemap.xml',
+      'https://mahrajtechnologies.com/static-sitemap.xml',
+      'https://mahrajtechnologies.com/blog-sitemap.xml',
     ],
   }
 }

@@ -1,5 +1,6 @@
 import {
   BarChart3,
+  BatteryCharging,
   BrainCircuit,
   Briefcase,
   Bug,
@@ -7,6 +8,7 @@ import {
   Car,
   CheckCircle,
   ClipboardCheck,
+  Cpu,
   Factory,
   FileText,
   Filter,
@@ -24,6 +26,7 @@ import {
   Share2,
   Ticket,
   TrendingUp,
+  Truck,
   Tv,
   Users,
   UserPlus,
@@ -43,11 +46,14 @@ import {
   PenTool,
   Palette,
   Video,
+  Wifi,
+  Wrench,
   type LucideIcon,
 } from "lucide-react";
 
 export const serviceIcons = {
   barChart3: BarChart3,
+  batteryCharging: BatteryCharging,
   brainCircuit: BrainCircuit,
   briefcase: Briefcase,
   bug: Bug,
@@ -55,6 +61,7 @@ export const serviceIcons = {
   car: Car,
   checkCircle: CheckCircle,
   clipboardCheck: ClipboardCheck,
+  cpu: Cpu,
   factory: Factory,
   fileText: FileText,
   filter: Filter,
@@ -72,6 +79,7 @@ export const serviceIcons = {
   share2: Share2,
   ticket: Ticket,
   trendUp: TrendingUp,
+  truck: Truck,
   tv: Tv,
   users: Users,
   userPlus: UserPlus,
@@ -91,6 +99,8 @@ export const serviceIcons = {
   penTool: PenTool,
   palette: Palette,
   video: Video,
+  wifi: Wifi,
+  wrench: Wrench,
 } as const;
 
 export type ServiceIconName = keyof typeof serviceIcons;
