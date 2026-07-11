@@ -14,6 +14,7 @@ import { artificialIntelligenceData } from "./data/artificial-intelligence";
 import { softwareDevelopmentData } from "./data/software-development";
 import { itSystemAuditData } from "./data/it-system-audit";
 import { automotiveDigitalSolutionsData } from "./data/automotive-digital-solutions";
+import { bankFintechData } from "./data/bank-fintech";
 
 const servicesBySlug: Record<string, ServiceDetailData> = {
   [digitalMarketingData.slug]: digitalMarketingData,
@@ -31,6 +32,7 @@ const servicesBySlug: Record<string, ServiceDetailData> = {
   [softwareDevelopmentData.slug]: softwareDevelopmentData,
   [itSystemAuditData.slug]: itSystemAuditData,
   [automotiveDigitalSolutionsData.slug]: automotiveDigitalSolutionsData,
+  [bankFintechData.slug]: bankFintechData,
 };
 
 export const allServices: ServiceDetailData[] = Object.values(servicesBySlug);
@@ -60,4 +62,5 @@ export const serviceCodeToSlug: Record<string, string> = {
   SFT_DEV: softwareDevelopmentData.slug,
   IT_AUD: itSystemAuditData.slug,
   AUTO_DIG: automotiveDigitalSolutionsData.slug,
+  BNK_FNT: bankFintechData.slug,
 };

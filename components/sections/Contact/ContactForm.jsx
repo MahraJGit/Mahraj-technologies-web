@@ -21,7 +21,7 @@ const InputField = ({ label, placeholder, type = "text", name }) => {
         type={type}
         name={name}
         placeholder={placeholder}
-        className="w-full bg-transparent border-none py-5 text-white text-lg focus:outline-none focus:ring-0 transition-all placeholder:text-zinc-800"
+        className="w-full bg-transparent border-none py-5 text-white text-lg focus:outline-none focus:ring-0 transition-all placeholder:text-zinc-500"
       />
       <div className="absolute bottom-0 left-0 h-[1px] w-full bg-zinc-800" />
       <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary group-focus-within/field:w-full transition-all duration-500" />
@@ -163,7 +163,7 @@ export default function ContactForm() {
               name="message"
               required
               placeholder="Describe your requirements..."
-              className="w-full bg-transparent border-none py-5 text-white  text-lg focus:outline-none focus:ring-0 transition-all placeholder:text-zinc-800 resize-none"
+              className="w-full bg-transparent border-none py-5 text-white  text-lg focus:outline-none focus:ring-0 transition-all placeholder:text-zinc-500 resize-none"
             />
             <div className="absolute bottom-0 left-0 h-[1px] w-full bg-zinc-800" />
             <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary group-focus-within/field:w-full transition-all duration-500" />

@@ -22,7 +22,7 @@ const nodes = [
 
 export default function ContactInfo() {
   return (
-    <div className="flex flex-col gap-12 lg:gap-16">
+    <div className="flex flex-col gap-12 lg:gap-16 min-w-0">
       <div className="space-y-6">
         {/* <span className="text-primary  text-[10px] uppercase font-bold flex items-center gap-3">
           <span className="w-8 h-[1px] bg-primary" />
@@ -82,16 +82,16 @@ export default function ContactInfo() {
       </div>
 
       {/* Direct Comms */}
-      <div className="mt-12 p-10 border border-primary/20 bg-primary/5 rounded-xl backdrop-blur-sm">
+      <div className="mt-12 p-6 sm:p-10 border border-primary/20 bg-primary/5 rounded-xl backdrop-blur-sm min-w-0 overflow-hidden">
         <h4 className="text-white font-black text-lg uppercase mb-8">Direct Channels</h4>
-        <div className="grid gap-8">
-          <div className="flex flex-col">
+        <div className="grid gap-8 min-w-0">
+          <div className="flex flex-col min-w-0">
             <span className="text-xs  text-primary uppercase mb-2 font-bold select-none opacity-70">Phone</span>
-            <span className="text-white text-2xl">+971 52 785 1523</span>
+            <span className="text-white text-xl sm:text-2xl">+971 52 785 1523</span>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col min-w-0">
             <span className="text-xs  text-primary uppercase mb-2 font-bold select-none opacity-70">Email</span>
-            <span className="text-white text-2xl">inquiries@mahrajtechnologies.com</span>
+            <span className="text-white text-xl sm:text-2xl break-all">inquiries@mahrajtechnologies.com</span>
           </div>
         </div>
       </div>
