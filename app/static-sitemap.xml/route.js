@@ -8,6 +8,18 @@ export async function GET() {
 
     const currentDate = new Date();
 
+    let serviceRoutes = [];
+
+    try {
+        serviceRoutes = getAllServiceSlugs().map((slug) => ({
+            path: `/services/${slug}`,
+            priority: 0.85,
+            changeFrequency: "monthly",
+        }));
+    } catch (error) {
+        console.error("Error loading service slugs for sitemap:", error);
+    }
+
     const staticRoutes = [
         {
             path: "",
@@ -19,11 +31,12 @@ export async function GET() {
             priority: 0.9,
             changeFrequency: "monthly",
         },
-        ...getAllServiceSlugs().map((slug) => ({
-            path: `/services/${slug}`,
-            priority: 0.85,
+        ...serviceRoutes,
+        {
+            path: "/about-us",
+            priority: 0.8,
             changeFrequency: "monthly",
-        })),
+        },
         {
             path: "/case-studies",
             priority: 0.8,
