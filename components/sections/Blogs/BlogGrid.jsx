@@ -32,6 +32,38 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
     });
   };
 
+  // Build a compact page list with ellipses for small screens / many pages
+  // e.g. [1, '…', 4, 5, 6, '…', 12]
+  const getVisiblePages = (total, current) => {
+    if (total <= 5) return Array.from({ length: total }, (_, i) => i + 1);
+
+    const pages = new Set([1, total, current]);
+    if (current > 1) pages.add(current - 1);
+    if (current < total) pages.add(current + 1);
+
+    // Prefer neighbors near the ends so we don't jump from 1 straight to middle
+    if (current <= 3) {
+      pages.add(2);
+      pages.add(3);
+      pages.add(4);
+    }
+    if (current >= total - 2) {
+      pages.add(total - 1);
+      pages.add(total - 2);
+      pages.add(total - 3);
+    }
+
+    const sorted = [...pages].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
+    const result = [];
+    for (let i = 0; i < sorted.length; i++) {
+      if (i > 0 && sorted[i] - sorted[i - 1] > 1) result.push('…');
+      result.push(sorted[i]);
+    }
+    return result;
+  };
+
+  const visiblePages = getVisiblePages(totalPages, currentPage);
+
   return (
     <section className="py-16 lg:py-24 bg-black relative">
       {/* Loading Overlay */}
@@ -170,38 +202,53 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
 
         {/* Pagination Controls */}
         {totalPages > 1 && (
-          <div className="mt-20 flex items-center justify-center gap-4">
+          <div className="mt-20 flex flex-wrap items-center justify-center gap-2 sm:gap-4">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className={`px-6 py-3 border border-zinc-800 text-[10px] font-black uppercase transition-all
+              aria-label="Previous page"
+              className={`px-4 sm:px-6 py-3 border border-zinc-800 text-[10px] font-black uppercase transition-all shrink-0
                 ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'text-white hover:bg-white hover:text-black'}
               `}
             >
-              PREVIOUS
+              <span className="sm:hidden">PREV</span>
+              <span className="hidden sm:inline">PREVIOUS</span>
             </button>
 
-            <div className="flex items-center gap-2">
-              {[...Array(totalPages)].map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => handlePageChange(i + 1)}
-                  className={`w-10 h-10 flex items-center justify-center text-[10px] font-black transition-all border
-                    ${currentPage === i + 1
-                      ? 'bg-primary border-primary text-white'
-                      : 'border-zinc-800 text-zinc-500 hover:border-white hover:text-white'
-                    }
-                  `}
-                >
-                  {i + 1}
-                </button>
-              ))}
+            <div className="flex items-center gap-1.5 sm:gap-2 order-first w-full sm:order-none sm:w-auto justify-center mb-2 sm:mb-0">
+              {visiblePages.map((page, i) =>
+                page === '…' ? (
+                  <span
+                    key={`ellipsis-${i}`}
+                    className="w-8 h-10 sm:w-10 flex items-center justify-center text-[10px] font-black text-zinc-600 select-none"
+                    aria-hidden
+                  >
+                    …
+                  </span>
+                ) : (
+                  <button
+                    key={page}
+                    onClick={() => handlePageChange(page)}
+                    aria-label={`Page ${page}`}
+                    aria-current={currentPage === page ? 'page' : undefined}
+                    className={`w-8 h-10 sm:w-10 flex items-center justify-center text-[10px] font-black transition-all border shrink-0
+                      ${currentPage === page
+                        ? 'bg-primary border-primary text-white'
+                        : 'border-zinc-800 text-zinc-500 hover:border-white hover:text-white'
+                      }
+                    `}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
             </div>
 
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className={`px-6 py-3 border border-zinc-800 text-[10px] font-black uppercase transition-all
+              aria-label="Next page"
+              className={`px-4 sm:px-6 py-3 border border-zinc-800 text-[10px] font-black uppercase transition-all shrink-0
                 ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'text-white hover:bg-white hover:text-black'}
               `}
             >
