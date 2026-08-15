@@ -67,6 +67,11 @@ export interface ServiceTestimonial {
   position: string;
 }
 
+export interface ServiceIndustry {
+  title: string;
+  description: string;
+}
+
 export interface ServiceLocation {
   title: string;
   officeAddress: string;
@@ -112,6 +117,9 @@ export interface ServiceDetailData {
   onlinePresenceHeading?: string;
   onlinePresenceDescription?: string;
   consultingImage?: StaticImageData | string;
+  industries?: ServiceIndustry[];
+  industriesHeading?: string;
+  industriesDescription?: string;
   locations?: ServiceLocation[];
   locationsHeading?: string;
   locationsDescription?: string;

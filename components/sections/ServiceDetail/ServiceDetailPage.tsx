@@ -5,6 +5,7 @@ import ComparisonSection from "./sections/ComparisonSection";
 import CaseStudiesSection from "./sections/CaseStudiesSection";
 import ToolsSection from "./sections/ToolsSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
+import IndustriesServedSection from "./sections/IndustriesServedSection";
 import LocationsSection from "./sections/LocationsSection";
 import FAQSection from "./sections/FAQSection";
 import {
@@ -93,6 +94,14 @@ export default function ServiceDetailPage({ service }: ServiceDetailPageProps) {
           consultingImage={service.consultingImage as string}
           onlinePresenceHeading={service.onlinePresenceHeading}
           onlinePresenceDescription={service.onlinePresenceDescription}
+        />
+      )}
+
+      {service.industries && service.industries.length > 0 && (
+        <IndustriesServedSection
+          heading={service.industriesHeading}
+          description={service.industriesDescription}
+          industries={service.industries}
         />
       )}
 
