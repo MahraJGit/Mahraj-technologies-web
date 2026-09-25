@@ -6,6 +6,8 @@ import { client, urlFor } from "@/lib/sanity";
 import { getPostBySlug, getAllPosts } from "@/lib/queries";
 import PortableText from "@/components/PortableText";
 import RecentPostsSidebar from "@/components/sections/Blogs/RecentPostsSidebar";
+import TableOfContents from "@/components/sections/Blogs/TableOfContents";
+import { extractHeadings } from "@/lib/extractHeadings";
 
 export const revalidate = 3600;
 
@@ -70,7 +72,7 @@ export default async function BlogDetailPage({ params }) {
   }
 
   const readingTime = calculateReadingTime(post.content);
-
+  const headings = extractHeadings(post.content);
 
   // Fetch all posts for sidebar logic
   const allPosts = await client.fetch(getAllPosts);
@@ -239,9 +241,9 @@ export default async function BlogDetailPage({ params }) {
           )}
 
           {/* Tags */}
-          {post.tags && (
+          {post.tags && post.tags.length > 0 && (
             <div className="mt-20 flex flex-wrap gap-3">
-              {post.tags.map((tag) => (
+              {[...new Set(post.tags)].map((tag) => (
                 <span key={tag} className="text-[10px] font-bold text-zinc-600 uppercase border border-zinc-900 px-3 py-1 bg-zinc-950">
                   #{tag}
                 </span>
@@ -250,9 +252,10 @@ export default async function BlogDetailPage({ params }) {
           )}
         </div>
 
-        {/* Sidebar Right - Recent Articles */}
+        {/* Sidebar Right - TOC + Recent Articles */}
         <aside className="lg:col-span-3">
           <div className="sticky top-32">
+            <TableOfContents headings={headings} />
             <RecentPostsSidebar recentPosts={recentPosts} />
           </div>
         </aside>
