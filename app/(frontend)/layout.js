@@ -22,6 +22,9 @@ export const metadata = {
   publisher: "Mahraj Technologies",
   verification: {
     google: "zvJrwFGTgqB2HemXDyuoIc5jSoz7Cp1pG430dOPXU40",
+    other: {
+      "msvalidate.01": "4AAD9557CA9EF5AD8E1CDED8ED597013",
+    },
   }
 };
 
