@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useTransition } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { ChevronRight } from 'lucide-react';
+import React, { useTransition } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { ChevronRight, Hash } from "lucide-react";
+import { urlFor } from "@/lib/sanity";
 
 export default function RecentPostsSidebar({ recentPosts }) {
   const router = useRouter();
@@ -17,7 +18,6 @@ export default function RecentPostsSidebar({ recentPosts }) {
 
   return (
     <>
-      {/* Loading Overlay */}
       {isPending && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300">
           <div className="flex flex-col items-center gap-6">
@@ -30,7 +30,7 @@ export default function RecentPostsSidebar({ recentPosts }) {
       )}
 
       <div>
-        <span className="text-[10px] font-bold text-zinc-700 uppercase mb-8 block flex items-center gap-3">
+        <span className="text-[10px] font-bold text-zinc-300 uppercase mb-8 block flex items-center gap-3 tracking-wider">
           <span className="w-6 h-[1px] bg-primary" />
           RECENT BLOGS
         </span>
@@ -41,12 +41,33 @@ export default function RecentPostsSidebar({ recentPosts }) {
               onClick={() => handleNavigation(rPost.slug)}
               className="group block cursor-pointer"
             >
+              <div className="relative w-full aspect-[16/10] mb-3 overflow-hidden rounded-sm border border-white/5 bg-zinc-950">
+                {rPost.mainImage ? (
+                  <Image
+                    src={urlFor(rPost.mainImage).width(400).height(250).url()}
+                    alt={rPost.mainImage.alt || rPost.title}
+                    title={rPost.mainImage.originalFilename || rPost.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 280px"
+                    className="object-cover opacity-90 transition-opacity group-hover:opacity-100"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Hash className="w-5 h-5 text-zinc-800" />
+                  </div>
+                )}
+              </div>
+
               <div className="flex flex-col gap-2">
                 <h5 className="text-white font-black uppercase text-xs leading-tight group-hover:text-primary transition-colors line-clamp-2">
                   {rPost.title}
                 </h5>
                 <div className="flex items-center gap-2 text-zinc-600 font-bold uppercase text-[8px]">
-                  {new Date(rPost.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}
+                  {new Date(rPost.publishedAt).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  })}
                   <ChevronRight className="w-2 h-2 group-hover:translate-x-1 transition-transform text-primary" />
                 </div>
               </div>

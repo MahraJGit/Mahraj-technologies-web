@@ -197,7 +197,7 @@ export default function TermsAndConditionsPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
                   <strong className="text-white w-20 flex-shrink-0">Address:</strong>
                   <div className="flex flex-col gap-2">
-                    <span>B2B Office Tower - Office Number - 2209 - Marasi Drive Street - Business Bay - Dubai - UAE</span>
+                    <span>B2B Office Tower - Office Number - 2205 - Marasi Drive Street - Business Bay - Dubai - UAE</span>
                     <span>World Trade Center - Office Number - 4087 - Islamabad, Pakistan</span>
                   </div>
                 </li>

@@ -38,7 +38,7 @@ export default function TableOfContents({ headings }) {
 
   return (
     <div className="mb-12">
-      <span className="text-[10px] font-bold text-zinc-700 uppercase mb-8 block flex items-center gap-3">
+      <span className="text-[14px] font-bold text-zinc-300 uppercase mb-8 block flex items-center gap-3 tracking-wider">
         <span className="w-6 h-[1px] bg-primary" />
         TABLE OF CONTENTS
       </span>
@@ -51,7 +51,7 @@ export default function TableOfContents({ headings }) {
             <a
               key={heading.key || `${heading.id}-${index}`}
               href={`#${heading.id}`}
-              className={`block text-[11px] font-bold uppercase leading-snug transition-colors border-l-2 -ml-px pl-4 ${
+              className={`block text-[12px] font-bold uppercase leading-snug transition-colors border-l-2 -ml-px pl-4 ${
                 isH3 ? "pl-7" : ""
               } ${
                 isActive

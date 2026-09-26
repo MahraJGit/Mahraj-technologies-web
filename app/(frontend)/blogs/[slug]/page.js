@@ -160,7 +160,7 @@ export default async function BlogDetailPage({ params }) {
       </header>
 
       {/* Main Image */}
-      <section className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-10 lg:mb-20">
         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm border border-white/5">
           {post.mainImage ? (
             <Image
@@ -179,6 +179,11 @@ export default async function BlogDetailPage({ params }) {
           )}
         </div>
       </section>
+
+      {/* Mobile TOC — directly below image */}
+      <div className="lg:hidden max-w-[1200px] mx-auto px-4 sm:px-6 mb-12">
+        <TableOfContents headings={headings} />
+      </div>
 
       {/* Article Content Area */}
       <section className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-20">
@@ -252,10 +257,12 @@ export default async function BlogDetailPage({ params }) {
           )}
         </div>
 
-        {/* Sidebar Right - TOC + Recent Articles */}
+        {/* Sidebar Right - TOC (desktop) + Recent Articles */}
         <aside className="lg:col-span-3">
           <div className="sticky top-32">
-            <TableOfContents headings={headings} />
+            <div className="hidden lg:block">
+              <TableOfContents headings={headings} />
+            </div>
             <RecentPostsSidebar recentPosts={recentPosts} />
           </div>
         </aside>
