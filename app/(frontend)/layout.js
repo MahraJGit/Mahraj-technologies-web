@@ -7,6 +7,7 @@ import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "@/app/api/uploadthing/core";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import MicrosoftClarity from "@/components/MicrosoftClarity";
 
 
 export const metadata = {
@@ -32,6 +33,7 @@ export default function FrontendLayout({ children }) {
   return (
     <>
       <GoogleAnalytics />
+      <MicrosoftClarity />
       <CalendlyProvider>
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <Header />

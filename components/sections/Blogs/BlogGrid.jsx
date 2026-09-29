@@ -1,35 +1,54 @@
 "use client";
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal } from 'lucide-react';
+import { ArrowRight, Terminal, Search, X } from 'lucide-react';
 import { urlFor } from '@/lib/sanity';
 import { useRouter } from 'next/navigation';
-import { useTransition } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import LoadingOverlay from '@/components/ui/LoadingOverlay';
 
-export default function BlogGrid({ posts = [], totalPages, currentPage, activeFilter }) {
+export default function BlogGrid({ posts = [], totalPages, currentPage, activeFilter, searchQuery = "" }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const [query, setQuery] = useState(searchQuery);
   const filters = ["ALL", "WEB DEVELOPMENT", "APP DEVELOPMENT", "SOFTWARE DEVELOPMENT", "DIGITAL MARKETING", "GRAPHIC DESIGNING", "ARTIFICIAL INTELLIGENCE"];
 
-  const handleFilterChange = (filter) => {
+  useEffect(() => {
+    setQuery(searchQuery);
+  }, [searchQuery]);
+
+  const buildParams = ({ filter = activeFilter, page = 1, q = searchQuery } = {}) => {
+    const params = new URLSearchParams();
+    if (filter !== "ALL") params.set('filter', filter);
+    if (q?.trim()) params.set('q', q.trim());
+    if (page > 1) params.set('page', page.toString());
+    return params;
+  };
+
+  const navigate = (params) => {
+    const qs = params.toString();
     startTransition(() => {
-      const params = new URLSearchParams();
-      if (filter !== "ALL") params.set('filter', filter);
-      params.set('page', '1'); // Reset to page 1 on filter change
-      router.push(`/blogs?${params.toString()}`, { scroll: false });
+      router.push(qs ? `/blogs?${qs}` : '/blogs', { scroll: false });
     });
   };
 
+  const handleFilterChange = (filter) => {
+    navigate(buildParams({ filter, page: 1, q: searchQuery }));
+  };
+
   const handlePageChange = (page) => {
-    startTransition(() => {
-      const params = new URLSearchParams();
-      if (activeFilter !== "ALL") params.set('filter', activeFilter);
-      params.set('page', page.toString());
-      router.push(`/blogs?${params.toString()}`, { scroll: false });
-    });
+    navigate(buildParams({ page, q: searchQuery }));
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate(buildParams({ page: 1, q: query }));
+  };
+
+  const handleClearSearch = () => {
+    setQuery("");
+    navigate(buildParams({ page: 1, q: "" }));
   };
 
   // Build a compact page list with ellipses for small screens / many pages
@@ -71,7 +90,7 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
 
       <div className="site-container font-sans">
         {/* Protocol Logs Header & Filter */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-8">
           <div>
             <h2 className="text-3xl font-black text-white uppercase mb-4">Our Blogs</h2>
             <p className="text-zinc-500 text-sm font-bold uppercase">Stay updated with our latest blogs.</p>
@@ -98,6 +117,63 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
           </div>
         </div>
 
+        {/* Search */}
+        <form onSubmit={handleSearchSubmit} className="mb-16 max-w-xl">
+          <div className="relative flex items-center">
+            <Search className="absolute left-4 w-4 h-4 text-zinc-500 pointer-events-none" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search blogs..."
+              aria-label="Search blogs"
+              className="w-full bg-zinc-950 border border-white/10 pl-11 pr-24 py-4 text-sm font-medium text-white placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={handleClearSearch}
+                aria-label="Clear search"
+                className="absolute right-16 p-1 text-zinc-500 hover:text-white transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+            <button
+              type="submit"
+              className="absolute right-2 px-4 py-2 bg-primary text-white text-[10px] font-black uppercase hover:bg-white hover:text-black transition-colors"
+            >
+              Search
+            </button>
+          </div>
+          {searchQuery && (
+            <p className="mt-3 text-[11px] font-bold text-zinc-500 uppercase">
+              Showing results for <span className="text-primary">&ldquo;{searchQuery}&rdquo;</span>
+            </p>
+          )}
+        </form>
+
+        {posts.length === 0 ? (
+          <div className="py-24 text-center border border-white/5 bg-zinc-950/50">
+            <p className="text-white text-xl font-black uppercase mb-3">No blogs found</p>
+            <p className="text-zinc-500 text-sm mb-8">
+              {searchQuery
+                ? `Nothing matched “${searchQuery}”. Try a different keyword.`
+                : "No posts available in this category yet."}
+            </p>
+            {(searchQuery || activeFilter !== "ALL") && (
+              <button
+                onClick={() => {
+                  setQuery("");
+                  navigate(new URLSearchParams());
+                }}
+                className="text-[11px] font-black uppercase text-primary hover:text-white transition-colors"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
+        ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
           {posts.map((post, index) => (
             <div
@@ -199,6 +275,7 @@ export default function BlogGrid({ posts = [], totalPages, currentPage, activeFi
             </div>
           </motion.div>
         </div>
+        )}
 
         {/* Pagination Controls */}
         {totalPages > 1 && (

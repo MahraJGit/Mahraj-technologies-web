@@ -20,6 +20,7 @@ export default async function BlogsPage({ searchParams }) {
   const params = await searchParams;
   const currentPage = parseInt(params?.page) || 1;
   const activeFilter = params?.filter || "ALL";
+  const searchQuery = (params?.q || "").trim();
   const limit = 5;
   const start = (currentPage - 1) * limit;
   const end = start + limit;
@@ -28,11 +29,13 @@ export default async function BlogsPage({ searchParams }) {
   const [posts, totalCount] = await Promise.all([
     client.fetch(getPaginatedPosts, {
       category: activeFilter,
+      search: searchQuery,
       start,
       end
     }),
     client.fetch(getPostsCount, {
-      category: activeFilter
+      category: activeFilter,
+      search: searchQuery,
     })
   ]);
 
@@ -51,6 +54,7 @@ export default async function BlogsPage({ searchParams }) {
         totalPages={totalPages}
         currentPage={currentPage}
         activeFilter={activeFilter}
+        searchQuery={searchQuery}
       />
     </main>
   );
