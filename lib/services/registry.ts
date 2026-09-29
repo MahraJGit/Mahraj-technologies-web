@@ -17,6 +17,7 @@ import { automotiveDigitalSolutionsData } from "./data/automotive-digital-soluti
 import { bankFintechData } from "./data/bank-fintech";
 import { fmcgMarketingData } from "./data/fmcg-marketing";
 import { foodBeveragesMarketingData } from "./data/food-beverages-marketing";
+import { digitalInsuranceSolutionsData } from "./data/digital-insurance-solutions";
 
 const servicesBySlug: Record<string, ServiceDetailData> = {
   [digitalMarketingData.slug]: digitalMarketingData,
@@ -37,6 +38,7 @@ const servicesBySlug: Record<string, ServiceDetailData> = {
   [bankFintechData.slug]: bankFintechData,
   [fmcgMarketingData.slug]: fmcgMarketingData,
   [foodBeveragesMarketingData.slug]: foodBeveragesMarketingData,
+  [digitalInsuranceSolutionsData.slug]: digitalInsuranceSolutionsData,
 };
 
 export const allServices: ServiceDetailData[] = Object.values(servicesBySlug);
@@ -69,4 +71,5 @@ export const serviceCodeToSlug: Record<string, string> = {
   BNK_FNT: bankFintechData.slug,
   FMCG_MKT: fmcgMarketingData.slug,
   FOD_BEV: foodBeveragesMarketingData.slug,
+  INSURANCE: digitalInsuranceSolutionsData.slug,
 };
